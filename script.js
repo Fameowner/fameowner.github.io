@@ -79,7 +79,7 @@ window.onscroll = () => {
 sсrolled = window.scrollY;
 scrolledX = sсrolled - xpos-stop;
 
-if ((getCoordsY(document.getElementById(`about`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
+if ((getCoordsY(document.getElementById(`homeEnd`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
 || (getCoordsY(document.getElementById(`ourStack`)) <= 50 && getCoordsY(document.getElementById(`ourVacancy`)) > 50 )
 || (getCoordsY(document.getElementById(`footer`)) <= 50)) {
 document.getElementById(`header`).classList.add (`navHeaderInverse`);
