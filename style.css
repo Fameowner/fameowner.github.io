@@ -1,46 +1,50 @@
 @font-face{
-    font-family: 'HelveticaNeueCyr-Black';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Black.woff');
+    font-weight: 900;
+    font-style: normal;
 }
 @font-face{
-    font-family: 'HelveticaNeueCyr-BlackItalic';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-BlackItalic.woff');
+    font-weight: 900;
+    font-style: italic;
 }
 @font-face{
-    font-family: 'HelveticaNeueCyr-Italic';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Italic.woff');
+    font-weight: normal;
+    font-style: italic;
 }
 @font-face{
-    font-family: 'HelveticaNeueCyr-Light';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Light.woff');
+    font-weight: 300;
+    font-style: normal;
 }
 @font-face{
-    font-family: 'HelveticaNeueCyr-LightItalic';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-LightItalic.woff');
+    font-weight: 300;
+    font-style: italic;
 }
 @font-face{
-    font-family: 'HelveticaNeueCyr-Medium';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Medium.woff');
+    font-weight: 500;
+    font-style: normal;
 }
 @font-face{
-    font-family: 'HelveticaNeueCyr-Roman';
-    src: url('Res/fonts/HelveticaNeueCyr-Roman.woff');
-}
-@font-face{
-    font-family: 'HelveticaNeueCyr-Thin';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Thin.woff');
+    font-weight: 100;
+    font-style: normal;
 }
 @font-face{
-    font-family: 'HelveticaNeueCyr-ThinItalic';
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-ThinItalic.woff');
-}
-@font-face{
-    font-family: 'HelveticaNeueCyr-UltraLight_0';
-    src: url('Res/fonts/HelveticaNeueCyr-UltraLight_0.woff');
-}
-@font-face{
-    font-family: 'HelveticaNeueCyr-UltraLightItalic';
-    src: url('Res/fonts/HelveticaNeueCyr-UltraLightItalic.woff');
+    font-weight: 100;
+    font-style: italic;
 }
 
 
@@ -187,7 +191,7 @@ header {
 }
 
 .headerBottomLeftLocation h1 {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .headerBottomLeftLocation h2 {
@@ -650,7 +654,7 @@ header {
 
 .ourStackItemListItem {
     flex-basis: 1;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 14px;
     line-height: 25px;
     letter-spacing: 0.04em;
@@ -667,7 +671,7 @@ header {
 
 .ourStackItemListItemDir {
     padding: 12px 0px 30px 0px;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 24px;
     line-height: 24px;
     color: #000000;
@@ -822,7 +826,7 @@ footer {
 }
 
 .footerBottomLeftLocation h1 {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .footerBottomLeftLocation h2 {
@@ -1084,7 +1088,7 @@ footer {
 }
 
 .startProject .startProjectheading {
-    font-weight: 200;
+    font-weight: 300;
     font-size: 48px;
     line-height: 60px;
     letter-spacing: 0.04em;
