@@ -1,3 +1,49 @@
+@font-face{
+    font-family: 'HelveticaNeueCyr-Black';
+    src: url('Res/fonts/HelveticaNeueCyr-Black.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-BlackItalic';
+    src: url('Res/fonts/HelveticaNeueCyr-BlackItalic.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-Italic';
+    src: url('Res/fonts/HelveticaNeueCyr-Italic.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-Light';
+    src: url('Res/fonts/HelveticaNeueCyr-Light.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-LightItalic';
+    src: url('Res/fonts/HelveticaNeueCyr-LightItalic.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-Medium';
+    src: url('Res/fonts/HelveticaNeueCyr-Medium.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-Roman';
+    src: url('Res/fonts/HelveticaNeueCyr-Roman.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-Thin';
+    src: url('Res/fonts/HelveticaNeueCyr-Thin.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-ThinItalic';
+    src: url('Res/fonts/HelveticaNeueCyr-ThinItalic.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-UltraLight_0';
+    src: url('Res/fonts/HelveticaNeueCyr-UltraLight_0.otf');
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr-UltraLightItalic';
+    src: url('Res/fonts/HelveticaNeueCyr-UltraLightItalic.otf');
+}
+
+
 body {
     display: flex;
     flex-direction: column;
@@ -232,8 +278,8 @@ header {
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background: rgba(0,0,0,.2);
-    backdrop-filter: blur(4px);
+    background: rgba(0,0,0,.5);
+    /* backdrop-filter: blur(4px); */
     z-index: 9;
 }
 
@@ -305,7 +351,7 @@ header {
     display: flex;
     flex-direction: column;
     flex-basis: 62%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 1);
     z-index: 7;
 }
 
@@ -347,12 +393,17 @@ header {
     color: #C4C4C4;
 }
 
-.homeLeftEnd {
-    position: absolute;
-    background-color: #010101;
+.homeEnd {
+    background-color: #fff;
     height: 10vh;
+    width: 100%;
+    z-index: 5;
+}
+
+.homeEnd div {
+    background-color: #000;
+    height: 100%;
     width: 62%;
-    top: 102vh;
 }
 
 .marqueeBG {
@@ -365,14 +416,15 @@ header {
 }
 
 .marqueeBG span {
-    font-family: Helvetica;
+    font-family: HelveticaNeueCyr;
     font-style: normal;
     font-weight: bold;
-    font-size: 28vw;
+    font-size: 22vw;
     line-height: 32.5vw;
     color: #EEA25C;
     display:inline-block;
-    padding-left:100%;
+    transform: translateX(-21%);
+    /* padding-left:100%;
     -webkit-animation: marquee 15s infinite linear;
     animation: marquee 15s infinite linear;
     }
@@ -382,31 +434,8 @@ header {
     }
     @keyframes marquee{
     0%{transform: translate(0, 0);}
-    100%{transform: translate(-100%, 0)}
+    100%{transform: translate(-100%, 0)} */
 }
-
-
-/* .marqueeBG span {
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 28vw;
-    line-height: 32.5vw;
-    color: #EEA25C;
-    display:inline-block;
-    padding-left:100%;
-    animation: text 5s infinite linear;
-    white-space: nowrap;
-    }
-    @keyframes text {
-    0%{
-        transform: translate(0, 0);
-    }
-    
-    100%{
-        transform: translate(-160%, 0);
-    }
-} */
 
 
 .about {
@@ -426,7 +455,7 @@ header {
     line-height: 1;
     text-align: center;
     letter-spacing: 0.08em;
-    margin: 50vh 19.8% 30vh;
+    margin: 40vh 19.8%;
     color: #000000;
 }
 
@@ -528,7 +557,7 @@ header {
 }
 
 .servicesLeft li {
-    font-family: Aeroport;
+    font-family: HelveticaNeueCyr;
     font-style: normal;
     font-weight: normal;
     font-size: .7vw;
@@ -1122,7 +1151,7 @@ footer {
 
 .modalDialog {
 	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: HelveticaNeueCyr;
 	top: 0;
 	right: 0;
 	bottom: 0;
