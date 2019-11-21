@@ -1,46 +1,46 @@
 @font-face{
     font-family: 'HelveticaNeueCyr-Black';
-    src: url('Res/fonts/HelveticaNeueCyr-Black.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-Black.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-BlackItalic';
-    src: url('Res/fonts/HelveticaNeueCyr-BlackItalic.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-BlackItalic.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-Italic';
-    src: url('Res/fonts/HelveticaNeueCyr-Italic.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-Italic.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-Light';
-    src: url('Res/fonts/HelveticaNeueCyr-Light.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-Light.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-LightItalic';
-    src: url('Res/fonts/HelveticaNeueCyr-LightItalic.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-LightItalic.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-Medium';
-    src: url('Res/fonts/HelveticaNeueCyr-Medium.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-Medium.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-Roman';
-    src: url('Res/fonts/HelveticaNeueCyr-Roman.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-Roman.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-Thin';
-    src: url('Res/fonts/HelveticaNeueCyr-Thin.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-Thin.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-ThinItalic';
-    src: url('Res/fonts/HelveticaNeueCyr-ThinItalic.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-ThinItalic.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-UltraLight_0';
-    src: url('Res/fonts/HelveticaNeueCyr-UltraLight_0.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-UltraLight_0.woff');
 }
 @font-face{
     font-family: 'HelveticaNeueCyr-UltraLightItalic';
-    src: url('Res/fonts/HelveticaNeueCyr-UltraLightItalic.otf');
+    src: url('Res/fonts/HelveticaNeueCyr-UltraLightItalic.woff');
 }
 
 
