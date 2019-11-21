@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name = "Description" content = "Веб-студия majorweb" >
+        <title>веб-студия majorweb</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header role = "navigation" class = "" id = "header">
+            <nav class = "navHeader" id = "navHeader">
+                <!-- <div class = "navButton"><a href="">Начать проект</a></div> -->
+                <div class = "navButton navButtonLeft" id = "navButtonLeft"><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></div>
+                <div class = "navButton "><a href="">majorweb</a></div>
+                <div class = "navButton ">
+                    <a>
+                        <button class = "menuButton" onclick="showMenu()" id = "burgerMenu" name = "burgerMenuButton">
+                                <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="40" id = "ham">
+                                        <path
+                                            class="line top"
+                                            d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                                        <path
+                                            class="line middle"
+                                            d="m 70,50 h -40" />
+                                        <path
+                                            class="line bottom"
+                                            d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+                                </svg>
+                        </button>
+                    </a>
+                </div>
+            </nav>
+            <div class = "headerBottom" id = "headerBottom">
+                <div class = "headerBottomLeft">
+                    <div class = "headerBottomLeftLocations">
+                        <div class = "headerBottomLeftLocation">
+                            <h1>Москва</h1>
+                            <h2>Новорязанская улица, 26с1</h2>
+                        </div>
+                        <div class = "headerBottomLeftLocation">
+                            <h1>Москва</h1>
+                            <h2>Новорязанская улица, 26с1</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class = "headerBottomRight">
+                    <nav class = "navMenu">
+                        <a href="#services" onclick="showMenu()">Сервисы</a>
+                        <a href="#slider" onclick="showMenu()">Наши работы</a>
+                        <a href="#about" onclick="showMenu()">О компании</a>
+                        <a>Заказать разработку</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class = "bgBlur" id = "bgBlur"></div>
+        <div class = "home" id = "home">
+            <div class = "marqueeBG" will-change id = "marqueeBG"> <!-- Переписать потом -->
+                <!-- <span><img src="Res\MAJORWEB.jpg"></span> -->
+                <span>MAJORWEB</span>
+                <!-- <span><svg width="3008" height="397" viewBox="0 0 3008 397" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M362.314 386.312V11.912H249.474L181.874 306.232L113.754 11.912H0.393575V386.312H73.1936V133.072C73.1936 125.792 73.1936 115.392 72.6736 102.392V72.232L142.874 386.312H218.794L289.514 72.232V102.392C288.994 115.392 288.994 125.792 288.994 133.072V386.312H362.314ZM762.718 386.312L630.118 11.912H541.718L408.078 386.312H490.238L515.718 309.352H654.038L677.958 386.312H762.718ZM585.398 97.712L632.198 244.872H537.038L585.398 97.712ZM855.631 253.192V244.352H781.791V253.192C781.791 296.872 790.111 331.712 806.751 357.192C823.391 382.672 856.151 395.672 904.511 395.672C952.871 395.672 986.671 379.552 1005.39 348.352C1016.31 329.632 1021.51 304.152 1021.51 272.432V11.912H943.511V273.992C943.511 291.672 941.951 304.672 938.311 312.472C932.591 325.472 920.111 331.712 901.391 331.712C883.191 331.712 870.711 325.992 865.511 314.032C859.271 302.072 856.671 281.792 855.631 253.192ZM1386.9 353.032C1424.86 317.152 1443.58 266.192 1443.58 198.592C1443.58 129.952 1424.86 78.472 1386.9 44.152C1358.82 15.032 1318.26 0.471989 1264.7 0.471989C1211.14 0.471989 1170.06 15.032 1141.98 44.152C1104.02 78.472 1084.78 129.952 1084.78 198.592C1084.78 266.192 1104.02 317.152 1141.98 353.032C1170.06 382.152 1211.14 396.712 1264.7 396.712C1318.26 396.712 1358.82 382.152 1386.9 353.032ZM1338.54 296.352C1319.82 319.232 1295.38 330.672 1264.7 330.672C1233.5 330.672 1209.06 319.232 1190.34 296.352C1171.62 273.472 1162.78 240.712 1162.78 198.592C1162.78 156.472 1171.62 124.232 1190.34 101.352C1209.06 78.472 1233.5 67.032 1264.7 67.032C1295.38 67.032 1319.82 78.472 1338.54 101.352C1356.22 124.232 1365.58 156.992 1365.58 198.592C1365.58 240.712 1356.22 273.472 1338.54 296.352ZM1749.5 21.792C1735.46 16.072 1715.18 12.432 1689.18 11.912H1505.62V386.312H1582.06V239.672H1662.66C1685.54 239.672 1701.66 243.832 1709.98 251.632C1718.3 259.432 1722.46 275.552 1722.98 299.472L1723.5 333.792C1723.5 344.712 1724.54 355.632 1726.62 366.032C1727.66 371.232 1729.22 377.992 1731.82 386.312H1817.62V376.952C1810.34 372.272 1805.66 364.992 1803.58 355.632C1802.02 349.392 1801.5 337.952 1801.5 320.792V295.832C1801.5 269.312 1797.86 250.072 1790.58 237.072C1783.3 224.072 1771.34 214.192 1754.18 207.432C1774.46 200.672 1789.54 188.192 1798.38 171.032C1807.22 153.872 1811.9 136.712 1811.9 118.512C1811.9 103.952 1809.82 90.952 1804.62 79.512C1799.94 68.072 1793.7 57.152 1785.38 47.792C1775.5 36.352 1763.54 27.512 1749.5 21.792ZM1670.46 177.792H1582.06V76.912H1672.54C1689.7 76.912 1702.18 79.512 1711.02 83.672C1725.58 91.472 1733.38 106.552 1733.38 129.432C1733.38 150.232 1725.58 164.272 1709.98 171.552C1701.14 175.712 1688.14 177.792 1670.46 177.792ZM1971.31 285.952L1960.91 226.152L1910.99 11.912H1828.31L1934.39 386.312H2006.67L2051.91 167.392L2065.43 95.112L2078.43 167.392L2123.67 386.312H2198.55L2303.59 11.912H2224.03L2174.11 228.752L2162.67 285.952L2151.23 226.152L2107.03 11.912H2024.35L1982.23 227.712L1971.31 285.952ZM2430.12 158.032V78.472H2627.72V11.912H2353.68V386.312H2637.08V319.232H2430.12V223.032H2611.6V158.032H2430.12ZM2978.72 51.952C2959.48 25.952 2927.24 12.952 2880.96 11.912H2699.48V386.312H2869C2887.72 386.312 2905.92 384.752 2922.04 381.112C2938.68 377.992 2952.72 371.752 2964.68 362.392C2975.08 354.592 2983.92 344.712 2991.2 332.752C3002.64 315.592 3007.84 295.312 3007.84 273.472C3007.84 251.632 3003.16 233.432 2993.8 218.352C2983.4 203.272 2969.36 192.352 2950.12 185.592C2962.6 179.352 2972.48 172.072 2978.72 164.272C2990.16 150.232 2995.88 132.032 2995.88 109.152C2995.88 86.792 2990.16 68.072 2978.72 51.952ZM2865.88 159.592H2773.84V76.912H2856C2874.2 76.912 2889.28 78.992 2900.72 83.152C2914.24 88.352 2921 99.792 2921 117.472C2921 133.072 2916.32 143.992 2905.92 150.232C2895.52 156.472 2882.52 159.592 2865.88 159.592ZM2865.88 321.312H2773.84V221.472H2866.92C2883.56 221.992 2896.04 224.072 2904.88 227.712C2921 234.992 2929.32 248.512 2929.32 267.752C2929.32 291.152 2920.48 306.752 2904.36 314.552C2895 319.232 2882.52 321.312 2865.88 321.312Z" fill="#EEA25C"/>
+                </svg></span> -->
+            </div>
+            <div class = "homeLeft">
+                <div class = "homeLeftText">
+                    <h1>В точности, как вы представляли свой бренд, но намного больше.</h1>
+                    <h2>ВЕБ РАЗРАБОТКА, ДИЗАЙН И МАРКЕТИНГ</h2>
+                </div>
+                <!-- <a href="#about"><h3>Вниз</h3></a> -->
+                <div class = "homeLeftEnd"></div>
+            </div>
+            <div class = "homeRight">
+            </div>
+        </div>
+        <div class = "ContactUsBlock" id = "ContactUsBlock">
+            <div class = "ContactUsBlockTop">
+                <span>Начать пороект с majorweb</span>
+            </div>
+            <div class = "ContactUsBlockBottom">
+                <div>
+                    <a href="mailto:start@majorweb.studio">start@majorweb.studio</a>
+                </div>
+                <div>
+                    <span>Our major is web.<br></span>
+                    <span>Don’t be shy, tell us more <br></span>
+                    <span>about yours!</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class = "about" id = "about">
+                <h1>Majorweb — это независимая студия, которая помогает раскрыть и донести &nbsp ценность продукта.</h1>
+                <!-- <h3>Вниз</h3> -->
+        </div>
+        <div class = 'scrollspace' id = 'services'>
+                <div class="card" id = 'horscrollsection'> 
+                        <div class = "services">
+                                <div class = "servicesLeft">
+                                        <h1>Разработка и Поддержка</h1>
+                                        <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
+                                        <ul>
+                                            <li>Разрабокта веб-сайта</li>
+                                            <li>Разработка мобильных и веб-приложений</li>
+                                            <li>Интеграция CRM / ERM платформ</li>
+                                            <li>Чат-боты в мессенджрах</li>
+                                        </ul>    
+                                </div>
+                                <div class = "servicesRight">
+                                    <div class = "servicesRightItem">
+                                        <video src = "Res\Pexels Videos 2795399 (1).webm"  loop clip muted id = "vid1"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "services">
+                                    <div class = "servicesLeft">
+                                            <h1>Дизайн и Креатив</h1>
+                                            <h2>Наличие разработчиков и дизайнеров под одной крышей гарантирует, что дизайн безупречно соответствует техническим требованиям и идет в ногу со временем</h2>
+                                            <ul>
+                                                <li>Цифровой дизайн продуктов и услуг</li>
+                                                <li>Бренд-дизайн</li>
+                                                <li>Производство визуального контента (иллюстрации, 3D)</li>
+                                                <li>UI / UX и Motion Design</li>
+                                            </ul>    
+                                    </div>
+                                    <div class = "servicesRight">
+                                        <div class = "servicesRightItem">
+                                            <video src = "Res\Pexels Videos 2035391.mp4"  loop clip muted id = "vid2"></video>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "services">
+                                    <div class = "servicesLeft">
+                                            <h1>Консалтинг и Аналитика</h1>
+                                            <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
+                                            <ul>
+                                                <li>Проверка безопасности веб-приложения</li>
+                                                <li>Проектирование архитектуры веб-приложения</li>
+                                                <li>A/B тестирование</li>
+                                                <li>Перфоманс и креатив консалтинг</li>
+                                            </ul>    
+                                    </div>
+                                    <div class = "servicesRight">
+                                        <div class = "servicesRightItem">
+                                            <video src = "Res\Pexels Videos 2795399 (1).webm"  loop clip muted id = "vid3"></video>
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
+        </div>
+        <div class = "ourWorks" id = "ourWorks">
+            <div class = "slider" id = "slider">
+                <div class="sliderItem sliderItemMove" id = "sliderItem0">
+                        <h2>tdnpo.ru 0</h2>
+                        <a>
+                            <img src="Res\majorpack.jpg" alt="tdnpo.ru">
+                        </a>
+                </div>
+                <div class="sliderItem" id = "sliderItem1">
+                    <h2>tdnpo.ru 1</h2>
+                    <a>
+                        <img src="Res\majorpack.jpg" alt="tdnpo.ru">
+                    </a>
+                </div>
+                <div class="sliderItem" id = "sliderItem2">
+                    <h2>tdnpo.ru 2</h2>
+                    <a>
+                        <img src="Res\majorpack.jpg" alt="tdnpo.ru">
+                    </a>
+                </div>
+                <div class="sliderItem" id = "sliderItem3">
+                    <h2>tdnpo.ru 3</h2>
+                    <a>
+                        <img src="Res\majorpack.jpg" alt="tdnpo.ru">
+                    </a>
+                </div>
+            </div>
+            <div class="testbuttons" id = "testbuttons">
+                    <button class = "testbutton buttonPrev" onclick="prev()" id = "buttonPrev" name = "buttonPrev"><img src="Res\arrow-left-S-light.png" alt=""></button>
+                    <button class = "testbutton  buttonNext" onclick="next()" id = "buttonNext" name = "buttonNext"><img src="Res\arrow-right-S-light.png" alt=""></button>
+            </div>
+        </div>
+        <div class = "ourStack" id = "ourStack">
+            <div class = "ourStackItem">
+                <h1>В нашей работе мы используем новейшие технологии и современный подход.</h1>
+            </div>
+            <div class = "ourStackItem">
+                <div class = "ourStackItemList">
+                    <div class = "ourStackItemListItem">
+                        <ul>
+                            <li class = "ourStackItemListItemNum">01</li>
+                            <li class = "ourStackItemListItemDir">Front—end</li>
+                            <li>Babel</li>
+                            <li>GatsbyJs</li>
+                            <li>Javascript ES7</li>
+                            <li>Mobx</li>
+                            <li>PostCSS</li>
+                            <li>PWA</li>
+                            <li>ReactJs</li>
+                            <li>React Native</li>
+                            <li>Redux</li>
+                            <li>Sass</li>
+                            <li>SSR</li>
+                            <li>Styled Components</li>
+                            <li>Typescript</li>
+                            <li>VueJs</li>
+                            <li>Webpack</li>
+                        </ul>
+                    </div>
+                    <div class = "ourStackItemListItem">
+                        <div class = "ourStackItemListItem">
+                            <ul>
+                                <li class = "ourStackItemListItemNum">02</li>
+                                <li class = "ourStackItemListItemDir">Back—end</li>
+                                <li>Celery</li>
+                                <li>Django</li>
+                                <li>Docker</li>
+                                <li>Flask</li>
+                                <li>Haproxy</li>
+                                <li>Nginx</li>
+                                <li>NodeJs</li>
+                                <li>PostgresSql</li>
+                                <li>Python</li>
+                                <li>Redis</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class = "ourStackItemListItem">
+                    <div class = "ourStackItemListItem">
+                        <ul>
+                            <li class = "ourStackItemListItemNum">03</li>
+                            <li class = "ourStackItemListItemDir">DevOps</li>
+                            <li>Centos</li>
+                            <li>Graphite</li>
+                            <li>InfluxDB</li>
+                            <li>Nagios</li>
+                            <li>Saltstack</li>
+                            <li>Sentry</li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class = "ourStackItemListItem">
+                        <div class = "ourStackItemListItem">
+                            <ul>
+                                <li class = "ourStackItemListItemNum">04</li>
+                                <li class = "ourStackItemListItemDir">Design</li>
+                                <li>3DS Max</li>
+                                <li>Adobe After Effects</li>
+                                <li>Adobe Illustrator</li>
+                                <li>Adobe Photoshop</li>
+                                <li>Blender</li>
+                                <li>Autocad</li>
+                                <li>Cinema 4D</li>
+                                <li>Figma</li>
+                                <li>Keyshot</li>
+                                <li>Marvelous Designer</li>
+                                <li>Sketch</li>
+                                <li>Unreal Engine</li>
+                                <li>Zbrush</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class = "ourStackItem"> <h2>Образ вашей компании в Интернете - лицо вашего бренда. Красивый дизайн и хорошо написанный код сделают ваших клиентов счастливее. Лояльность клиентов способствует увеличению продаж и развитию вашего бизнеса.</h2> </div>
+            <div class = "ourStackItem"> <a href = "">Станьте первыми.</a></div>
+        </div>
+        <div class = "ourVacancy" id = "ourVacancy">
+            <div class = "ourVacancyTop">
+                <ul>
+                    <li>Мы всегда ищем новые таланты, </li>
+                    <li>свяжитесь с нами, если Вы:</li>
+                </ul>
+            </div>
+            <div class = "ourVacancyBottom">
+                <div class = "ourVacancyBottomItem" id = "VacancyFrontEnd">
+                    <ul>
+                        <li>Front—end разработчик</li>
+                        <li>Разработка проектов (frontend-части)</li>
+                        <li>Доработка существующих проектов</li>
+                        <li>Разработка бизнес-логики и back-end системы для поддержки продукта</li>
+                        <li>Проектирование пользовательских интерфейсов</li>
+                        <li>Создание функциональных API (совместная работа c front-end разработчиками)</li>
+                        <li>Кроссбраузерная и адаптивная верстка HTML5/CSS3</li>
+                    </ul>
+                </div>
+                <div class = "ourVacancyBottomItem" id = "VacancyBackEnd">
+                    <ul>
+                        <li>Back—end разработчик</li>
+                        <li>Разработка проектов (frontend-части)</li>
+                        <li>Доработка существующих проектов</li>
+                        <li>Разработка бизнес-логики и back-end системы для поддержки продукта</li>
+                        <li>Проектирование пользовательских интерфейсов</li>
+                        <li>Создание функциональных API (совместная работа c front-end разработчиками)</li>
+                        <li>Кроссбраузерная и адаптивная верстка HTML5/CSS3</li>
+                    </ul>
+                </div>
+                    <div class = "Box VacancyBox" id = "VacancyBox1">  </div>
+            </div>
+            <div class = "ourVacancyResponseto">
+                    <ul>
+                    <a href="mailto:jobs@majorweb.studio"><li>Отправить резюме</li></a>
+                    <a href="mailto:jobs@majorweb.studio"><li>jobs@majorweb.studio</li></a>
+                    </ul>
+            </div>
+        </div>
+
+        <!-- <a href="#openModal">Открыть модальное окно</a>
+        <div id="openModal" class="modalDialog">
+            <a href="#close" title="Закрыть" class="close">X</a>
+            <div class="startProject startProjectOpen" id = "startProject">
+                <form action="" method="POST" id = "startProjectForm" class = "startProjectForm">
+                    <div class = "startProjectFormItem startProjectFormItemLeft">
+                            <label class="startProjectheading" >Вас интересует</label>
+                            <label class="startProjectheading">Бюджет</label>
+                            <label class="startProjectheading" for = "textareaDescriptionProject">Описание</label>
+                    </div>
+                    <div class = "startProjectFormItem startProjectFormItemRight">
+                        <div>
+                            <input type="checkbox" name="servicesDesign" value="Design" id="checkboxDesignButton">
+                            <label for = "checkboxDesignButton"> Дизайн </label>
+                            <input type="checkbox" name="servicesDevelopment" value="Development" id ="checkboxDevelopmentButton">
+                            <label for = "checkboxDevelopmentButton">Разработка</label>
+                            <input type="checkbox" name="servicesSupport" value="Support" id = "checkboxSupportButton">
+                            <label for = "checkboxSupportButton">Поддержка</label>
+                            <input type="checkbox" name="servicesConsulting" value="Consulting" id = "checkboxConsultingButton">
+                            <label for = "checkboxConsultingButton">Консалтинг</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="budget" value="upTo200" id = "radioBudgetUpTo200Button">
+                            <label for = "radioBudgetUpTo200Button">До 200 тыс. ₽</label>
+                            <input type="radio" name="budget" value="f200t500" id = "radioBudgetf200t500Button">
+                            <label for = "radioBudgetf200t500Button">От 200 тыс. до 500 тыс. ₽</label>
+                            <input type="radio" name="budget" value="f500" id = "radioBudgetf500Button">
+                            <label for = "radioBudgetf500Button">От 500 тыс. ₽</label>
+                        </div>
+                        <div>
+                            <textarea class = "startProjectFormInput" type="textarea" name="descriptionProject" placeholder="Кратко опишите ваш проект, чтобы мы могли составить бриф." id = "textareaDescriptionProject"></textarea>
+                        </div>
+                    </div>
+                    <div class = "startProjectFormItemBottom">
+                        <div>
+                            <label class="startProjectheading">Контакты</label>
+                        </div>
+                        <div class = "contacts">
+                            <label for="contactsNameID">Имя:</label>
+                            <input class = "startProjectFormInput shortInput" type="text" name="contactsName" placeholder="Как вас зовут?" id = "contactsNameID">
+                            <label for="contactsEMailID">e-mail:</label>
+                            <input class = "startProjectFormInput shortInput" type="email" name="contactsEMail" placeholder="Почта для связи" id = "contactsEMailID">
+                            <label for="contactsPhoneID">Номер телефона:</label>
+                            <input class = "startProjectFormInput shortInput" type="tel" name="contactsPhone" placeholder="8 (900) 000 00 00" pattern="[0-9] {+}" id = "contactsPhoneID">
+                        </div>
+                    </div>
+                    <div class = "startProjectFormItemButton">
+                        <button type="submit">
+                            Отправить
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+
+
+        <footer id = "footer">
+            <div class = "footerTop" id = "footerTop">
+                <ul>
+                    <li>Our major is web,</li>
+                    <li>tell us more about yours.</li>
+                </ul>
+            </div>
+            <div  class = "footerBottom">
+                <div class = "footerBottomLeft">
+                    <div class = "footerBottomLeftLocations">
+                            <div class = "footerBottomLeftLocation">
+                                    <h1>Москва</h1>
+                                    <h2>Адрес нашего офиса в Москве</h2>
+                                </div>
+                                <div class = "footerBottomLeftLocation">
+                                    <h1>Нью-Йорк</h1>
+                                    <h2>Адрес нашего вымышленного офиса в Нью-Йорке</h2>
+                                </div>
+                    </div>
+                </div>
+                <div class = "footerBottomRight">
+                    <ul>
+                        <li>Начать проект с нами.</li>
+                        <li><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <div class = "Box helloBox" id = "helloBox">  </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
