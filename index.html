@@ -11,8 +11,8 @@
     <body>
         <header role = "navigation" class = "" id = "header">
             <nav class = "navHeader" id = "navHeader">
-                <!-- <div class = "navButton"><a href="">Начать проект</a></div> -->
                 <div class = "navButton navButtonLeft" id = "navButtonLeft"><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></div>
+                <div class = "navButton"><a onclick = "showStartProject()">Начать проект</a></div>
                 <div class = "navButton "><a href="">majorweb</a></div>
                 <div class = "navButton ">
                     <a>
@@ -37,20 +37,20 @@
                     <div class = "headerBottomLeftLocations">
                         <div class = "headerBottomLeftLocation">
                             <h1>Москва</h1>
-                            <h2>Новорязанская улица, 26с1</h2>
+                            <h2>Новорязанская <br> улица, 26с1</h2>
                         </div>
                         <div class = "headerBottomLeftLocation">
                             <h1>Москва</h1>
-                            <h2>Новорязанская улица, 26с1</h2>
+                            <h2>Новорязанская <br> улица, 26с1</h2>
                         </div>
                     </div>
                 </div>
                 <div class = "headerBottomRight">
                     <nav class = "navMenu">
+                        <a href="#about" onclick="showMenu()">О компании</a>
                         <a href="#services" onclick="showMenu()">Сервисы</a>
                         <a href="#slider" onclick="showMenu()">Наши работы</a>
-                        <a href="#about" onclick="showMenu()">О компании</a>
-                        <a>Заказать разработку</a>
+                        <!-- <a>Заказать разработку</a> -->
                     </nav>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                 <div class="card" id = 'horscrollsection'> 
                         <div class = "services">
                                 <div class = "servicesLeft">
-                                        <h1>Разработка и Поддержка</h1>
+                                        <h1>Разработка и <br> Поддержка</h1>
                                         <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
                                         <ul>
                                             <li>Разрабокта веб-сайта</li>
@@ -115,7 +115,7 @@
                             </div>
                             <div class = "services">
                                     <div class = "servicesLeft">
-                                            <h1>Дизайн и Креатив</h1>
+                                            <h1>Дизайн и <br> Креатив</h1>
                                             <h2>Наличие разработчиков и дизайнеров под одной крышей гарантирует, что дизайн безупречно соответствует техническим требованиям и идет в ногу со временем</h2>
                                             <ul>
                                                 <li>Цифровой дизайн продуктов и услуг</li>
@@ -132,7 +132,7 @@
                                 </div>
                                 <div class = "services">
                                     <div class = "servicesLeft">
-                                            <h1>Консалтинг и Аналитика</h1>
+                                            <h1>Консалтинг и <br>Аналитика</h1>
                                             <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
                                             <ul>
                                                 <li>Проверка безопасности веб-приложения</li>
@@ -296,7 +296,8 @@
                         <li>Кроссбраузерная и адаптивная верстка HTML5/CSS3</li>
                     </ul>
                 </div>
-                    <div class = "Box VacancyBox" id = "VacancyBox1">  </div>
+                    <div class = "Box VacancyBox BoxFrontEnd" id = "VacancyBox1">  </div>
+                    <div class = "Box VacancyBox BoxBackEnd" id = "VacancyBox2">  </div>
             </div>
             <div class = "ourVacancyResponseto">
                     <ul>
@@ -305,63 +306,57 @@
                     </ul>
             </div>
         </div>
-
-        <!-- <a href="#openModal">Открыть модальное окно</a>
-        <div id="openModal" class="modalDialog">
-            <a href="#close" title="Закрыть" class="close">X</a>
-            <div class="startProject startProjectOpen" id = "startProject">
-                <form action="" method="POST" id = "startProjectForm" class = "startProjectForm">
-                    <div class = "startProjectFormItem startProjectFormItemLeft">
-                            <label class="startProjectheading" >Вас интересует</label>
-                            <label class="startProjectheading">Бюджет</label>
-                            <label class="startProjectheading" for = "textareaDescriptionProject">Описание</label>
+        <div class="startProject" id = "startProject">
+            <form action="" method="POST" id = "startProjectForm" class = "startProjectForm" >
+                <div class = "closeButton"><a onclick = "showStartProject()">Закрыть</a></div>
+                <div class = "startProjectFormItem startProjectFormItemLeft">
+                        <label class="startProjectheading" >Вас интересует</label>
+                        <label class="startProjectheading">Бюджет</label>
+                        <label class="startProjectheading" for = "textareaDescriptionProject">Описание</label>
+                </div>
+                <div class = "startProjectFormItem startProjectFormItemRight">
+                    <div>
+                        <input type="checkbox" name="servicesDesign" value="Design" id="checkboxDesignButton">
+                        <label for = "checkboxDesignButton"> Дизайн </label>
+                        <input type="checkbox" name="servicesDevelopment" value="Development" id ="checkboxDevelopmentButton">
+                        <label for = "checkboxDevelopmentButton">Разработка</label>
+                        <input type="checkbox" name="servicesSupport" value="Support" id = "checkboxSupportButton">
+                        <label for = "checkboxSupportButton">Поддержка</label>
+                        <input type="checkbox" name="servicesConsulting" value="Consulting" id = "checkboxConsultingButton">
+                        <label for = "checkboxConsultingButton">Консалтинг</label>
                     </div>
-                    <div class = "startProjectFormItem startProjectFormItemRight">
-                        <div>
-                            <input type="checkbox" name="servicesDesign" value="Design" id="checkboxDesignButton">
-                            <label for = "checkboxDesignButton"> Дизайн </label>
-                            <input type="checkbox" name="servicesDevelopment" value="Development" id ="checkboxDevelopmentButton">
-                            <label for = "checkboxDevelopmentButton">Разработка</label>
-                            <input type="checkbox" name="servicesSupport" value="Support" id = "checkboxSupportButton">
-                            <label for = "checkboxSupportButton">Поддержка</label>
-                            <input type="checkbox" name="servicesConsulting" value="Consulting" id = "checkboxConsultingButton">
-                            <label for = "checkboxConsultingButton">Консалтинг</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="budget" value="upTo200" id = "radioBudgetUpTo200Button">
-                            <label for = "radioBudgetUpTo200Button">До 200 тыс. ₽</label>
-                            <input type="radio" name="budget" value="f200t500" id = "radioBudgetf200t500Button">
-                            <label for = "radioBudgetf200t500Button">От 200 тыс. до 500 тыс. ₽</label>
-                            <input type="radio" name="budget" value="f500" id = "radioBudgetf500Button">
-                            <label for = "radioBudgetf500Button">От 500 тыс. ₽</label>
-                        </div>
-                        <div>
-                            <textarea class = "startProjectFormInput" type="textarea" name="descriptionProject" placeholder="Кратко опишите ваш проект, чтобы мы могли составить бриф." id = "textareaDescriptionProject"></textarea>
-                        </div>
+                    <div>
+                        <input type="radio" name="budget" value="upTo200" id = "radioBudgetUpTo200Button">
+                        <label for = "radioBudgetUpTo200Button">До 200 тыс. ₽</label>
+                        <input type="radio" name="budget" value="f200t500" id = "radioBudgetf200t500Button">
+                        <label for = "radioBudgetf200t500Button">От 200 тыс. до 500 тыс. ₽</label>
+                        <input type="radio" name="budget" value="f500" id = "radioBudgetf500Button">
+                        <label for = "radioBudgetf500Button">От 500 тыс. ₽</label>
                     </div>
-                    <div class = "startProjectFormItemBottom">
-                        <div>
-                            <label class="startProjectheading">Контакты</label>
-                        </div>
-                        <div class = "contacts">
-                            <label for="contactsNameID">Имя:</label>
-                            <input class = "startProjectFormInput shortInput" type="text" name="contactsName" placeholder="Как вас зовут?" id = "contactsNameID">
-                            <label for="contactsEMailID">e-mail:</label>
-                            <input class = "startProjectFormInput shortInput" type="email" name="contactsEMail" placeholder="Почта для связи" id = "contactsEMailID">
-                            <label for="contactsPhoneID">Номер телефона:</label>
-                            <input class = "startProjectFormInput shortInput" type="tel" name="contactsPhone" placeholder="8 (900) 000 00 00" pattern="[0-9] {+}" id = "contactsPhoneID">
-                        </div>
+                    <div>
+                        <textarea class = "startProjectFormInput" type="textarea" name="descriptionProject" placeholder="Кратко опишите ваш проект, чтобы мы могли составить бриф." id = "textareaDescriptionProject"></textarea>
                     </div>
-                    <div class = "startProjectFormItemButton">
-                        <button type="submit">
-                            Отправить
-                        </button>
+                </div>
+                <div class = "startProjectFormItemBottom">
+                    <div>
+                        <label class="startProjectheading">Контакты</label>
                     </div>
-                </form>
-            </div>
-        </div> -->
-
-
+                    <div class = "contacts">
+                        <label for="contactsNameID" required>Имя:</label>
+                        <input class = "startProjectFormInput shortInput" type="text" name="contactsName" placeholder="Как вас зовут?" id = "contactsNameID">
+                        <label for="contactsEMailID" required>e-mail:</label>
+                        <input class = "startProjectFormInput shortInput" type="email" name="contactsEMail" placeholder="Почта для связи" id = "contactsEMailID">
+                        <label for="contactsPhoneID" required>Номер телефона:</label>
+                        <input class = "startProjectFormInput shortInput" type="tel" name="contactsPhone" placeholder="8 (900) 000 00 00" pattern="[0-9] {+}" id = "contactsPhoneID">
+                    </div>
+                </div>
+                <div class = "startProjectFormItemButton">
+                    <button type="submit">
+                        Отправить
+                    </button>
+                </div>
+            </form>
+        </div>
         <footer id = "footer">
             <div class = "footerTop" id = "footerTop">
                 <ul>
