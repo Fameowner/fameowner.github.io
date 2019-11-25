@@ -4,8 +4,13 @@ sсrolled = window.scrollY,
 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight,
 scrolledX = sсrolled - xpos,
 pagewidth = window.innerWidth,
-stop = 500
+stop = 500;
 
+function pauseAll() {
+        document.getElementById('vid1').pause();
+        document.getElementById('vid2').pause();
+        document.getElementById('vid3').pause();
+}
 
 function showMenu() {
         document.getElementById(`ham`).classList.toggle('active');
@@ -14,9 +19,7 @@ function showMenu() {
         document.getElementById(`headerBottom`).classList.toggle (`headerBottomOpen`);
         document.getElementById(`bgBlur`).classList.toggle (`bgBlurOpen`);
         document.getElementById(`navHeader`).classList.toggle (`navHeaderInverse`);
-        document.getElementById('vid1').pause();
-        document.getElementById('vid2').pause();
-        document.getElementById('vid3').pause();
+        pauseAll();
 }
 
 function showStartProject() {
@@ -25,6 +28,7 @@ function showStartProject() {
         if (document.getElementById(`header`).classList.contains(`headerOpen`)){
                 showMenu();
         }
+        pauseAll();
 }
 
 var textarea = document.querySelector('textarea');
@@ -135,7 +139,7 @@ window.onscroll = () => {
         }
         document.getElementById('horscrollsection').scrollLeft = scrolledX;
 
-        if (sсrolled < xpos - window.innerHeight )
+        if (sсrolled < xpos - window.innerHeight - stop)
         {
                 document.getElementById(`horscrollsection`).classList.remove (`cardHold`);
                 document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
@@ -172,13 +176,19 @@ document.getElementById(`ourVacancy`).onmousemove = (m) => {
         VacancyFrontEndCenter = document.getElementById(`VacancyFrontEnd`).getBoundingClientRect();
         VacancyBackEndCenter = document.getElementById(`VacancyBackEnd`).getBoundingClientRect();
         ourVacancyCenter = document.getElementById(`ourVacancy`).getBoundingClientRect();
-        document.getElementById('VacancyBox1').classList.add ('BoxShow');
-        document.getElementById('VacancyBox2').classList.add ('BoxShow');
-        document.getElementById(`VacancyBox1`).style.left = VacancyFrontEndCenter.left + VacancyFrontEndCenter.width/2 + (m.clientX - (VacancyFrontEndCenter.left + VacancyFrontEndCenter.width/2)) *.1 + randomInteger(1,5) + `px`;
-        document.getElementById(`VacancyBox1`).style.top = VacancyFrontEndCenter.top + VacancyFrontEndCenter.height/2 + (m.clientY -(VacancyFrontEndCenter.top + VacancyFrontEndCenter.height/2))* .05 + randomInteger(1,5) + sсrolled + `px`;
-        document.getElementById(`VacancyBox2`).style.left = VacancyBackEndCenter.left + VacancyBackEndCenter.width/2 + (m.clientX - (VacancyBackEndCenter.left + VacancyBackEndCenter.width/2)) *.03 + randomInteger(1,5) + `px`;
-        document.getElementById(`VacancyBox2`).style.top = VacancyBackEndCenter.top + VacancyBackEndCenter.height/2 + (m.clientY -(VacancyBackEndCenter.top + VacancyBackEndCenter.height/2))*.06 + randomInteger(1,5) + sсrolled + `px`;
+        if (m.clientX<window.innerWidth/2) {
+                document.getElementById('VacancyBox1').classList.add ('BoxShow');
+                document.getElementById('VacancyBox2').classList.remove ('BoxShow');
+                document.getElementById(`VacancyBox1`).style.left = VacancyFrontEndCenter.left + VacancyFrontEndCenter.width/2 + (m.clientX - (VacancyFrontEndCenter.left + VacancyFrontEndCenter.width/2)) *.1 + `px`;
+                document.getElementById(`VacancyBox1`).style.top = VacancyFrontEndCenter.top + VacancyFrontEndCenter.height/2 + (m.clientY -(VacancyFrontEndCenter.top + VacancyFrontEndCenter.height/2))* .05 +  sсrolled + `px`;
+        } else {
+                document.getElementById('VacancyBox2').classList.add ('BoxShow');
+                document.getElementById('VacancyBox1').classList.remove ('BoxShow');
+                document.getElementById(`VacancyBox2`).style.left = VacancyBackEndCenter.left + VacancyBackEndCenter.width/2 + (m.clientX - (VacancyBackEndCenter.left + VacancyBackEndCenter.width/2)) *.06  + `px`;
+                document.getElementById(`VacancyBox2`).style.top = VacancyBackEndCenter.top + VacancyBackEndCenter.height/2 + (m.clientY -(VacancyBackEndCenter.top + VacancyBackEndCenter.height/2))*.06  + sсrolled + `px`;
+        }
 }
+
 
 document.getElementById(`ourVacancy`).onmouseleave = (m) => {
         setTimeout(`document.getElementById('VacancyBox1').classList.remove ('BoxShow');`,250);
