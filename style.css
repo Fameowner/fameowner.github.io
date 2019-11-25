@@ -1,5 +1,11 @@
 @font-face{
     font-family: 'HelveticaNeueCyr';
+    src: url('Res/fonts/HelveticaNeueCyr-Normal.woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Black.woff');
     font-weight: 900;
     font-style: normal;
@@ -37,16 +43,15 @@
 @font-face{
     font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Thin.woff');
-    font-weight: 100;
+    font-weight: 200;
     font-style: normal;
 }
 @font-face{
     font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-ThinItalic.woff');
-    font-weight: 100;
+    font-weight: 200;
     font-style: italic;
 }
-
 
 body {
     display: flex;
@@ -75,7 +80,7 @@ header {
 
 .headerOpen {
     /* background-color: #fff; */
-    height: 80vh;
+    /* height: 80vh; */
 }
 
 .headerHidden {
@@ -124,7 +129,7 @@ header {
 }
 
 .navButton:first-of-type a{
-    font-weight: 500;
+    font-weight: normal;
     margin-left: 10vw;
 }
 
@@ -176,7 +181,7 @@ header {
     flex-direction: column-reverse;
     padding-top: 10vh;
     margin-left: 10vw ;
-    flex-basis: 35%;
+    flex-basis: 25%;
 }
 
 .headerBottomLeftLocations{
@@ -196,17 +201,19 @@ header {
 }
 
 .headerBottomLeftLocation h1 {
-    font-weight: 500;
+    font-weight: normal;
+    letter-spacing: 0.04em;
 }
 
 .headerBottomLeftLocation h2 {
     font-weight: 300;
     color: #7D7D7D;
+    letter-spacing: 0.04em;
 }
 
 
 .headerBottomRight {
-    flex-basis: 65%;
+    flex-basis: 75%;
     display: flex;
     justify-content: center;
 }
@@ -219,9 +226,9 @@ header {
 
 .navMenu a {
     color: #000;
-    font-size: 6vw;
+    font-size: 3.75vw;
     text-decoration: none;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .navMenu a + a {
@@ -376,7 +383,7 @@ header {
 
 .homeLeft h1 {
     font-style: normal;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 4vw;
     line-height: 4vw;
     letter-spacing: 0.08em;
@@ -608,11 +615,11 @@ header {
 }
 
 .ourStackItem + .ourStackItem {
-    margin-top: 90px;
+    margin-top: 8.3vh;
 }
 
 .ourStackItem h1 {
-    font-weight: 100;
+    font-weight: 200;
     font-size: 3.9vw;
     line-height: 1;
     text-align: center;
@@ -622,7 +629,7 @@ header {
 }
 
 .ourStackItem h2 {
-    font-weight: 100;
+    font-weight: 200;
     font-size: 1.25vw;
     line-height: 1.1;
     text-align: center;
@@ -632,7 +639,7 @@ header {
 }
 
 .ourStackItem a {
-    font-weight: 100;
+    font-weight: 200;
     font-size: 2.5vw;
     line-height: 1;
     text-align: center;
@@ -647,9 +654,8 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-top: 2px solid #808080;
-    border-bottom: 2px solid #808080;
-    min-height: 500px;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
     width: 75%;
     padding: 1%;
 }
@@ -659,12 +665,12 @@ header {
     font-weight: 300;
     font-size: .7vw;
     line-height: 25px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     color: #000000;
 }
 
 .ourStackItemListItemNum {
-    font-weight: 100;
+    font-weight: 200;
     font-size: .62vw;
     line-height: 1.8;
     letter-spacing: -0.04em;
@@ -672,7 +678,8 @@ header {
 }
 
 .ourStackItemListItemDir {
-    padding: 12px 0px 30px 0px;
+    letter-spacing: 0.04em;
+    padding: 12px 0px 25px 0px;
     font-weight: 300;
     font-size: 1.2vw;
     line-height: 1;
@@ -694,7 +701,7 @@ header {
 }
 
 .ourVacancyTop li {
-    font-weight: 100;
+    font-weight: 200;
     font-size: 2.5vw;
     line-height: 1.25;
     letter-spacing: 0.04em;
@@ -728,7 +735,7 @@ header {
 }
 .ourVacancyBottomItem li {
     font-style: thin;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 14px;
     line-height: 25px;
     letter-spacing: 0.04em;
@@ -755,7 +762,7 @@ header {
 }
 
 .ourVacancyResponseto li:last-of-type{
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .ourVacancyResponseto a {
@@ -790,7 +797,7 @@ footer {
 }
 
 .footerTop li:first-of-type {
-    font-weight: 100;
+    font-weight: 200;
 }
 
 .footerBottom {
@@ -853,7 +860,7 @@ footer {
 }
 
 .footerBottomRight li:first-of-type {
-    font-weight: 100;
+    font-weight: 200;
 }
 
 
@@ -904,8 +911,9 @@ footer {
     font-size: 14px;
     line-height: 14px;
     text-decoration-line: underline;
+    letter-spacing: 0.04em;
     color: #C4C4C4;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .sliderItem img {
@@ -952,34 +960,24 @@ footer {
     transform: translate(-50%,-50%);
     text-align: center;
     justify-content: center;
-    transition: opacity 1s;
     font-style: normal;
     font-weight: 300;
     font-size: 48px;
     line-height: 1;
     letter-spacing: 0.04em;
     border-radius: 1px;
-}
-
-.helloBox {
-    background-color: #E1C80E;
-    width: 340px;
-    height: 477.19px;
-    transition: all .3s;
+    transition:  left .3s, right .3s, opacity 1s;
 }
 
 .BoxShow {
     opacity: 1;
 }
 
+
 .helloBox {
     background-color: #E1C80E;
     width: 340px;
     height: 477.19px;
-}
-
-.VacancyBox {
-    transition: all .3s;
 }
 
 .BoxFrontEnd {    
@@ -1027,19 +1025,14 @@ footer {
 .startProjectForm {
     position: fixed;
     display: flex;
-    top:5%;
-    left: 7%;
+    top: 5%;
+    left: 5%;
     justify-content: space-between;
-    background-color:rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 16;
-    height: 80vh;
-    max-height: 80vh;
-    width: 80vw;
-    /* transform: translateY(-100%);
-    transition: transform .5s; */
-    color: #fff;
-    padding: 50px;
-    flex-wrap: wrap ;
+    width: 80%;
+    padding: 5vh 5vw;
+    flex-wrap: wrap;
     border-radius: 10px;
     overflow-y: scroll;
 }
@@ -1155,8 +1148,8 @@ footer {
 
 .startProject .startProjectheading {
     font-weight: 300;
-    font-size: 48px;
-    line-height: 60px;
+    font-size: 2.5vw;
+    line-height: 1.25;
     letter-spacing: 0.04em;
     color: #fff;
 }
@@ -1235,5 +1228,43 @@ footer {
     }
     .navMenu a {
         font-size: 8vw;
+    }
+}
+
+.mobile {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    background-image: linear-gradient(to right, rgb(67, 70, 105), rgb(54, 56, 84), rgb(40, 42, 63), rgb(27, 28, 42), rgb(13, 14, 21), rgb(0, 0, 0), rgb(5, 9, 15), rgb(11, 18, 29), rgb(16, 27, 44), rgb(21, 36, 58), rgb(27, 45, 73), rgb(32, 54, 87));
+}
+
+.mobileText {
+    transform: rotate(0deg);
+}
+
+@keyframes mobileText {
+    0% {transform: rotate(0deg);}
+    33% {transform: rotate(90deg);}
+    66% {transform: rotate(180deg);}
+    100% {transform: rotate(270deg);}
+}
+
+.mobile h1 {
+    color: #EEA25C;
+}
+
+@media (max-width: 600px) {
+    .mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    body {
+        overflow: hidden;
     }
 }
