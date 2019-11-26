@@ -1244,14 +1244,13 @@ footer {
 }
 
 .mobileText {
-    transform: rotate(0deg);
+    animation: anim1 3s ease-in-out infinite;
 }
 
-@keyframes mobileText {
-    0% {transform: rotate(0deg);}
-    33% {transform: rotate(90deg);}
-    66% {transform: rotate(180deg);}
-    100% {transform: rotate(270deg);}
+@keyframes anim1 {
+    0% {transform: translateY(0%);}
+    50% {transform: translateY(50%);}
+    100% {transform: translateY(0%);}
 }
 
 .mobile h1 {
