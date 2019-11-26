@@ -164,16 +164,13 @@ header {
     flex-grow: 1;
     padding-bottom: 15vh;
     background-color: #fff;
-    transform: translateY(-100%);
-    /* opacity: 0; */
-    margin-top: -10vh;
+    transform: translateY(-120%);
     padding-top: 20vh;
-    transition: all .5s;
+    transition: all .8s ease-out;
 }
 
 .headerBottomOpen {
-    transform: scale(1);
-    opacity: 1;
+    transform: translateY(-10vh);
 }
 
 .headerBottomLeft {
@@ -311,11 +308,12 @@ header {
 .ContactUsBlock {
     display: flex;
     position: fixed;
-    top: 75vh;
-    left: 70vw;
+    bottom: 5vh;
+    right: 5vw;
     flex-direction: column;
-    justify-content: space-between;
-    width: 25vw;
+    justify-content: center;
+    width: 498px;
+    height: 141px;
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid #FFFFFF;
     box-sizing: border-box;
@@ -323,19 +321,19 @@ header {
     color: #fff;
     z-index: 4;
     font-weight: normal;
-    font-size: .7vw;
+    font-size: 14px;
     line-height: 1;
-    transform: translateX(0%);
-    transition: transform .8s;
+    font-style: normal;
+    transition: right .8s;
 }
 
 .ContactUsBlockClosed {
-    transform: translateX(50vw);
+    right: calc(-498px - 10vw);
 }
 
 .ContactUsBlock>div{
     display: flex;
-    height: 3vh;
+    height: 32px;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -343,16 +341,29 @@ header {
 .ContactUsBlockTop {
     border-bottom: #ffffff solid 1px;
     align-items: flex-end;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
 }
 
 .ContactUsBlockBottom {
-    padding-top:  5px;
+    padding-top:  8px;
+}
+
+.ContactUsBlockBottom div:last-of-type {
+    padding-right: 16px;
 }
 
 .ContactUsBlockBottom a {
     text-decoration: none;
     color: #fff;
+}
+
+.ContactUsBlockBottomRight{
+    display: flex;
+    flex-direction: column;
+}
+
+.ContactUsBlockBottomRight span + span {
+    padding-top: 2px;
 }
 
 .home {
@@ -379,6 +390,11 @@ header {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    animation: .7s ease-in-out homeLeftTextAnim;
+}
+@keyframes homeLeftTextAnim {
+    0% {opacity: 0; transform: translateX(-5%);}
+    100% {opacity: 1;}
 }
 
 .homeLeft h1 {
@@ -440,7 +456,7 @@ header {
     line-height: 32.5vw;
     color: #EEA25C;
     display:inline-block;
-    transform: translateX(-21%);
+    transform: translateX(-19%);
     /* padding-left:100%;
     -webkit-animation: marquee 15s infinite linear;
     animation: marquee 15s infinite linear;
@@ -458,13 +474,19 @@ header {
 .about {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 120vh;
     background-color: #fff;
     z-index: 4;
-    /* margin-top: -10vh; */
 }
 
 .about h1 {
+    display: none;
+}
+
+
+.about h2 {
+    justify-content: center;
     font-family: HelveticaNeueCyr;
     font-weight: 250;
     font-style: normal;
@@ -472,7 +494,7 @@ header {
     line-height: 1;
     text-align: center;
     letter-spacing: 0.08em;
-    margin: 40vh 19.8%;
+    margin: 0px 19.8%;
     color: #000000;
 }
 
@@ -559,7 +581,7 @@ header {
 .servicesLeft h2 {
     margin-top: 30px;
     font-size: 0.75vw;
-    line-height: 1.5vw;
+    line-height: 1.5;
     font-weight: 300;
     color: #C4C4C4;
     max-width: 24vw;
@@ -574,7 +596,7 @@ header {
     font-style: normal;
     font-weight: normal;
     font-size: .7vw;
-    line-height: 2vw;
+    line-height: 2.9;
     letter-spacing: -0.04em;
     text-decoration-line: underline;
     color: #C4C4C4;
@@ -603,7 +625,8 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 200vh;
+    min-height: 200vh;
+    padding: 10px 0px;
     background-color: #fff;
     z-index: 1;
 }
@@ -670,6 +693,7 @@ header {
 }
 
 .ourStackItemListItemNum {
+    display: inline;
     font-weight: 200;
     font-size: .62vw;
     line-height: 1.8;
@@ -966,7 +990,7 @@ footer {
     line-height: 1;
     letter-spacing: 0.04em;
     border-radius: 1px;
-    transition:  left .3s, right .3s, opacity 1s;
+    transition:  left .3s, top .3s, opacity 1s;
 }
 
 .BoxShow {
@@ -1209,61 +1233,254 @@ footer {
     border-bottom: 1px solid #FFFFFF;
 }
 
-
-@media (max-width: 1440px) {
-    .headerOpen{
-        height: 70vh;
-    }
+.mob {
+    display: none;
+    margin: 5vh 10vw;
+    justify-content: space-between;
 }
 
-@media (max-width: 1080px) {
-    .headerOpen{
-        height: 60vh;
-    }
+.mob h3 {
+    letter-spacing: 0.04em;
+    color: #727272;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 300;
 }
 
-@media (max-width: 800px) {
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+    
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+    .mob {
+        display: flex;
+    }
+    .home {
+        flex-direction:column-reverse;
+        margin-top: 0px;
+        height: 100vh;
+    }
+
+    .homeLeft {
+        background: #121212;
+        flex-basis: 40%;
+    }
+
+    .homeLeftText {
+        margin: 0px 10%;
+    }
+
+    .homeLeft h1 {
+        font-size: 8vw;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+    }
+
+    .homeLeft h2 {
+        display: none;
+    }
+
+    .marqueeBG {
+        position: inherit;
+        flex-basis: 33%;
+    }
+    .marqueeBG span {
+        transform: translateX(-2%);
+        font-size: 29vw;
+        line-height: 1;
+    }
+    .navButtonLeftOpen {
+        display: none;
+    }
+    .headerBottom {
+        flex-direction: column-reverse;
+        padding-bottom: 0px;
+    }
     .headerBottomLeft {
-        flex-basis: 20%;
+        flex-direction: row
     }
     .navMenu a {
         font-size: 8vw;
     }
-}
 
-.mobile {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    font-size: 2em;
-    background-image: linear-gradient(to right, rgb(67, 70, 105), rgb(54, 56, 84), rgb(40, 42, 63), rgb(27, 28, 42), rgb(13, 14, 21), rgb(0, 0, 0), rgb(5, 9, 15), rgb(11, 18, 29), rgb(16, 27, 44), rgb(21, 36, 58), rgb(27, 45, 73), rgb(32, 54, 87));
-}
+    .homeEnd {
+        opacity: 0;
+        height: 0px;
+    }
 
-.mobileText {
-    animation: anim1 3s ease-in-out infinite;
-}
+    .about h2 {
+        text-align: left;
+        font-size: 4.05vw;
+        line-height: 1.8;
+    }
 
-@keyframes anim1 {
-    0% {transform: translateY(0%);}
-    50% {transform: translateY(50%);}
-    100% {transform: translateY(0%);}
-}
-
-.mobile h1 {
-    color: #EEA25C;
-}
-
-@media (max-width: 600px) {
-    .mobile {
-        display: flex;
+    .about h1 {
+        font-weight: 200;
+        font-size: 10.3vw;
+        line-height: 1.1;
+        letter-spacing: 0.04em;
+        margin: 5vh 19.8%;
+        color: #000000;
+        opacity: 0.8;
+        display: inline;
+    }
+    .scrollspace{
         flex-direction: column;
-        justify-content: center;
+        height: auto;
     }
-    body {
-        overflow: hidden;
+
+    .card {
+        flex-direction: column;
+        height: auto;
     }
+    .services {
+        flex-direction: column;
+        height: 150vh;
+    }
+    .servicesLeft {
+        flex-basis: 100vh;
+        padding: 0px 19% 0px 10%;
+    }
+    .servicesRight {
+        flex-basis: 50vh;
+    }
+    .servicesLeft h1 {
+        font-size: 30px;
+    }
+
+    .servicesLeft h2 {
+        font-size: 14px;
+        max-width: 85vw;
+    }
+    .servicesLeft li {
+        font-size: 12px;
+    }
+    .servicesRight {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .servicesRightItem {
+        max-width: 90vw;
+        max-height: 50vh;
+    }
+
+    .slider {
+        flex-basis: 70%;
+    }
+
+    .sliderItem {
+        flex-direction: column-reverse;
+        margin-left: 30vw;
+        width: 72vw;
+        min-height: 72vw;
+        transition: margin 1s;
+    }
+
+    .sliderItem + .sliderItem {
+        margin-left: 14vw;
+    }
+
+    .sliderItemMove {
+        margin: 0 0 0 -72vw;
+    }
+
+    .sliderItem h2 {
+        margin-top: 25px;
+    }
+
+    .sliderItem img {
+        width: 72vw;
+        height: 72vw;
+    }
+
+    .ourStack {
+        flex-direction: column;
+        min-height: auto;
+        padding: 10vh 0px;
+    }
+
+    .ourStackItem + .ourStackItem {
+        margin-top: 8.3vh;
+    }
+
+    .ourStackItem h1 {
+        font-size: 11vw;
+        text-align: left;
+        padding: 0px 10% 0px 10%;
+    }
+
+    .ourStackItem h2 {
+        font-size: 3.3vw;
+        line-height: 2.1;
+        padding: 0px 13%;
+    }
+
+    .ourStackItem a {
+        font-size: 6.6vw;
+        border-bottom: 1px solid black;
+    }
+
+    .ourStackItemList {
+        flex-direction: column;
+        border-top: none;
+        border-bottom: none;
+    }
+
+    .ourStackItemListItem li:not(.ourStackItemListItemNum):not(.ourStackItemListItemDir) {
+        display: none;
+    }
+
+    .ourStackItemListItemNum {
+        font-size: 3.3vw;
+        line-height: 1.8;
+    }
+
+    .ourStackItemListItemDir {
+        padding: 12px 0px 25px 0px;
+        font-size: 6.6vw;
+        border-top: 1px solid #808080;
+    }
+
+    .footerTop{
+        margin: 15vh 10vw 0px 10vw;
+    }
+
+    .footerTop li {
+        font-size: 8.3vw;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .footerBottomLeftLocations {
+        margin-right: 33%;
+    }
+    .footerBottomRight {
+        margin-left: 10vw;
+    }
+    
+
+    .ContactUsBlock {/* хуй*/
+        display: none;
+    } /* хуй*/
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+
 }

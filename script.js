@@ -109,56 +109,65 @@ window.onscroll = () => {
         } else {
         document.getElementById(`header`).classList.remove (`navHeaderInverse`);
         }
-
-        if (sсrolled > window.innerHeight+stop){
-        document.getElementById('marqueeBG').classList.remove('marqueeBG')
-        } else document.getElementById('marqueeBG').classList.add('marqueeBG');
-
-        if (scrolledX >= 2*pagewidth) {
-        document.getElementById('vid1').pause();
-        document.getElementById('vid2').pause();
-        document.getElementById('vid3').play();
-        } else if (scrolledX >= pagewidth) {
-        document.getElementById('vid1').pause();
-        document.getElementById('vid2').play();
-        if (scrolledX >= 1.5*pagewidth) {
+        if (window.innerWidth >  767) {
+                if (scrolledX >= 2*pagewidth) {
+                document.getElementById('vid1').pause();
+                document.getElementById('vid2').pause();
                 document.getElementById('vid3').play();
-        } else {document.getElementById('vid3').pause();}
-        } else if (scrolledX > 0) {
-        document.getElementById('vid1').play();
-        if (scrolledX >= .5*pagewidth){
+                } else if (scrolledX >= pagewidth) {
+                document.getElementById('vid1').pause();
                 document.getElementById('vid2').play();
-        } else {document.getElementById('vid2').pause();}
-        document.getElementById('vid3').pause();
-        } else if (scrolledX <= 0) {
-        if (scrolledX >= - window.innerHeight) {
+                if (scrolledX >= 1.5*pagewidth) {
+                        document.getElementById('vid3').play();
+                } else {document.getElementById('vid3').pause();}
+                } else if (scrolledX > 0) {
                 document.getElementById('vid1').play();
-        } else {document.getElementById('vid1').pause();}
-        document.getElementById('vid2').pause();
-        document.getElementById('vid3').pause();
-        }
-        document.getElementById('horscrollsection').scrollLeft = scrolledX;
+                if (scrolledX >= .5*pagewidth){
+                        document.getElementById('vid2').play();
+                } else {document.getElementById('vid2').pause();}
+                document.getElementById('vid3').pause();
+                } else if (scrolledX <= 0) {
+                if (scrolledX >= - window.innerHeight) {
+                        document.getElementById('vid1').play();
+                } else {document.getElementById('vid1').pause();}
+                document.getElementById('vid2').pause();
+                document.getElementById('vid3').pause();
+                }
+                document.getElementById('horscrollsection').scrollLeft = scrolledX;
 
-        if (sсrolled < xpos - window.innerHeight - stop)
-        {
-                document.getElementById(`horscrollsection`).classList.remove (`cardHold`);
-                document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
-        } else if (sсrolled >= xpos - window.innerHeight && scrolledX + window.innerWidth <=  document.getElementById('horscrollsection').scrollWidth+stop) {
-                document.getElementById(`horscrollsection`).classList.add (`cardHold`);
-                document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
-                document.getElementById(`ContactUsBlock`).classList.remove('ContactUsBlockClosed');
-        } else if (scrolledX + window.innerWidth > document.getElementById('horscrollsection').scrollWidth+stop && scrolledX + window.innerWidth <=  document.getElementById('horscrollsection').scrollWidth + stop + window.innerHeight){
-                document.getElementById(`services`).classList.add (`scrollspacescrolled`);
-                document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
-                document.getElementById(`horscrollsection`).classList.add (`cardHold`);
-        } else {
-                document.getElementById(`horscrollsection`).classList.remove (`cardHold`);
-                document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
+                if (sсrolled < xpos - window.innerHeight - stop)
+                {
+                        document.getElementById(`horscrollsection`).classList.remove (`cardHold`);
+                        document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
+                } else if (sсrolled >= xpos - window.innerHeight && scrolledX + window.innerWidth <=  document.getElementById('horscrollsection').scrollWidth+stop) {
+                        document.getElementById(`horscrollsection`).classList.add (`cardHold`);
+                        document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
+                        if (sсrolled >= xpos - window.innerHeight/2) {
+                                document.getElementById(`ContactUsBlock`).classList.remove('ContactUsBlockClosed');
+                        } else {
+                                document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
+                        }
+                        } else if (scrolledX + window.innerWidth > document.getElementById('horscrollsection').scrollWidth+stop && scrolledX + window.innerWidth <=  document.getElementById('horscrollsection').scrollWidth + stop + window.innerHeight){
+                        document.getElementById(`services`).classList.add (`scrollspacescrolled`);
+                        document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
+                        document.getElementById(`horscrollsection`).classList.add (`cardHold`);
+                } else {
+                        document.getElementById(`horscrollsection`).classList.remove (`cardHold`);
+                        document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
+                }
         }
 };
 
 document.getElementById("slider").ondragstart = () => {
         return(false);
+}
+
+document.getElementById(`footerTopBoxSpace`).onmouseover = (m) => {
+        document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
+}
+
+document.getElementById(`footerTopBoxSpace`).onmouseleave = (m) => {
+        document.getElementById(`helloBox`).src = "";
 }
 
 document.getElementById(`footer`).onmousemove = (m) => {
