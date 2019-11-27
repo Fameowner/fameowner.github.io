@@ -76,27 +76,39 @@ function randomInteger(min, max) {
         return Math.floor(rand);
 }
 
-function resizeWindow() {
-        if (document.getElementById(`horscrollsection`).classList.contains(`cardHold`)) {
-                document.getElementById(`horscrollsection`).classList.remove(`cardHold`);
-                xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
-                pagewidth = window.innerWidth;
-                document.getElementById(`horscrollsection`).classList.add(`cardHold`);
+// function resizeWindow() {
+//         if (document.getElementById(`horscrollsection`).classList.contains(`cardHold`)) {
+//                 document.getElementById(`horscrollsection`).classList.remove(`cardHold`);
+//                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
+//                 pagewidth = window.innerWidth;
+//                 document.getElementById(`horscrollsection`).classList.add(`cardHold`);
+//         }
+//         else if (document.getElementById(`services`).classList.contains(`scrollspacescrolled`))
+//         {
+//                 document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
+//                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
+//                 pagewidth = window.innerWidth
+//                 document.getElementById(`services`).classList.add (`scrollspacescrolled`);
+//         } else {
+//                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
+//                 pagewidth = window.innerWidth;
+//         }
+//         bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
+// }
+
+function bottomSelectorClick(t) {
+        var b = document.getElementsByClassName(`our-vacancy__bottom-selector`);
+        for(i = 0; i<b.length;i++){
+                b[i].classList.remove(`our-vacancy__bottom-selector_selected`);
         }
-        else if (document.getElementById(`services`).classList.contains(`scrollspacescrolled`))
-        {
-                document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
-                xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
-                pagewidth = window.innerWidth
-                document.getElementById(`services`).classList.add (`scrollspacescrolled`);
-        } else {
-                xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
-                pagewidth = window.innerWidth;
-        }
-        pagewidth = window.innerWidth;
+        t.classList.add(`our-vacancy__bottom-selector_selected`);
+        document.getElementById(`our-vacancy__bottom-ID`).scrollTo({left: document.getElementById(`our-vacancy__bottom-ID`).offsetWidth * (Number(t.text)-1), behavior: 'smooth' });
 }
 
-window.addEventListener('onchange', resizeWindow());
+// window.addEventListener(`resize`, resizeWindow());
+window.addEventListener(`resize`, () => {
+        bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
+});
 
 window.onscroll = () => {
         sсrolled = window.scrollY;
@@ -109,7 +121,7 @@ window.onscroll = () => {
         } else {
         document.getElementById(`header`).classList.remove (`navHeaderInverse`);
         }
-        if (window.innerWidth >  767) {
+        if (window.innerWidth >  699) {
                 if (scrolledX >= 2*pagewidth) {
                 document.getElementById('vid1').pause();
                 document.getElementById('vid2').pause();
@@ -181,25 +193,16 @@ document.getElementById(`footer`).onmouseleave = (m) => {
         setTimeout(`document.getElementById('helloBox').classList.remove ('BoxShow');`,250);
 }
 
-document.getElementById(`ourVacancy`).onmousemove = (m) => {
-        VacancyFrontEndCenter = document.getElementById(`VacancyFrontEnd`).getBoundingClientRect();
-        VacancyBackEndCenter = document.getElementById(`VacancyBackEnd`).getBoundingClientRect();
-        ourVacancyCenter = document.getElementById(`ourVacancy`).getBoundingClientRect();
-        if (m.clientX<window.innerWidth/2) {
+
+
+document.getElementById(`our-vacancy__bottom-ID`).onmousemove = (m) => {
+        VacancyCenter = document.getElementById(`our-vacancy__bottom-ID`).getBoundingClientRect();
                 document.getElementById('VacancyBox1').classList.add ('BoxShow');
-                document.getElementById('VacancyBox2').classList.remove ('BoxShow');
-                document.getElementById(`VacancyBox1`).style.left = VacancyFrontEndCenter.left + VacancyFrontEndCenter.width/2 + (m.clientX - (VacancyFrontEndCenter.left + VacancyFrontEndCenter.width/2)) *.1 + `px`;
-                document.getElementById(`VacancyBox1`).style.top = VacancyFrontEndCenter.top + VacancyFrontEndCenter.height/2 + (m.clientY -(VacancyFrontEndCenter.top + VacancyFrontEndCenter.height/2))* .05 +  sсrolled + `px`;
-        } else {
-                document.getElementById('VacancyBox2').classList.add ('BoxShow');
-                document.getElementById('VacancyBox1').classList.remove ('BoxShow');
-                document.getElementById(`VacancyBox2`).style.left = VacancyBackEndCenter.left + VacancyBackEndCenter.width/2 + (m.clientX - (VacancyBackEndCenter.left + VacancyBackEndCenter.width/2)) *.06  + `px`;
-                document.getElementById(`VacancyBox2`).style.top = VacancyBackEndCenter.top + VacancyBackEndCenter.height/2 + (m.clientY -(VacancyBackEndCenter.top + VacancyBackEndCenter.height/2))*.06  + sсrolled + `px`;
-        }
+                document.getElementById(`VacancyBox1`).style.left = VacancyCenter.left + VacancyCenter.width/2 + (m.clientX - (VacancyCenter.left + VacancyCenter.width/2)) *.1 + `px`;
+                document.getElementById(`VacancyBox1`).style.top = VacancyCenter.top + VacancyCenter.height/2 + (m.clientY -(VacancyCenter.top + VacancyCenter.height/2))* .05 +  sсrolled + `px`;
 }
 
 
-document.getElementById(`ourVacancy`).onmouseleave = (m) => {
+document.getElementById(`our-vacancy__bottom-ID`).onmouseleave = (m) => {
         setTimeout(`document.getElementById('VacancyBox1').classList.remove ('BoxShow');`,250);
-        setTimeout(`document.getElementById('VacancyBox2').classList.remove ('BoxShow');`,250);
 }
