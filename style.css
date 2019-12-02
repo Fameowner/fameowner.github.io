@@ -80,7 +80,7 @@ header {
 
 .header_opened {
     /* background-color: #fff; */
-    /* height: 80vh; */
+    height: auto;
 }
 
 .headerHidden {
