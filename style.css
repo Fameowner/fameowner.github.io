@@ -154,7 +154,7 @@ header {
 }
 
 .nav-button__left_opened {
-    transform: translateY(0%);
+    transform: translateY(0vh);
 }
 
 .header__bottom {
@@ -164,7 +164,8 @@ header {
     flex-grow: 1;
     padding-bottom: 15vh;
     background-color: #fff;
-    transform: translateY(-80vh);
+    border-bottom: 1px #000 solid;
+    transform: translateY(-100vh);
     padding-top: 20vh;
     transition: all .8s ease-out;
 }
