@@ -1,31 +1,34 @@
 var
-slides = document.getElementsByClassName('sliderItem');
+slides = document.getElementsByClassName('slider-item');
 sсrolled = window.scrollY,
 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight,
 scrolledX = sсrolled - xpos,
 pagewidth = window.innerWidth,
-stop = 500;
+stop = 500,
+vid1 = document.getElementById('vid1'),
+vid2 = document.getElementById('vid2'),
+vid3 = document.getElementById('vid3');
 
 function pauseAll() {
-        document.getElementById('vid1').pause();
-        document.getElementById('vid2').pause();
-        document.getElementById('vid3').pause();
+        vid1.pause();
+        vid2.pause();
+        vid3.pause();
 }
 
 function showMenu() {
         document.getElementById(`ham`).classList.toggle('active');
-        document.getElementById(`header`).classList.toggle (`headerOpen`);
-        document.getElementById(`navButtonLeft`).classList.toggle (`navButtonLeftOpen`);
-        document.getElementById(`headerBottom`).classList.toggle (`headerBottomOpen`);
-        document.getElementById(`bgBlur`).classList.toggle (`bgBlurOpen`);
-        document.getElementById(`navHeader`).classList.toggle (`navHeaderInverse`);
+        document.getElementById(`header`).classList.toggle (`header_opened`);
+        document.getElementById(`nav-button__left`).classList.toggle (`nav-button__left_opened`);
+        document.getElementById(`header__bottom`).classList.toggle (`header__bottom_opened`);
+        document.getElementById(`bg-blur`).classList.toggle (`bg-blur_opened`);
+        document.getElementById(`nav-header`).classList.toggle (`nav-headerInverse`);
         pauseAll();
 }
 
 function showStartProject() {
-        document.getElementById(`startProject`).classList.toggle('startProjectOpen');
+        document.getElementById(`start-project`).classList.toggle('startProject_opened');
         document.getElementById(`header`).classList.toggle(`headerHidden`);
-        if (document.getElementById(`header`).classList.contains(`headerOpen`)){
+        if (document.getElementById(`header`).classList.contains(`header_opened`)){
                 showMenu();
         }
         pauseAll();
@@ -44,26 +47,26 @@ function next() {
         var
         cloneSlide = slides[0],
         clone = cloneSlide.cloneNode(true);
-        clone.classList.remove (`sliderItemMove`);
+        clone.classList.remove (`slider-item_move`);
         document.getElementById(`slider`).appendChild(clone);
         slides[0].remove();
-        slides[0].classList.add (`sliderItemMove`);
-        document.getElementById(`buttonNext`).disabled = true;
-        document.getElementById(`buttonPrev`).disabled = true;
-        setTimeout('document.getElementById(`buttonNext`).disabled = false; document.getElementById(`buttonPrev`).disabled = false;', 1000);
+        slides[0].classList.add (`slider-item_move`);
+        document.getElementById(`button-next`).disabled = true;
+        document.getElementById(`button-prev`).disabled = true;
+        setTimeout('document.getElementById(`button-next`).disabled = false; document.getElementById(`button-prev`).disabled = false;', 1000);
 }
 
 function prev() {
         var
         cloneSlide = slides[slides.length-1],
         clone = cloneSlide.cloneNode(true);
-        clone.classList.add (`sliderItemMove`);
+        clone.classList.add (`slider-item_move`);
         document.getElementById(`slider`).prepend(clone);
         slides[slides.length-1].remove();
-        slides[1].classList.remove (`sliderItemMove`);
-        document.getElementById(`buttonNext`).disabled = true;
-        document.getElementById(`buttonPrev`).disabled = true;
-        setTimeout('document.getElementById(`buttonNext`).disabled = false; document.getElementById(`buttonPrev`).disabled = false;', 1000);
+        slides[1].classList.remove (`slider-item_move`);
+        document.getElementById(`button-next`).disabled = true;
+        document.getElementById(`button-prev`).disabled = true;
+        setTimeout('document.getElementById(`button-next`).disabled = false; document.getElementById(`button-prev`).disabled = false;', 1000);
 }
 
 function getCoordsY(elem) {
@@ -76,26 +79,6 @@ function randomInteger(min, max) {
         return Math.floor(rand);
 }
 
-// function resizeWindow() {
-//         if (document.getElementById(`horscrollsection`).classList.contains(`cardHold`)) {
-//                 document.getElementById(`horscrollsection`).classList.remove(`cardHold`);
-//                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
-//                 pagewidth = window.innerWidth;
-//                 document.getElementById(`horscrollsection`).classList.add(`cardHold`);
-//         }
-//         else if (document.getElementById(`services`).classList.contains(`scrollspacescrolled`))
-//         {
-//                 document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
-//                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
-//                 pagewidth = window.innerWidth
-//                 document.getElementById(`services`).classList.add (`scrollspacescrolled`);
-//         } else {
-//                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
-//                 pagewidth = window.innerWidth;
-//         }
-//         bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
-// }
-
 function bottomSelectorClick(t) {
         var b = document.getElementsByClassName(`our-vacancy__bottom-selector`);
         for(i = 0; i<b.length;i++){
@@ -105,45 +88,66 @@ function bottomSelectorClick(t) {
         document.getElementById(`our-vacancy__bottom-ID`).scrollTo({left: document.getElementById(`our-vacancy__bottom-ID`).offsetWidth * (Number(t.text)-1), behavior: 'smooth' });
 }
 
-// window.addEventListener(`resize`, resizeWindow());
 window.addEventListener(`resize`, () => {
+        if (document.getElementById(`horscrollsection`).classList.contains(`cardHold`)) {
+                document.getElementById(`horscrollsection`).classList.remove(`cardHold`);
+                xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
+                pagewidth = window.innerWidth;
+                document.getElementById(`horscrollsection`).classList.add(`cardHold`);
+        }
+        else if (document.getElementById(`services`).classList.contains(`scrollspacescrolled`))
+        {
+                document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
+                xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
+                pagewidth = window.innerWidth
+                document.getElementById(`services`).classList.add (`scrollspacescrolled`);
+        } else {
+                xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
+                pagewidth = window.innerWidth;
+        }
         bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
 });
 
 window.onscroll = () => {
+        var     vid1Rect = vid1.getBoundingClientRect(),
+                vid2Rect = vid2.getBoundingClientRect();
+
+        vid1.style.opacity = vid1Rect.left/vid1Rect.width + .5;
+        vid2.style.opacity = vid2Rect.left/vid2Rect.width + .5;
+
         sсrolled = window.scrollY;
         scrolledX = sсrolled - xpos-stop;
 
-        if ((getCoordsY(document.getElementById(`homeEnd`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
-        || (getCoordsY(document.getElementById(`ourStack`)) <= 50 && getCoordsY(document.getElementById(`ourVacancy`)) > 50 )
+        if ((getCoordsY(document.getElementById(`home__end`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
+        || (getCoordsY(document.getElementById(`our-stack`)) <= 50 && getCoordsY(document.getElementById(`our-vacancy`)) > 50 )
         || (getCoordsY(document.getElementById(`footer`)) <= 50)) {
-        document.getElementById(`header`).classList.add (`navHeaderInverse`);
+        document.getElementById(`header`).classList.add (`nav-headerInverse`);
         } else {
-        document.getElementById(`header`).classList.remove (`navHeaderInverse`);
+        document.getElementById(`header`).classList.remove (`nav-headerInverse`);
         }
         if (window.innerWidth >  699) {
                 if (scrolledX >= 2*pagewidth) {
-                document.getElementById('vid1').pause();
-                document.getElementById('vid2').pause();
-                document.getElementById('vid3').play();
+                vid1.pause();
+                vid2.pause();
+                vid3.play();
                 } else if (scrolledX >= pagewidth) {
-                document.getElementById('vid1').pause();
-                document.getElementById('vid2').play();
+                vid1.pause();
+                vid2.play();
                 if (scrolledX >= 1.5*pagewidth) {
-                        document.getElementById('vid3').play();
-                } else {document.getElementById('vid3').pause();}
+                        vid3.play();
+                } else {vid3.pause();}
                 } else if (scrolledX > 0) {
-                document.getElementById('vid1').play();
+                vid1.play();
                 if (scrolledX >= .5*pagewidth){
-                        document.getElementById('vid2').play();
-                } else {document.getElementById('vid2').pause();}
-                document.getElementById('vid3').pause();
+                        vid2.play();
+                } else {vid2.pause();}
+                vid3.pause();
                 } else if (scrolledX <= 0) {
                 if (scrolledX >= - window.innerHeight) {
-                        document.getElementById('vid1').play();
-                } else {document.getElementById('vid1').pause();}
-                document.getElementById('vid2').pause();
-                document.getElementById('vid3').pause();
+                        vid1.play();
+                } else {vid1.pause();}
+                vid2.pause();
+                vid3.pause();
                 }
                 document.getElementById('horscrollsection').scrollLeft = scrolledX;
 
@@ -155,18 +159,19 @@ window.onscroll = () => {
                         document.getElementById(`horscrollsection`).classList.add (`cardHold`);
                         document.getElementById(`services`).classList.remove (`scrollspacescrolled`);
                         if (sсrolled >= xpos - window.innerHeight/2) {
-                                document.getElementById(`ContactUsBlock`).classList.remove('ContactUsBlockClosed');
+                                document.getElementById(`contact-us-block`).classList.remove('contact-us-blockClosed');
                         } else {
-                                document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
+                                document.getElementById(`contact-us-block`).classList.add('contact-us-blockClosed');
                         }
                         } else if (scrolledX + window.innerWidth > document.getElementById('horscrollsection').scrollWidth+stop && scrolledX + window.innerWidth <=  document.getElementById('horscrollsection').scrollWidth + stop + window.innerHeight){
                         document.getElementById(`services`).classList.add (`scrollspacescrolled`);
-                        document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
+                        document.getElementById(`contact-us-block`).classList.add('contact-us-blockClosed');
                         document.getElementById(`horscrollsection`).classList.add (`cardHold`);
                 } else {
                         document.getElementById(`horscrollsection`).classList.remove (`cardHold`);
-                        document.getElementById(`ContactUsBlock`).classList.add('ContactUsBlockClosed');
+                        document.getElementById(`contact-us-block`).classList.add('contact-us-blockClosed');
                 }
+                document.getElementById(`bg-titleID`).style = `transform: translate3d(` + document.getElementById('horscrollsection').scrollLeft * .92 + `px , 0px, 0px)`;
         }
 };
 
@@ -174,17 +179,17 @@ document.getElementById("slider").ondragstart = () => {
         return(false);
 }
 
-document.getElementById(`footerTopBoxSpace`).onmouseover = (m) => {
+document.getElementById(`footer-top__box-space`).onmouseover = (m) => {
         document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
 }
 
-document.getElementById(`footerTopBoxSpace`).onmouseleave = (m) => {
+document.getElementById(`footer-top__box-space`).onmouseleave = (m) => {
         document.getElementById(`helloBox`).src = "";
 }
 
 document.getElementById(`footer`).onmousemove = (m) => {
         document.getElementById('helloBox').classList.add ('BoxShow');
-        footerTopCenter = document.getElementById(`footerTop`).getBoundingClientRect(),
+        footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect(),
         document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/2 + (m.clientX - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
         document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/2 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
 }
