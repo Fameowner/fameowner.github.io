@@ -149,11 +149,13 @@ header {
 
 .nav-button__left {
     flex-grow: 1;
+    -webkit-transform: translateY(-120vh);
     transform: translateY(-120vh);
     transition: all 1s;
 }
 
 .nav-button__left_opened {
+    -webkit-transform: translateY(0vh);
     transform: translateY(0vh);
 }
 
@@ -165,12 +167,14 @@ header {
     padding-bottom: 15vh;
     background-color: #fff;
     border-bottom: 1px #000 solid;
+    -webkit-transform: translateY(-100vh);
     transform: translateY(-100vh);
     padding-top: 20vh;
     transition: all .8s ease-out;
 }
 
 .header__bottom_opened {
+    -webkit-transform: translateY(-10vh);
     transform: translateY(-10vh);
 }
 
