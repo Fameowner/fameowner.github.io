@@ -389,6 +389,11 @@ header {
     z-index: 7;
 }
 
+.home-left__text-outer {
+    overflow: hidden;
+}
+
+
 .homeLeftText {
     margin: 0px 20%;
     flex-basis: 75%;
@@ -398,8 +403,20 @@ header {
     animation: .7s ease-in-out homeLeftTextAnim;
 }
 @keyframes homeLeftTextAnim {
-    0% {opacity: 0; transform: translateX(-5%);}
-    100% {opacity: 1;}
+    0% {
+        -webkit-transform: translateY(100px);
+        -moz-transform: translateY(100px);
+        -ms-transform: translateY(100px);
+        -o-transform: translateY(100px);
+        transform: translateY(100px);
+        opacity: 0; }
+      100% {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1; } 
 }
 
 .homeLeft h1 {
@@ -644,7 +661,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 200vh;
+    height: 100vw;
     padding: 10px 0px;
     background-color: #fff;
     z-index: 1;
@@ -1039,6 +1056,14 @@ footer {
     width: 40vw;
     height: 40vw;
     background-size: cover;
+}
+
+.our-works__right-bg {
+    position: absolute;
+    right: 0px;
+    width: 20vw;
+    height: 100%;
+    background: linear-gradient(269.86deg, #000000 6.84%, rgba(14, 14, 14, 0.809374) 33.79%, rgba(40, 40, 40, 0.629537) 57.17%, rgba(41, 41, 41, 0.350512) 77.45%, rgba(121, 121, 121, 0) 99.74%);
 }
 
 .our-works__buttons {
