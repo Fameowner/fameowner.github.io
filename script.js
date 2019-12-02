@@ -200,14 +200,14 @@ document.getElementById(`footer`).onmouseleave = (m) => {
 
 
 
-document.getElementById(`our-vacancy__bottom-ID`).onmousemove = (m) => {
-        VacancyCenter = document.getElementById(`our-vacancy__bottom-ID`).getBoundingClientRect();
-                document.getElementById('VacancyBox1').classList.add ('BoxShow');
-                document.getElementById(`VacancyBox1`).style.left = VacancyCenter.left + VacancyCenter.width/2 + (m.clientX - (VacancyCenter.left + VacancyCenter.width/2)) *.1 + `px`;
-                document.getElementById(`VacancyBox1`).style.top = VacancyCenter.top + VacancyCenter.height/2 + (m.clientY -(VacancyCenter.top + VacancyCenter.height/2))* .05 +  sсrolled + `px`;
-}
+// document.getElementById(`our-vacancy__bottom-ID`).onmousemove = (m) => {
+//         VacancyCenter = document.getElementById(`our-vacancy__bottom-ID`).getBoundingClientRect();
+//                 document.getElementById('VacancyBox1').classList.add ('BoxShow');
+//                 document.getElementById(`VacancyBox1`).style.left = VacancyCenter.left + VacancyCenter.width/2 + (m.clientX - (VacancyCenter.left + VacancyCenter.width/2)) *.1 + `px`;
+//                 document.getElementById(`VacancyBox1`).style.top = VacancyCenter.top + VacancyCenter.height/2 + (m.clientY -(VacancyCenter.top + VacancyCenter.height/2))* .05 +  sсrolled + `px`;
+// }
 
 
-document.getElementById(`our-vacancy__bottom-ID`).onmouseleave = (m) => {
-        setTimeout(`document.getElementById('VacancyBox1').classList.remove ('BoxShow');`,250);
-}
+// document.getElementById(`our-vacancy__bottom-ID`).onmouseleave = (m) => {
+//         setTimeout(`document.getElementById('VacancyBox1').classList.remove ('BoxShow');`,250);
+// }
