@@ -10,13 +10,13 @@
     </head>
     <body>
         <header role = "navigation" class = "" id = "header">
-            <nav class = "navHeader" id = "navHeader">
-                <div class = "navButton navButtonLeft" id = "navButtonLeft"><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></div>
-                <!-- <div class = "navButton"><a onclick = "showStartProject()">Начать проект</a></div> -->
-                <div class = "navButton "><a href="">majorweb</a></div>
-                <div class = "navButton ">
+            <nav class = "nav-header" id = "nav-header">
+                <div class = "nav-button nav-button__left" id = "nav-button__left"><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></div>
+                <!-- <div class = "nav-button"><a onclick = "showStartProject()">Начать проект</a></div> -->
+                <div class = "nav-button "><a href="">majorweb</a></div>
+                <div class = "nav-button ">
                     <a>
-                        <button class = "menuButton" onclick="showMenu()" id = "burgerMenu" name = "burgerMenuButton">
+                        <button class = "menu-button" onclick="showMenu()" id = "burger-menu" name = "burger-menu-button">
                                 <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="40" id = "ham">
                                         <path
                                             class="line top"
@@ -32,25 +32,25 @@
                     </a>
                 </div>
             </nav>
-            <div class = "headerBottom" id = "headerBottom">
+            <div class = "header__bottom" id = "header__bottom">
                 <div class="mob">
                         <h3> Начать диалог </h3>
                         <a href="mailto:start@majorweb.studio">start@majorweb.studio</a>
                 </div>
-                <div class = "headerBottomLeft">
-                    <div class = "headerBottomLeftLocations">
-                        <div class = "headerBottomLeftLocation">
+                <div class = "header-bottom__left">
+                    <div class = "hheader-bottom__left-locations">
+                        <div class = "header-bottom-left-locations__loc">
                             <h1>Москва</h1>
                             <h2>Новорязанская <br> улица, 26с1</h2>
                         </div>
-                        <div class = "headerBottomLeftLocation">
+                        <div class = "header-bottom-left-locations__loc">
                             <h1>Москва</h1>
                             <h2>Новорязанская <br> улица, 26с1</h2>
                         </div>
                     </div>
                 </div>
-                <div class = "headerBottomRight">
-                    <nav class = "navMenu">
+                <div class = "header-bottom__right">
+                    <nav class = "nav-menu">
                         <a href="#about" onclick="showMenu()">О компании</a>
                         <a href="#services" onclick="showMenu()">Сервисы</a>
                         <a href="#slider" onclick="showMenu()">Наши работы</a>
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </header>
-        <div class = "bgBlur" id = "bgBlur"></div>
+        <div class = "bg-blur" id = "bg-blur"></div>
         <div class = "home js-bg_black" id = "home">
             <div class = "marqueeBG" will-change id = "marqueeBG"> 
                 <span>MAJORWEB</span>
@@ -74,19 +74,19 @@
             <div class = "homeRight">
             </div>
         </div>
-        <div class = "homeEnd js-bg_white" id = "homeEnd">
+        <div class = "home__end js-bg_white" id = "home__end">
             <div>
             </div>
         </div>
-        <div class = "ContactUsBlock" id = "ContactUsBlock">
-            <div class = "ContactUsBlockTop">
+        <div class = "contact-us-block" id = "contact-us-block">
+            <div class = "contact-us-blockTop">
                 <span>Начать проект с majorweb</span>
             </div>
-            <div class = "ContactUsBlockBottom">
+            <div class = "contact-us-blockBottom">
                 <div>
                     <a href="mailto:start@majorweb.studio">start@majorweb.studio</a>
                 </div>
-                <div class = "ContactUsBlockBottomRight">
+                <div class = "contact-us-blockBottomRight">
                     <span>Our major is web.<br></span>
                     <span>Don’t be shy, tell us more <br></span>
                     <span>about yours!</span>
@@ -94,15 +94,16 @@
             </div>
         </div>
         </div>
-        <div class = "about " id = "about">
+        <div class = "about" id = "about">
                 <h1>Мы создаем современный контент для брендов со смыслом.</h1>
                 <h2>Majorweb — это независимая студия, которая помогает раскрыть и донести &nbsp ценность продукта.</h2>
                 <!-- <h3>Вниз</h3> -->
         </div>
         <div class = "scrollspace js-bg_black" id = "services">
-                <div class="card" id = 'horscrollsection'> 
+                <div class="card" id = 'horscrollsection'>
+                        <h1 class="bg-title" id="bg-titleID">Our work</h1>
                         <div class = "services">
-                                <div class = "servicesLeft">
+                                <div class = "services__left">
                                         <h1>Разработка и <br> Поддержка</h1>
                                         <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
                                         <ul>
@@ -110,16 +111,16 @@
                                             <li>Разработка мобильных и веб-приложений</li>
                                             <li>Интеграция CRM / ERM платформ</li>
                                             <li>Чат-боты в мессенджрах</li>
-                                        </ul>    
+                                        </ul>
                                 </div>
-                                <div class = "servicesRight">
-                                    <div class = "servicesRightItem">
+                                <div class = "services__right" >
+                                    <div class = "services__rightItem">
                                         <video src = "Res\Pexels Videos 2795399 (1).webm"  loop clip muted id = "vid1"></video>
                                     </div>
                                 </div>
                             </div>
                             <div class = "services">
-                                    <div class = "servicesLeft">
+                                    <div class = "services__left">
                                             <h1>Дизайн и <br> Креатив</h1>
                                             <h2>Наличие разработчиков и дизайнеров под одной крышей гарантирует, что дизайн безупречно соответствует техническим требованиям и идет в ногу со временем</h2>
                                             <ul>
@@ -129,14 +130,14 @@
                                                 <li>UI / UX и Motion Design</li>
                                             </ul>    
                                     </div>
-                                    <div class = "servicesRight">
-                                        <div class = "servicesRightItem">
+                                    <div class = "services__right">
+                                        <div class = "services__rightItem">
                                             <video src = "Res\Pexels Videos 2035391.mp4"  loop clip muted id = "vid2"></video>
                                         </div>
                                     </div>
                                 </div>
                                 <div class = "services">
-                                    <div class = "servicesLeft">
+                                    <div class = "services__left">
                                             <h1>Консалтинг и <br>Аналитика</h1>
                                             <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
                                             <ul>
@@ -146,56 +147,56 @@
                                                 <li>Перфоманс и креатив консалтинг</li>
                                             </ul>    
                                     </div>
-                                    <div class = "servicesRight">
-                                        <div class = "servicesRightItem">
+                                    <div class = "services__right">
+                                        <div class = "services__rightItem">
                                             <video src = "Res\Pexels Videos 2795399 (1).webm"  loop clip muted id = "vid3"></video>
                                         </div>
                                     </div>
                                 </div>
                 </div>
         </div>
-        <div class = "ourWorks js-bg_black" id = "ourWorks">
+        <div class = "our-works js-bg_black" id = "our-works">
             <div class = "slider" id = "slider">
-                <div class="sliderItem sliderItemMove" id = "sliderItem0">
+                <div class="slider-item slider-item_move" id = "slider-item__0">
                     <h2>Зоомагазин FunnyBunny</h2>
                     <a>
                         <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
                     </a>
                 </div>
-                <div class="sliderItem" id = "sliderItem1">
+                <div class="slider-item" id = "slider-item1">
                     <h2>Произвотство покрытий для НКТ</h2>
                     <a>
                         <img src="Res\majorpack.jpg" alt="majorpack">
                     </a>
                 </div>
-                <div class="sliderItem" id = "sliderItem2">
+                <div class="slider-item" id = "slider-item2">
                     <h2>Зоомагазин FunnyBunny</h2>
                     <a>
                         <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
                     </a>
                 </div>
-                <div class="sliderItem" id = "sliderItem3">
+                <div class="slider-item" id = "slider-item3">
                     <h2>Произвотство покрытий для НКТ</h2>
                     <a>
                         <img src="Res\majorpack.jpg" alt="majorpack">
                     </a>
                 </div>
             </div>
-            <div class="testbuttons" id = "testbuttons">
-                    <button class = "testbutton buttonPrev" onclick="prev()" id = "buttonPrev" name = "buttonPrev"><img src="Res\arrow-left-S-light.png" alt=""></button>
-                    <button class = "testbutton  buttonNext" onclick="next()" id = "buttonNext" name = "buttonNext"><img src="Res\arrow-right-S-light.png" alt=""></button>
+            <div class="our-works__buttons" id = "our-works__buttons">
+                    <button class = "our-works__button button-prev" onclick="prev()" id = "button-prev" name = "button-prev"><img src="Res\arrow-left-S-light.png" alt=""></button>
+                    <button class = "our-works__button  button-next" onclick="next()" id = "button-next" name = "button-next"><img src="Res\arrow-right-S-light.png" alt=""></button>
             </div>
         </div>
-        <div class = "ourStack js-bg_white" id = "ourStack">
-            <div class = "ourStackItem">
+        <div class = "our-stack js-bg_white" id = "our-stack">
+            <div class = "our-stack__item">
                 <h1>В нашей работе мы используем новейшие технологии и современный подход.</h1>
             </div>
-            <div class = "ourStackItem">
-                <div class = "ourStackItemList">
-                    <div class = "ourStackItemListItem">
+            <div class = "our-stack__item">
+                <div class = "our-stack__item-list">
+                    <div class = "our-stack-item__list-item">
                         <ul>
-                            <li class = "ourStackItemListItemNum">01</li>
-                            <li class = "ourStackItemListItemDir">Front—end</li>
+                            <li class = "our-stack__item-list-item-num">01</li>
+                            <li class = "our-stack-item__list-item-dir">Front—end</li>
                             <li>Babel</li>
                             <li>GatsbyJs</li>
                             <li>Javascript ES7</li>
@@ -213,29 +214,26 @@
                             <li>Webpack</li>
                         </ul>
                     </div>
-                    <div class = "ourStackItemListItem">
-                        <div class = "ourStackItemListItem">
-                            <ul>
-                                <li class = "ourStackItemListItemNum">02</li>
-                                <li class = "ourStackItemListItemDir">Back—end</li>
-                                <li>Celery</li>
-                                <li>Django</li>
-                                <li>Docker</li>
-                                <li>Flask</li>
-                                <li>Haproxy</li>
-                                <li>Nginx</li>
-                                <li>NodeJs</li>
-                                <li>PostgresSql</li>
-                                <li>Python</li>
-                                <li>Redis</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class = "ourStackItemListItem">
-                    <div class = "ourStackItemListItem">
+                    <div class = "our-stack-item__list-item">
                         <ul>
-                            <li class = "ourStackItemListItemNum">03</li>
-                            <li class = "ourStackItemListItemDir">DevOps</li>
+                            <li class = "our-stack__item-list-item-num">02</li>
+                            <li class = "our-stack__item-list-item-dir">Back—end</li>
+                            <li>Celery</li>
+                            <li>Django</li>
+                            <li>Docker</li>
+                            <li>Flask</li>
+                            <li>Haproxy</li>
+                            <li>Nginx</li>
+                            <li>NodeJs</li>
+                            <li>PostgresSql</li>
+                            <li>Python</li>
+                            <li>Redis</li>
+                        </ul>
+                        </div>
+                    <div class = "our-stack-item__list-item">
+                        <ul>
+                            <li class = "our-stack__item-list-item-num">03</li>
+                            <li class = "our-stack__item-list-item-dir">DevOps</li>
                             <li>Centos</li>
                             <li>Graphite</li>
                             <li>InfluxDB</li>
@@ -244,42 +242,39 @@
                             <li>Sentry</li>
                         </ul>
                     </div>
-                    </div>
-                    <div class = "ourStackItemListItem">
-                        <div class = "ourStackItemListItem">
-                            <ul>
-                                <li class = "ourStackItemListItemNum">04</li>
-                                <li class = "ourStackItemListItemDir">Design</li>
-                                <li>3DS Max</li>
-                                <li>Adobe After Effects</li>
-                                <li>Adobe Illustrator</li>
-                                <li>Adobe Photoshop</li>
-                                <li>Blender</li>
-                                <li>Autocad</li>
-                                <li>Cinema 4D</li>
-                                <li>Figma</li>
-                                <li>Keyshot</li>
-                                <li>Marvelous Designer</li>
-                                <li>Sketch</li>
-                                <li>Unreal Engine</li>
-                                <li>Zbrush</li>
-                            </ul>
-                        </div>
+                    <div class = "our-stack-item__list-item">
+                        <ul>
+                            <li class = "our-stack__item-list-item-num">04</li>
+                            <li class = "our-stack__item-list-item-dir">Design</li>
+                            <li>3DS Max</li>
+                            <li>Adobe After Effects</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Adobe Photoshop</li>
+                            <li>Blender</li>
+                            <li>Autocad</li>
+                            <li>Cinema 4D</li>
+                            <li>Figma</li>
+                            <li>Keyshot</li>
+                            <li>Marvelous Designer</li>
+                            <li>Sketch</li>
+                            <li>Unreal Engine</li>
+                            <li>Zbrush</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class = "ourStackItem"> <h2>Образ вашей компании в Интернете - лицо вашего бренда. Красивый дизайн и хорошо написанный код сделают ваших клиентов счастливее. Лояльность клиентов способствует увеличению продаж и развитию вашего бизнеса.</h2> </div>
-            <div class = "ourStackItem"> <a href = "">Станьте первыми.</a></div>
+            <div class = "our-stack__item"> <h2>Образ вашей компании в Интернете - лицо вашего бренда. Красивый дизайн и хорошо написанный код сделают ваших клиентов счастливее. Лояльность клиентов способствует увеличению продаж и развитию вашего бизнеса.</h2> </div>
+            <div class = "our-stack__item"> <a href = "">Станьте первыми.</a></div>
         </div>
-        <div class = "ourVacancy js-bg_black" id = "ourVacancy">
-            <div class = "ourVacancyTop">
+        <div class = "our-vacancy js-bg_black" id = "our-vacancy">
+            <div class = "our-vacancy_top">
                 <ul>
                     <li>Мы всегда ищем новые таланты, </li>
                     <li>свяжитесь с нами, если Вы:</li>
                 </ul>
             </div>
             <div class = "our-vacancy__bottom" id = "our-vacancy__bottom-ID">
-                <div class = "our-vacancy__bottom-item" id = "Vacancy-01">
+                <div class = "our-vacancy__bottom-item" id = "our-vacancy-01">
                     <div class = "our-vacancy__bottom-header">Front—end разработчик</div>
                     <div class = "our-vacancy__bottom-description">
                         <div class = "our-vacancy__bottom-description-duties c-our-vacancy__bottom-description-paddings">
@@ -362,32 +357,32 @@
                 <a class = "our-vacancy__bottom-selector our-vacancy__bottom-selector_selected" id ="our-vacancy__bottom-selector-01" onclick="bottomSelectorClick(this)">01</a>
                 <a class = "our-vacancy__bottom-selector" id ="our-vacancy__bottom-selector-02" onclick="bottomSelectorClick(this)">02</a>
             </div>
-            <div class = "ourVacancyResponseto">
+            <div class = "our-vacancyResponseto">
                     <ul>
                     <a href="mailto:jobs@majorweb.studio"><li>Отправить резюме</li></a>
                     <a href="mailto:jobs@majorweb.studio"><li>jobs@majorweb.studio</li></a>
                     </ul>
             </div>
-            <div class = "Box BoxFrontEnd" id = "VacancyBox1">  </div>
+            <div class = "Box Box_front-end" id = "VacancyBox1">  </div>
         </div>
-        <div class="startProject" id = "startProject">
-            <form action="" method="POST" id = "startProjectForm" class = "startProjectForm" >
-                <div class = "closeButton"><a onclick = "showStartProject()">Закрыть</a></div>
-                <div class = "startProjectFormItem startProjectFormItemLeft">
-                        <label class="startProjectheading" >Вас интересует</label>
-                        <label class="startProjectheading">Бюджет</label>
-                        <label class="startProjectheading" for = "textareaDescriptionProject">Описание</label>
+        <div class="start-project" id = "start-project">
+            <form action="" method="POST" id = "start-project__form" class = "start-project__form" >
+                <div class = "start-project-form__close-button"><a onclick = "showStartProject()">Закрыть</a></div>
+                <div class = "start-project-form__item start-project-form__item-left">
+                        <label class="start-project-form__heading" >Вас интересует</label>
+                        <label class="start-project-form__heading">Бюджет</label>
+                        <label class="start-project-form__heading" for = "textarea-escription-project">Описание</label>
                 </div>
-                <div class = "startProjectFormItem startProjectFormItemRight">
+                <div class = "start-project-form__item start-project-form__item-right">
                     <div>
-                        <input type="checkbox" name="servicesDesign" value="Design" id="checkboxDesignButton">
-                        <label for = "checkboxDesignButton"> Дизайн </label>
-                        <input type="checkbox" name="servicesDevelopment" value="Development" id ="checkboxDevelopmentButton">
-                        <label for = "checkboxDevelopmentButton">Разработка</label>
-                        <input type="checkbox" name="servicesSupport" value="Support" id = "checkboxSupportButton">
-                        <label for = "checkboxSupportButton">Поддержка</label>
-                        <input type="checkbox" name="servicesConsulting" value="Consulting" id = "checkboxConsultingButton">
-                        <label for = "checkboxConsultingButton">Консалтинг</label>
+                        <input type="checkbox" name="services_design" value="Design" id="checkbox-design_button">
+                        <label for = "checkbox-design_button"> Дизайн </label>
+                        <input type="checkbox" name="services_development" value="Development" id ="checkbox-development_button">
+                        <label for = "checkbox-development_button">Разработка</label>
+                        <input type="checkbox" name="services_support" value="Support" id = "checkbox-support_button">
+                        <label for = "checkbox-support_button">Поддержка</label>
+                        <input type="checkbox" name="services_consulting" value="Consulting" id = "checkbox-consulting_button">
+                        <label for = "checkbox-consulting_button">Консалтинг</label>
                     </div>
                     <div>
                         <input type="radio" name="budget" value="upTo200" id = "radioBudgetUpTo200Button">
@@ -398,23 +393,23 @@
                         <label for = "radioBudgetf500Button">От 500 тыс. ₽</label>
                     </div>
                     <div>
-                        <textarea class = "startProjectFormInput" type="textarea" name="descriptionProject" placeholder="Кратко опишите ваш проект, чтобы мы могли составить бриф." id = "textareaDescriptionProject"></textarea>
+                        <textarea class = "start-project-form__input" type="textarea" name="descriptionProject" placeholder="Кратко опишите ваш проект, чтобы мы могли составить бриф." id = "textarea-escription-project"></textarea>
                     </div>
                 </div>
-                <div class = "startProjectFormItemBottom">
+                <div class = "start-project-form__item-bottom">
                     <div>
-                        <label class="startProjectheading">Контакты</label>
+                        <label class="start-project-form__heading">Контакты</label>
                     </div>
                     <div class = "contacts">
-                        <label for="contactsNameID" required>Имя:</label>
-                        <input class = "startProjectFormInput shortInput" type="text" name="contactsName" placeholder="Как вас зовут?" id = "contactsNameID">
-                        <label for="contactsEMailID" required>e-mail:</label>
-                        <input class = "startProjectFormInput shortInput" type="email" name="contactsEMail" placeholder="Почта для связи" id = "contactsEMailID">
-                        <label for="contactsPhoneID" required>Номер телефона:</label>
-                        <input class = "startProjectFormInput shortInput" type="tel" name="contactsPhone" placeholder="8 (900) 000 00 00" pattern="[0-9] {+}" id = "contactsPhoneID">
+                        <label for="contacts-name-ID" required>Имя:</label>
+                        <input class = "start-project-form__input shortInput" type="text" name="contactsName" placeholder="Как вас зовут?" id = "contacts-name-ID">
+                        <label for="contacts-eMail-ID" required>e-mail:</label>
+                        <input class = "start-project-form__input shortInput" type="email" name="contactsEMail" placeholder="Почта для связи" id = "contacts-eMail-ID">
+                        <label for="contacts-phone-ID" required>Номер телефона:</label>
+                        <input class = "start-project-form__input shortInput" type="tel" name="contactsPhone" placeholder="8 (900) 000 00 00" pattern="[0-9] {+}" id = "contacts-phone-ID">
                     </div>
                 </div>
-                <div class = "startProjectFormItemButton">
+                <div class = "start-project-form__item-button">
                     <button type="submit">
                         Отправить
                     </button>
@@ -422,26 +417,26 @@
             </form>
         </div>
         <footer class = "js-bg_white" id = "footer">
-            <div class = "footerTop" id = "footerTop">
-                <ul id = "footerTopBoxSpace">
+            <div class = "footer__top" id = "footer__top">
+                <ul id = "footer-top__box-space">
                     <li>Our major is web,</li>
                     <li>tell us more about yours.</li>
                 </ul>
             </div>
-            <div  class = "footerBottom">
-                <div class = "footerBottomLeft">
-                    <div class = "footerBottomLeftLocations">
-                            <div class = "footerBottomLeftLocation">
+            <div  class = "footer__bottom">
+                <div class = "footer-bottom__left">
+                    <div class = "footer-bottom-left__locations">
+                            <div class = "footer-bottom-left__location">
                                     <h1>Москва</h1>
                                     <h2>Адрес нашего офиса в Москве</h2>
                                 </div>
-                                <div class = "footerBottomLeftLocation">
+                                <div class = "footer-bottom-left__location">
                                     <h1>Нью-Йорк</h1>
                                     <h2>Адрес нашего вымышленного офиса в Нью-Йорке</h2>
                                 </div>
                     </div>
                 </div>
-                <div class = "footerBottomRight">
+                <div class = "footer-bottom__right">
                     <ul>
                         <li>Начать проект с нами.</li>
                         <li><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></li>
