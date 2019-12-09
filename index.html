@@ -61,7 +61,7 @@
             </div>
         </header>
         <div class = "bg-blur" id = "bg-blur"></div>
-        <div class = "home js-bg_black" id = "home">
+        <!-- <div class = "home js-bg_black" id = "home">
             <div class = "marqueeBG" will-change id = "marqueeBG"> 
                 <span>MAJORWEB</span>
             </div>
@@ -70,16 +70,33 @@
                         <h1>В точности, как вы представляли свой бренд, но намного больше.</h1>
                         <h2>ВЕБ РАЗРАБОТКА, ДИЗАЙН И МАРКЕТИНГ</h2>
                 </div>
-                <!-- <a href="#about"><h3>Вниз</h3></a> -->
             </div>
             <div class = "homeRight">
             </div>
-        </div>
-        <div class = "home__end js-bg_white" id = "home__end">
-            <div>
+        </div> -->
+        <div class="home js-bg_black">
+            <div class = "home__coords">
+                    <span class = "home__title t1">MAJORWEB/DIGITAL<br> </span>
+                    <br>
+                    <span class = "home__title t2">55°45'24.9"N <br></span>
+                    <span class = "home__title t3">37°33'47.1"E <br></span>
+                    <span class = "home__title t4">55.756927, 37.563087</span>
+            </div>
+            <div class = "home__videos" >
+                <div class="video-box" id = "video-box">
+                    <video src="Res\vid-bg-home.mp4" class = "home__bg" poster = "Res\RecBlack.jpg" autoplay clip muted id = "home__bg"></video>
+                </div>
+            </div>
+            <div class = "home__services" id = "home__services">
+                    <span class = "home__title t5" id = "t5">ВЕБ РАЗРАБОТКА, ДИЗАЙН И МАРКЕТИНГ</span>
             </div>
         </div>
-        <div class = "contact-us-block" id = "contact-us-block">
+        <div class = "home__end js-bg_white" id = "home__end">
+            <div class = "home-end__tagline">
+                    <h1>В точности, как вы представляли свой бренд, но намного <br> больше.</h1>
+            </div>
+        </div>
+        <div class = "contact-us-block contact-us-blockClosed" id = "contact-us-block">
             <div class = "contact-us-blockTop">
                 <span>Начать проект с majorweb</span>
             </div>
@@ -116,7 +133,7 @@
                                 </div>
                                 <div class = "services__right" >
                                     <div class = "services__rightItem">
-                                        <video src = "Res\Pexels Videos 2795399 (1).webm"  loop clip muted id = "vid1"></video>
+                                        <video src = "Res\vid-code.mp4" poster="Res\dev.jpg" loop clip muted id = "vid1"></video>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +150,7 @@
                                     </div>
                                     <div class = "services__right">
                                         <div class = "services__rightItem">
-                                            <video src = "Res\Pexels Videos 2035391.mp4"  loop clip muted id = "vid2"></video>
+                                            <video src = "Res\vid-gisign.mp4" poster="Res\Dis.jpg" loop clip muted id = "vid2"></video>
                                         </div>
                                     </div>
                                 </div>
@@ -150,14 +167,14 @@
                                     </div>
                                     <div class = "services__right">
                                         <div class = "services__rightItem">
-                                            <video src = "Res\Pexels Videos 2795399 (1).webm"  loop clip muted id = "vid3"></video>
+                                            <video src = "" poster="Res\Kon.jpg" loop clip muted id = "vid3"></video>
                                         </div>
                                     </div>
                                 </div>
                 </div>
         </div>
         <div class = "our-works js-bg_black" id = "our-works">
-            <div class = "our-works__right-bg"></div>
+            <button class = "our-works-slider__next" onclick="next()" id = "our-works-slider__next"></button>
             <div class = "slider" id = "slider">
                 <div class="slider-item slider-item_move" id = "slider-item__0">
                     <h2>Зоомагазин FunnyBunny</h2>
@@ -165,29 +182,33 @@
                         <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
                     </a>
                 </div>
-                <div class="slider-item" id = "slider-item1">
-                    <h2>Произвотство покрытий для НКТ</h2>
+                <div class="slider-item" id = "slider-item__1">
+                    <h2>tdnpo.ru</h2>
                     <a>
                         <img src="Res\majorpack.jpg" alt="majorpack">
                     </a>
                 </div>
-                <div class="slider-item" id = "slider-item2">
+                <div class="slider-item" id = "slider-item__2">
                     <h2>Зоомагазин FunnyBunny</h2>
                     <a>
                         <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
                     </a>
                 </div>
-                <div class="slider-item" id = "slider-item3">
-                    <h2>Произвотство покрытий для НКТ</h2>
+                <div class="slider-item" id = "slider-item__3">
+                    <h2>tdnpo.ru</h2>
                     <a>
                         <img src="Res\majorpack.jpg" alt="majorpack">
                     </a>
                 </div>
             </div>
             <div class="our-works__buttons" id = "our-works__buttons">
-                    <button class = "our-works__button button-prev" onclick="prev()" id = "button-prev" name = "button-prev"><img src="Res\arrow-left-S-light.png" alt=""></button>
-                    <button class = "our-works__button  button-next" onclick="next()" id = "button-next" name = "button-next"><img src="Res\arrow-right-S-light.png" alt=""></button>
-            </div>
+                    <!-- <button class = "our-works__button button-prev" onclick="prev()" id = "button-prev" name = "button-prev"><img src="Res\arrow-left-S-light.png" alt=""></button>
+                    <button class = "our-works__button  button-next" onclick="next()" id = "button-next" name = "button-next"><img src="Res\arrow-right-S-light.png" alt=""></button> -->
+                    <button class="our-works__buttonN a-like-underline our-works-buttonN_current"> 01 </button>
+                    <button class="our-works__buttonN a-like-underline"> 02 </button>
+                    <button class="our-works__buttonN a-like-underline"> 03 </button>
+                    <button class="our-works__buttonN a-like-underline"> 04 </button>
+                </div>
         </div>
         <div class = "our-stack js-bg_white" id = "our-stack">
             <div class = "our-stack__item">
@@ -266,7 +287,7 @@
                 </div>
             </div>
             <div class = "our-stack__item"> <h2>Образ вашей компании в Интернете - лицо вашего бренда. Красивый дизайн и хорошо написанный код сделают ваших клиентов счастливее. Лояльность клиентов способствует увеличению продаж и развитию вашего бизнеса.</h2> </div>
-            <div class = "our-stack__item"> <a href = "">Станьте первыми.</a></div>
+            <div class = "our-stack__item"> <a class = "a-like-underline black" href = "">Станьте первыми.</a></div>
         </div>
         <div class = "our-vacancy js-bg_black" id = "our-vacancy">
             <div class = "our-vacancy_top">
@@ -356,12 +377,12 @@
                 </div>
             </div>
             <div class = "our-vacancy__bottom-selection">
-                <a class = "our-vacancy__bottom-selector our-vacancy__bottom-selector_selected" id ="our-vacancy__bottom-selector-01" onclick="bottomSelectorClick(this)">01</a>
-                <a class = "our-vacancy__bottom-selector" id ="our-vacancy__bottom-selector-02" onclick="bottomSelectorClick(this)">02</a>
+                <a class = "our-vacancy__bottom-selector our-vacancy__bottom-selector_selected a-like-underline " id ="our-vacancy__bottom-selector-01" onclick="bottomSelectorClick(this)">01</a>
+                <a class = "our-vacancy__bottom-selector a-like-underline" id ="our-vacancy__bottom-selector-02" onclick="bottomSelectorClick(this)">02</a>
             </div>
             <div class = "our-vacancyResponseto">
                     <ul>
-                    <a href="mailto:jobs@majorweb.studio"><li>Отправить резюме</li></a>
+                    <a class = "a-like-underline" href="mailto:jobs@majorweb.studio"><li>Отправить резюме</li></a>
                     <a href="mailto:jobs@majorweb.studio"><li>jobs@majorweb.studio</li></a>
                     </ul>
             </div>
