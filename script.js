@@ -9,6 +9,14 @@ vid1 = document.getElementById('vid1'),
 vid2 = document.getElementById('vid2'),
 vid3 = document.getElementById('vid3');
 
+document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
+
+document.getElementById(`home__bg`).addEventListener("ended", () => {
+        document.getElementById(`home__bg`).currentTime = 16;
+        document.getElementById(`home__bg`).play();
+});
+
+
 function pauseAll() {
         vid1.pause();
         vid2.pause();
@@ -17,6 +25,7 @@ function pauseAll() {
 
 function showMenu() {
         document.getElementById(`ham`).classList.toggle('active');
+        document.getElementById(`nav-header`).classList.toggle (`nav-header_opened`);
         document.getElementById(`header`).classList.toggle (`header_opened`);
         document.getElementById(`nav-button__left`).classList.toggle (`nav-button__left_opened`);
         document.getElementById(`header__bottom`).classList.toggle (`header__bottom_opened`);
@@ -51,9 +60,8 @@ function next() {
         document.getElementById(`slider`).appendChild(clone);
         slides[0].remove();
         slides[0].classList.add (`slider-item_move`);
-        document.getElementById(`button-next`).disabled = true;
-        document.getElementById(`button-prev`).disabled = true;
-        setTimeout('document.getElementById(`button-next`).disabled = false; document.getElementById(`button-prev`).disabled = false;', 1000);
+        document.getElementById(`our-works-slider__next`).disabled = true;
+        setTimeout('document.getElementById(`our-works-slider__next`).disabled = false;', 1000);
 }
 
 function prev() {
@@ -64,9 +72,9 @@ function prev() {
         document.getElementById(`slider`).prepend(clone);
         slides[slides.length-1].remove();
         slides[1].classList.remove (`slider-item_move`);
-        document.getElementById(`button-next`).disabled = true;
-        document.getElementById(`button-prev`).disabled = true;
-        setTimeout('document.getElementById(`button-next`).disabled = false; document.getElementById(`button-prev`).disabled = false;', 1000);
+        // document.getElementById(`button-next`).disabled = true;
+        // document.getElementById(`button-prev`).disabled = true;
+        // setTimeout('document.getElementById(`button-next`).disabled = false; document.getElementById(`button-prev`).disabled = false;', 1000);
 }
 
 function getCoordsY(elem) {
@@ -106,6 +114,7 @@ window.addEventListener(`resize`, () => {
                 pagewidth = window.innerWidth;
         }
         bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
+        document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 });
 
 window.onscroll = () => {
