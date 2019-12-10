@@ -1064,7 +1064,11 @@ footer {
     margin-left: 30vw;
     width: 40vw;
     min-height: 40vw;
-    transition: all 1s;
+    transition: all 1s ease-out;
+}
+
+.slider-item-fast {
+    transition: all .3s ease-in-out;
 }
 
 .slider-item + .slider-item {
@@ -1586,10 +1590,10 @@ footer {
         min-height: 72vw;
         transition: margin 1s;
     }
-
+/* 
     .slider-item__fast {
         transition: margin .2s;
-    }
+    } */
 
     .slider-item + .slider-item {
         margin-left: 14vw;

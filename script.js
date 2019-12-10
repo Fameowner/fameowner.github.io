@@ -61,17 +61,49 @@ function autosize(){
 
 var currNslide = 0
 
+function currentSlideNumUpdate(N) {
+        NumNav = document.getElementsByClassName(`our-works__buttonN`);
+        N = N%NumNav.length;
+        for (i=0;i<NumNav.length;i++) {
+                NumNav[i].classList.remove(`our-works-buttonN_current`);
+        }
+        NumNav[N].classList.add(`our-works-buttonN_current`);
+}
+
+function disableButtons() {
+        NumNav = document.getElementsByClassName(`our-works__buttonN`);
+        for (i = 0; i < NumNav.length; i++) {
+                NumNav[i].disabled = true;
+        }
+        document.getElementById(`our-works-slider__next`).disabled = true;
+}
+function activateButtons() {
+        NumNav = document.getElementsByClassName(`our-works__buttonN`);
+        for (i = 0; i < NumNav.length; i++) {
+                NumNav[i].disabled = false;
+        }
+        document.getElementById(`our-works-slider__next`).disabled = false;
+}
+
+function nextButton(){
+        next();
+        disableButtons();
+        setTimeout(() => {
+                activateButtons(); 
+        }, 900);
+}
+
+
 function next() {
-        var
+        var cloneSlide,clone;
         cloneSlide = slides[0],
         clone = cloneSlide.cloneNode(true);
         clone.classList.remove (`slider-item_move`);
         document.getElementById(`slider`).appendChild(clone);
         slides[0].remove();
         slides[0].classList.add (`slider-item_move`);
-        document.getElementById(`our-works-slider__next`).disabled = true;
-        setTimeout('document.getElementById(`our-works-slider__next`).disabled = false;', 1000);
-        currNslide++;
+        currNslide = (currNslide+1)%(slides.length);
+        currentSlideNumUpdate(currNslide);
 }
 
 function prev() {
@@ -82,26 +114,49 @@ function prev() {
         document.getElementById(`slider`).prepend(clone);
         slides[slides.length-1].remove();
         slides[1].classList.remove (`slider-item_move`);
-        currNslide-=1;
+        currNslide = Math.abs((currNslide-1)%(slides.length));
+        currentSlideNumUpdate(currNslide);
 }
 
 function numButton (t) {
         t-=1;
         mov =  t - currNslide;
-        if (mov < 0) {
-                for (i = 0; i<=(-1*mov); i++) {
+        if (mov < -1) {
+                disableButtons();
+                for (i=0;i<slides.length;i++){
+                        slides[i].classList.add(`slider-item-fast`);
+                }
+                prev();
+                let timerId = setInterval(() => prev(), 300);
+                setTimeout(() => {
+                        clearInterval(timerId); 
                         prev();
-                        setTimeout('', 1000);
-                }
+                        for (i=0;i<slides.length;i++){
+                                slides[i].classList.remove(`slider-item-fast`);
+                        } 
+                }, (-mov-1)*299);
+                setTimeout(() => {activateButtons();}, (-mov)*299+500);
         }
-        else if (mov > 0){
-                for (i = 0; i<=mov; i++) {
+        else if (mov > 1) {
+                disableButtons();
+                for (i=0;i<slides.length;i++){
+                        slides[i].classList.add(`slider-item-fast`);
+                }
+                next();
+                let timerId = setInterval(() => next(), 300);
+                setTimeout(() => {
+                        clearInterval(timerId); 
                         next();
-                        setTimeout('', 1000);
-                }
+                        for (i=0;i<slides.length;i++){
+                                slides[i].classList.remove(`slider-item-fast`);
+                        } 
+                }, (mov-1)*299);
+                setTimeout(() => {activateButtons();}, (mov)*299+500);
+        } else if (mov == 1) {
+                next();
+        } else if (mov == -1) {
+                prev();
         }
-        console.log(t);
-        console.log(mov);
 }
 
 function getCoordsY(elem) {
@@ -144,6 +199,10 @@ window.addEventListener(`resize`, () => {
         document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 });
 
+function videoCheckAndPlay(vid) {
+        if (vid.readyState != 0) {vid.play()}
+}
+
 window.onscroll = () => {
         var     vid1Rect = vid1.getBoundingClientRect(),
                 vid2Rect = vid2.getBoundingClientRect();
@@ -162,25 +221,25 @@ window.onscroll = () => {
         document.getElementById(`header`).classList.remove (`nav-headerInverse`);
         }
         if (window.innerWidth >  699) {
-                if (scrolledX >= 2*pagewidth) {
+                if (scrolledX >= 2*pagewidth) {;
                 vid1.pause();
                 vid2.pause();
-                vid3.play();
+                videoCheckAndPlay(vid3);
                 } else if (scrolledX >= pagewidth) {
                 vid1.pause();
-                vid2.play();
+                videoCheckAndPlay(vid2);
                 if (scrolledX >= 1.5*pagewidth) {
-                        vid3.play();
+                        videoCheckAndPlay(vid3);
                 } else {vid3.pause();}
                 } else if (scrolledX > 0) {
-                vid1.play();
+                videoCheckAndPlay(vid1);
                 if (scrolledX >= .5*pagewidth){
-                        vid2.play();
+                        videoCheckAndPlay(vid2);
                 } else {vid2.pause();}
                 vid3.pause();
                 } else if (scrolledX <= 0) {
                 if (scrolledX >= - window.innerHeight) {
-                        vid1.play();
+                        videoCheckAndPlay(vid1);
                 } else {vid1.pause();}
                 vid2.pause();
                 vid3.pause();
