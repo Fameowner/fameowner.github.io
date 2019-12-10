@@ -203,12 +203,18 @@ function videoCheckAndPlay(vid) {
         if (vid.readyState != 0) {vid.play()}
 }
 
+var     vid1Rect = vid1.getBoundingClientRect(),
+        vid2Rect = vid2.getBoundingClientRect();
+
 window.onscroll = () => {
-        var     vid1Rect = vid1.getBoundingClientRect(),
-                vid2Rect = vid2.getBoundingClientRect();
+        vid1Rect = vid1.getBoundingClientRect();
+        vid2Rect = vid2.getBoundingClientRect();
 
         vid1.style.opacity = vid1Rect.left/vid1Rect.width + .5;
         vid2.style.opacity = vid2Rect.left/vid2Rect.width + .5;
+
+        document.getElementById(`services__left_2`).style.opacity = -(document.getElementById(`services__left_2`).getBoundingClientRect().left/window.innerWidth - .8);
+        document.getElementById(`services__left_3`).style.opacity = -(document.getElementById(`services__left_3`).getBoundingClientRect().left/window.innerWidth - .8);
 
         sсrolled = window.scrollY;
         scrolledX = sсrolled - xpos-stop;
