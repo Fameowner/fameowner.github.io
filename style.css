@@ -397,7 +397,7 @@ header {
 }
 
 .home__videos {
-    padding-left: 25vw;
+    padding-left: 22vw;
 }
 
 .home__coords {
@@ -561,10 +561,19 @@ header {
     display: flex;
     flex-direction: column;
     height: calc(100vh + 200vw + 1000px);
+    overflow: hidden;
 }
 
 .scrollspacescrolled {
     flex-direction: column-reverse;
+}
+
+.bg-title-outer {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 80%;
+    z-index: 4;
 }
 
 .bg-title {
@@ -576,7 +585,6 @@ header {
     letter-spacing: 0.04em;
     display: inline-block;
     white-space: nowrap;
-    z-index: 4;
 }
 
 .card {
@@ -671,12 +679,16 @@ header {
     background-clip: border-box;
     height: 100%;
     width: 100%;
-    max-width: 50vw;
+    width: 50vw;
     overflow: hidden;
 }
 
 .services__rightItem video {
-    transform: translate(0,-30%);
+    width   : 100%;
+    position: relative;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
     /* max-height:100vh; */
     /* max-width: 50vw; */
 }
@@ -1573,6 +1585,10 @@ footer {
         width: 72vw;
         min-height: 72vw;
         transition: margin 1s;
+    }
+
+    .slider-item__fast {
+        transition: margin .2s;
     }
 
     .slider-item + .slider-item {

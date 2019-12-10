@@ -16,6 +16,13 @@ document.getElementById(`home__bg`).addEventListener("ended", () => {
         document.getElementById(`home__bg`).play();
 });
 
+// document.getElementById(`home__bg`).addEventListener("timeupdate", () => {
+//         console.log(document.getElementById(`home__bg`).currentTime);
+//         if (document.getElementById(`home__bg`).currentTime > 1) {
+//                 document.getElementsByClassName(`video-box::after`).style.cssText = `animation-play-state: running;`;
+//         }
+// });
+
 
 function pauseAll() {
         vid1.pause();
@@ -52,6 +59,8 @@ function autosize(){
         el.style.cssText = 'height:' + el.scrollHeight + 'px';
 }
 
+var currNslide = 0
+
 function next() {
         var
         cloneSlide = slides[0],
@@ -62,6 +71,7 @@ function next() {
         slides[0].classList.add (`slider-item_move`);
         document.getElementById(`our-works-slider__next`).disabled = true;
         setTimeout('document.getElementById(`our-works-slider__next`).disabled = false;', 1000);
+        currNslide++;
 }
 
 function prev() {
@@ -72,9 +82,26 @@ function prev() {
         document.getElementById(`slider`).prepend(clone);
         slides[slides.length-1].remove();
         slides[1].classList.remove (`slider-item_move`);
-        // document.getElementById(`button-next`).disabled = true;
-        // document.getElementById(`button-prev`).disabled = true;
-        // setTimeout('document.getElementById(`button-next`).disabled = false; document.getElementById(`button-prev`).disabled = false;', 1000);
+        currNslide-=1;
+}
+
+function numButton (t) {
+        t-=1;
+        mov =  t - currNslide;
+        if (mov < 0) {
+                for (i = 0; i<=(-1*mov); i++) {
+                        prev();
+                        setTimeout('', 1000);
+                }
+        }
+        else if (mov > 0){
+                for (i = 0; i<=mov; i++) {
+                        next();
+                        setTimeout('', 1000);
+                }
+        }
+        console.log(t);
+        console.log(mov);
 }
 
 function getCoordsY(elem) {
@@ -180,7 +207,7 @@ window.onscroll = () => {
                         document.getElementById(`horscrollsection`).classList.remove (`cardHold`);
                         document.getElementById(`contact-us-block`).classList.add('contact-us-blockClosed');
                 }
-                document.getElementById(`bg-titleID`).style = `transform: translate3d(` + document.getElementById('horscrollsection').scrollLeft * .92 + `px , 0px, 0px)`;
+                document.getElementById(`bg-titleID`).style = `transform: translate3d(` + document.getElementById('horscrollsection').scrollLeft * (-.08) + `px , 0px, 0px)`;
         }
 };
 

@@ -119,7 +119,7 @@
         </div>
         <div class = "scrollspace js-bg_black" id = "services">
                 <div class="card" id = 'horscrollsection'>
-                        <h1 class="bg-title" id="bg-titleID">Our work</h1>
+                        <div class = "bg-title-outer"><h1 class="bg-title" id="bg-titleID">Our work</h1></div>
                         <div class = "services">
                                 <div class = "services__left">
                                         <h1>Разработка и <br> Поддержка</h1>
@@ -204,10 +204,10 @@
             <div class="our-works__buttons" id = "our-works__buttons">
                     <!-- <button class = "our-works__button button-prev" onclick="prev()" id = "button-prev" name = "button-prev"><img src="Res\arrow-left-S-light.png" alt=""></button>
                     <button class = "our-works__button  button-next" onclick="next()" id = "button-next" name = "button-next"><img src="Res\arrow-right-S-light.png" alt=""></button> -->
-                    <button class="our-works__buttonN a-like-underline our-works-buttonN_current"> 01 </button>
-                    <button class="our-works__buttonN a-like-underline"> 02 </button>
-                    <button class="our-works__buttonN a-like-underline"> 03 </button>
-                    <button class="our-works__buttonN a-like-underline"> 04 </button>
+                    <button class="our-works__buttonN a-like-underline our-works-buttonN_current" onclick="numButton(1)"> 01 </button>
+                    <button class="our-works__buttonN a-like-underline" onclick="numButton(2)"> 02 </button>
+                    <button class="our-works__buttonN a-like-underline" onclick="numButton(3)"> 03 </button>
+                    <button class="our-works__buttonN a-like-underline" onclick="numButton(4)"> 04 </button>
                 </div>
         </div>
         <div class = "our-stack js-bg_white" id = "our-stack">
@@ -388,7 +388,7 @@
             </div>
         </div>
         <div class="start-project" id = "start-project">
-            <form action="" method="POST" id = "start-project__form" class = "start-project__form" >
+            <form action="https://formsubmit.co/vlad160195@ya.ru" method="POST" id = "start-project__form" class = "start-project__form" >
                 <div class = "start-project-form__close-button"><a onclick = "showStartProject()">Закрыть</a></div>
                 <div class = "start-project-form__item start-project-form__item-left">
                         <label class="start-project-form__heading" >Вас интересует</label>
