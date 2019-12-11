@@ -210,8 +210,47 @@ function videoCheckAndPlay(vid) {
         if (vid.readyState != 0) {vid.play()}
 }
 
+function navHeaderInverse(act) {
+        if (act == `remove`) {document.getElementById(`header`).classList.remove (`nav-headerInverse`)}
+        else if (act == `add`){document.getElementById(`header`).classList.add (`nav-headerInverse`)}
+}
+
+// function getBgCoords() {
+//         let     a = document.getElementsByClassName(`js-bg_black`),
+//                 b = document.getElementsByClassName(`js-bg_white`),
+//                 coordsA = [],
+//                 coordsB = [],
+//                 bgCoords = [],
+//                 last;
+//         for (i=0;i<a.length;i++) {
+//                 coordsA.push(getCoordsY(a[i])+sсrolled);
+//         }
+//         for (i=0;i<b.length;i++) {
+//                 coordsB.push(getCoordsY(b[i])+sсrolled);
+//         }
+//         let s = coordsA.length+coordsB.length;
+//         for (i=0;i<s;i++){
+//                 if (coordsA[0]<coordsB[0])
+//                         {
+//                                 if (last != `a`) {bgCoords.push(coordsA[0])}
+//                                 coordsA.shift();
+//                                 last = `a`;
+//                         }
+//                 else if (coordsA[0]>coordsB[0])
+//                         {
+//                                 if (last != `b`) {bgCoords.push(coordsB[0])}
+//                                 coordsB.shift();
+//                                 last = `b`;
+//                         }
+//         }
+//         return (bgCoords);
+
+// }
+// var bgCoordsList = getBgCoords();
+
 var     vid1Rect = vid1.getBoundingClientRect(),
-        vid2Rect = vid2.getBoundingClientRect();
+        vid2Rect = vid2.getBoundingClientRect(),
+        animHomeEndPassed = false;
 
 window.onscroll = () => {
         vid1Rect = vid1.getBoundingClientRect();
@@ -226,7 +265,29 @@ window.onscroll = () => {
         sсrolled = window.scrollY;
         scrolledX = sсrolled - xpos-stop;
 
-        if ((getCoordsY(document.getElementById(`home__end`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
+        let scrolledPercent = (sсrolled)/window.innerHeight*100;
+
+        if (scrolledPercent>50) {
+                animHomeEndPassed = true;
+                document.getElementById(`home-end__tagline`).style = `width:100%;`;
+                document.getElementById(`home__end`).style = `background-color: ` + `rgb(0,0,0);`;
+        }
+        if (animHomeEndPassed == false)
+        {
+                let bg = Math.round(255-(scrolledPercent/100)*255*10/6);
+                document.getElementById(`home-end__tagline`).style = `width:` + (scrolledPercent +50) + `%;`;
+                document.getElementById(`home__end`).style = `background-color: ` + `rgb(`+bg+`,`+bg+`,`+bg+`);`;
+        }
+
+        if (sсrolled>window.innerHeight/2) {
+                document.getElementById(`text-animation-onscroll_01`).classList.remove(`paused`);
+        }
+
+        if (sсrolled>window.innerHeight*1.4) {
+                document.getElementById(`text-animation-onscroll_02`).classList.remove(`paused`);
+        }
+
+        if ((getCoordsY(document.getElementById(`about`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
         || (getCoordsY(document.getElementById(`our-stack`)) <= 50 && getCoordsY(document.getElementById(`our-vacancy`)) > 50 )
         || (getCoordsY(document.getElementById(`footer`)) <= 50)) {
         document.getElementById(`header`).classList.add (`nav-headerInverse`);

@@ -91,14 +91,21 @@
                     <span class = "home__title t5" id = "t5">ВЕБ РАЗРАБОТКА, ДИЗАЙН И МАРКЕТИНГ</span>
             </div>
         </div>
-        <div class = "home__end js-bg_white" id = "home__end">
-            <div class = "home-end__tagline">
-                    <h1>В точности, как вы представляли свой бренд, но намного <br> больше.</h1>
+        <div class = "home__end js-bg_black" id = "home__end">
+            <div class = "home-end__tagline" id  = "home-end__tagline">
+                <div>
+                    <div id = "text-animation-onscroll_01" class = "text-animation-onscroll paused">
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom">В точности, как вы </h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom">представляли свой </h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s1">бренд, <span class = "text-underline-left2right">но намного</span></h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2"> <span class = "text-underline-left2right">больше.</span></h1></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class = "contact-us-block contact-us-blockClosed" id = "contact-us-block">
             <div class = "contact-us-blockTop">
-                <span>Начать проект с majorweb</span>
+                <span onclick="showStartProject()">Начать проект с majorweb</span>
             </div>
             <div class = "contact-us-blockBottom">
                 <div>
@@ -112,10 +119,14 @@
             </div>
         </div>
         </div>
-        <div class = "about" id = "about">
+        <div class = "about js-bg_white" id = "about">
+                <div id = "text-animation-onscroll_02" class = "text-animation-onscroll paused">
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom">Majorweb — это независимая </h2></div>
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom s1">студия, которая помогает </h2></div>
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom s2">раскрыть и донести</h2></div>
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom s3">ценность продукта.</h2></div>
+                </div>
                 <h1>Мы создаем современный контент для брендов со смыслом.</h1>
-                <h2>Majorweb — это независимая студия, которая помогает раскрыть и донести &nbsp ценность продукта.</h2>
-                <!-- <h3>Вниз</h3> -->
         </div>
         <div class = "scrollspace js-bg_black" id = "services">
                 <div class="card" id = 'horscrollsection'>
@@ -430,7 +441,7 @@
                     </div>
                 </div>
                 <div class = "start-project-form__item-button">
-                    <button type="submit">
+                    <button type="submit" class="a-like-underline">
                         Отправить
                     </button>
                 </div>

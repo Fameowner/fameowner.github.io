@@ -303,8 +303,10 @@ header {
 .bg-blur {
     display: none;
     position: fixed;
-    height: 100vh;
-    width: 100vw;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(0,0,0,.7);
     /* backdrop-filter: blur(4px); */
     z-index: 9;
@@ -499,21 +501,105 @@ header {
 
 .home-end__tagline {
     background-color: #010101;
-    width: 58.75%;
-    height: 60vh;
+    width: 35%;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 100%;
+    transition: all .11s;
 }
 
+.home-end__tagline>div {
+    display: flex;
+    justify-content: center;
+}
+
+
 .home-end__tagline h1 {
-    padding: 0px 11vw;
     font-style: normal;
     font-weight: 200;
     font-size: 3.75vw;
     line-height: .98;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+    transition: all .11s;
+}
+
+.text-from-bottom-outter {
+    overflow: hidden;
+}
+
+.text-from-bottom.s4 {
+    animation-delay: 1.2s;
+}
+.text-from-bottom.s3 {
+    animation-delay: .9s;
+}
+
+.text-from-bottom.s2 {
+    animation-delay: .6s;
+}
+.text-from-bottom.s1 {
+    animation-delay: .3s;
+}
+
+.text-from-bottom {
+    transform: translateY(100%);
+    animation: text-from-bottom-anim 1s ease-in-out forwards;
+}
+
+
+.text-animation-onscroll.paused .text-from-bottom, .text-animation-onscroll.paused .text-underline-left2right,.text-animation-onscroll.paused .text-underline-left2right::after{
+    animation-play-state: paused, paused;
+}
+
+.text-underline-left2right {
+    position: relative;
+    animation: forwards;
+    opacity: 0;
+    animation: text-underline-opacity-anim 2s ease-in-out .7s forwards;
+}
+
+@keyframes text-underline-opacity-anim {
+    0%{
+
+    }
+    100%{
+        opacity: 100%;
+    }
+
+}
+
+.text-underline-left2right::after{
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    height: 1px;
+    background-color: #fff;
+    right: 100%;
+    animation: text-underline-left2right-anim 1.5s ease-in-out 1.5s forwards;
+}
+
+@keyframes text-underline-left2right-anim {
+    0% {
+
+    }
+    100% {
+        right: 0%;
+    }
+}
+
+
+
+@keyframes text-from-bottom-anim{
+    0% {
+
+    }
+    100% {
+        transform: translateY(0%);
+    }
 }
 
 
@@ -521,7 +607,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 120vh;
+    height: 100vh;
     background-color: #fff;
     z-index: 4;
 }
@@ -671,7 +757,6 @@ header {
 
 .services__right {
     flex-basis: 50%;
-    transform: scale(.75);
 }
 
 .services__rightItem {
@@ -681,6 +766,7 @@ header {
     width: 100%;
     width: 50vw;
     overflow: hidden;
+    transform: scale(.75) translateX(-16%);
 }
 
 .services__rightItem video {
@@ -750,7 +836,7 @@ header {
     justify-content: space-between;
     border-top: 1px solid #808080;
     border-bottom: 1px solid #808080;
-    width: 75%;
+    width: 70%;
     padding: 1%;
 }
 
@@ -1252,21 +1338,21 @@ footer {
 }
 
 .start-project {
-    display: none;
     position: fixed;
-    max-height: 0px;
-    max-width: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    z-index: 15;
     background: rgba(136, 136, 136, 0.5);
-    z-index: 0;
+    overflow: hidden;
+    transform: translateX(-100%) scale(0);
 }
 
 .startProject_opened{
-    display: inherit;
-    z-index: 15;
-    width: 100vw;
-    height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
+    transform: translateX(0)scale(1);
 }
 
 .start-project-form__close-button {
@@ -1282,14 +1368,13 @@ footer {
 }
 
 .start-project__form {
-    position: fixed;
+    position: relative;
     display: flex;
-    top: 5%;
     left: 5%;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 16;
-    width: 80%;
+    width: 80vw;
     padding: 5vh 5vw;
     flex-wrap: wrap;
     border-radius: 10px;
@@ -1465,7 +1550,6 @@ footer {
     color: #FFFFFF;
     background-color: transparent;
     cursor: pointer;
-    border-bottom: 1px solid #FFFFFF;
 }
 
 .mob {
