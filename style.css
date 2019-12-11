@@ -1061,14 +1061,13 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 30vw;
     width: 40vw;
     min-height: 40vw;
     transition: all 1s ease-out;
 }
 
 .slider-item-fast {
-    transition: all .3s ease-in-out;
+    transition: all .3s steps(40);
 }
 
 .slider-item + .slider-item {

@@ -19,7 +19,7 @@ document.getElementById(`home__bg`).addEventListener("ended", () => {
 // document.getElementById(`home__bg`).addEventListener("timeupdate", () => {
 //         console.log(document.getElementById(`home__bg`).currentTime);
 //         if (document.getElementById(`home__bg`).currentTime > 1) {
-//                 document.getElementsByClassName(`video-box::after`).style.cssText = `animation-play-state: running;`;
+//                 
 //         }
 // });
 
@@ -89,7 +89,7 @@ function nextButton(){
         next();
         disableButtons();
         setTimeout(() => {
-                activateButtons(); 
+                activateButtons();
         }, 900);
 }
 
@@ -107,8 +107,8 @@ function next() {
 }
 
 function prev() {
-        var
-        cloneSlide = slides[slides.length-1],
+        var cloneSlide,clone;
+        cloneSlide = slides[slides.length-1];
         clone = cloneSlide.cloneNode(true);
         clone.classList.add (`slider-item_move`);
         document.getElementById(`slider`).prepend(clone);
@@ -119,6 +119,7 @@ function prev() {
 }
 
 function numButton (t) {
+        var delay = 300;
         t-=1;
         mov =  t - currNslide;
         if (mov < -1) {
@@ -127,15 +128,17 @@ function numButton (t) {
                         slides[i].classList.add(`slider-item-fast`);
                 }
                 prev();
-                let timerId = setInterval(() => prev(), 300);
-                setTimeout(() => {
-                        clearInterval(timerId); 
+                let timerId = setInterval(() => prev(), delay);
+                setTimeout(() =>
+                {
+                        clearInterval(timerId);
                         prev();
                         for (i=0;i<slides.length;i++){
                                 slides[i].classList.remove(`slider-item-fast`);
-                        } 
-                }, (-mov-1)*299);
-                setTimeout(() => {activateButtons();}, (-mov)*299+500);
+                        }
+                },
+                (-mov-1)*(delay-1));
+                setTimeout(() => {activateButtons();}, (-mov)*(delay-1)+500);
         }
         else if (mov > 1) {
                 disableButtons();
@@ -143,19 +146,23 @@ function numButton (t) {
                         slides[i].classList.add(`slider-item-fast`);
                 }
                 next();
-                let timerId = setInterval(() => next(), 300);
+                let timerId = setInterval(() => next(), delay);
                 setTimeout(() => {
-                        clearInterval(timerId); 
+                        clearInterval(timerId);
                         next();
                         for (i=0;i<slides.length;i++){
                                 slides[i].classList.remove(`slider-item-fast`);
-                        } 
-                }, (mov-1)*299);
-                setTimeout(() => {activateButtons();}, (mov)*299+500);
+                        }
+                }, (mov-1)*(delay-1));
+                setTimeout(() => {activateButtons();}, (mov)*(delay-1)+500);
         } else if (mov == 1) {
+                disableButtons();
                 next();
+                setTimeout(() => {activateButtons();}, 800)
         } else if (mov == -1) {
+                disableButtons();
                 prev();
+                setTimeout(() => {activateButtons();}, 800)
         }
 }
 
@@ -298,17 +305,3 @@ document.getElementById(`footer`).onmousemove = (m) => {
 document.getElementById(`footer`).onmouseleave = (m) => {
         setTimeout(`document.getElementById('helloBox').classList.remove ('BoxShow');`,250);
 }
-
-
-
-// document.getElementById(`our-vacancy__bottom-ID`).onmousemove = (m) => {
-//         VacancyCenter = document.getElementById(`our-vacancy__bottom-ID`).getBoundingClientRect();
-//                 document.getElementById('VacancyBox1').classList.add ('BoxShow');
-//                 document.getElementById(`VacancyBox1`).style.left = VacancyCenter.left + VacancyCenter.width/2 + (m.clientX - (VacancyCenter.left + VacancyCenter.width/2)) *.1 + `px`;
-//                 document.getElementById(`VacancyBox1`).style.top = VacancyCenter.top + VacancyCenter.height/2 + (m.clientY -(VacancyCenter.top + VacancyCenter.height/2))* .05 +  sсrolled + `px`;
-// }
-
-
-// document.getElementById(`our-vacancy__bottom-ID`).onmouseleave = (m) => {
-//         setTimeout(`document.getElementById('VacancyBox1').classList.remove ('BoxShow');`,250);
-// }
