@@ -119,9 +119,9 @@
         </div>
         <div class = "scrollspace js-bg_black" id = "services">
                 <div class="card" id = 'horscrollsection'>
-                        <h1 class="bg-title" id="bg-titleID">Our work</h1>
+                        <div class = "bg-title-outer"><h1 class="bg-title" id="bg-titleID">Our work</h1></div>
                         <div class = "services">
-                                <div class = "services__left">
+                                <div class = "services__left" id = "services__left_1">
                                         <h1>Разработка и <br> Поддержка</h1>
                                         <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
                                         <ul>
@@ -138,7 +138,7 @@
                                 </div>
                             </div>
                             <div class = "services">
-                                    <div class = "services__left">
+                                    <div class = "services__left" id = "services__left_2">
                                             <h1>Дизайн и <br> Креатив</h1>
                                             <h2>Наличие разработчиков и дизайнеров под одной крышей гарантирует, что дизайн безупречно соответствует техническим требованиям и идет в ногу со временем</h2>
                                             <ul>
@@ -155,7 +155,7 @@
                                     </div>
                                 </div>
                                 <div class = "services">
-                                    <div class = "services__left">
+                                    <div class = "services__left" id = "services__left_3">
                                             <h1>Консалтинг и <br>Аналитика</h1>
                                             <h2>Мы не оставим Вас одних, стоя под дождем с сырой идеей. Благодаря нашей производственной команде, мы будем с вами на всем пути к готовой продукции.</h2>
                                             <ul>
@@ -174,40 +174,38 @@
                 </div>
         </div>
         <div class = "our-works js-bg_black" id = "our-works">
-            <button class = "our-works-slider__next" onclick="next()" id = "our-works-slider__next"></button>
+            <button class = "our-works-slider__next" onclick="nextButton()" id = "our-works-slider__next"></button>
             <div class = "slider" id = "slider">
                 <div class="slider-item slider-item_move" id = "slider-item__0">
-                    <h2>Зоомагазин FunnyBunny</h2>
+                    <h2>04 Зоомагазин FunnyBunny</h2>
                     <a>
                         <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
                     </a>
                 </div>
                 <div class="slider-item" id = "slider-item__1">
-                    <h2>tdnpo.ru</h2>
+                    <h2>01 tdnpo.ru</h2>
                     <a>
                         <img src="Res\majorpack.jpg" alt="majorpack">
                     </a>
                 </div>
                 <div class="slider-item" id = "slider-item__2">
-                    <h2>Зоомагазин FunnyBunny</h2>
+                    <h2>02 Зоомагазин FunnyBunny</h2>
                     <a>
                         <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
                     </a>
                 </div>
                 <div class="slider-item" id = "slider-item__3">
-                    <h2>tdnpo.ru</h2>
+                    <h2>03 tdnpo.ru</h2>
                     <a>
                         <img src="Res\majorpack.jpg" alt="majorpack">
                     </a>
                 </div>
             </div>
             <div class="our-works__buttons" id = "our-works__buttons">
-                    <!-- <button class = "our-works__button button-prev" onclick="prev()" id = "button-prev" name = "button-prev"><img src="Res\arrow-left-S-light.png" alt=""></button>
-                    <button class = "our-works__button  button-next" onclick="next()" id = "button-next" name = "button-next"><img src="Res\arrow-right-S-light.png" alt=""></button> -->
-                    <button class="our-works__buttonN a-like-underline our-works-buttonN_current"> 01 </button>
-                    <button class="our-works__buttonN a-like-underline"> 02 </button>
-                    <button class="our-works__buttonN a-like-underline"> 03 </button>
-                    <button class="our-works__buttonN a-like-underline"> 04 </button>
+                    <button class="our-works__buttonN a-like-underline our-works-buttonN_current" onclick="numButton(1)"> 01 </button>
+                    <button class="our-works__buttonN a-like-underline" onclick="numButton(2)"> 02 </button>
+                    <button class="our-works__buttonN a-like-underline" onclick="numButton(3)"> 03 </button>
+                    <button class="our-works__buttonN a-like-underline" onclick="numButton(4)"> 04 </button>
                 </div>
         </div>
         <div class = "our-stack js-bg_white" id = "our-stack">
@@ -287,7 +285,7 @@
                 </div>
             </div>
             <div class = "our-stack__item"> <h2>Образ вашей компании в Интернете - лицо вашего бренда. Красивый дизайн и хорошо написанный код сделают ваших клиентов счастливее. Лояльность клиентов способствует увеличению продаж и развитию вашего бизнеса.</h2> </div>
-            <div class = "our-stack__item"> <a class = "a-like-underline black" href = "">Станьте первыми.</a></div>
+            <div class = "our-stack__item"> <a class = "a-like-underline black" onclick = "showStartProject()">Станьте первыми.</a></div>
         </div>
         <div class = "our-vacancy js-bg_black" id = "our-vacancy">
             <div class = "our-vacancy_top">
@@ -388,7 +386,7 @@
             </div>
         </div>
         <div class="start-project" id = "start-project">
-            <form action="" method="POST" id = "start-project__form" class = "start-project__form" >
+            <form action="https://formsubmit.co/vlad160195@ya.ru" method="POST" id = "start-project__form" class = "start-project__form" >
                 <div class = "start-project-form__close-button"><a onclick = "showStartProject()">Закрыть</a></div>
                 <div class = "start-project-form__item start-project-form__item-left">
                         <label class="start-project-form__heading" >Вас интересует</label>
