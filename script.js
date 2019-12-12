@@ -7,16 +7,18 @@ pagewidth = window.innerWidth,
 stop = 500,
 vid1 = document.getElementById('vid1'),
 vid2 = document.getElementById('vid2'),
-vid3 = document.getElementById('vid3');
+vid3 = document.getElementById('vid3'),
+vidBG =document.getElementById(`home__bg`),
+bgCoordsList = getBgCoords();
 
 // document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 
-document.getElementById(`home__bg`).addEventListener("ended", () => {
+vidBG.addEventListener("ended", () => {
         document.getElementById(`home__bg`).currentTime = 16;
         document.getElementById(`home__bg`).play();
 });
 
-document.getElementById(`home__bg`).addEventListener("timeupdate", () => {
+vidBG.addEventListener("timeupdate", () => {
         if (document.getElementById(`home__bg`).currentTime > 9.5) {
                 document.getElementById(`video-box_ID`).classList.add(`play`);
                 document.getElementById(`home__services`).classList.add(`play`);
@@ -184,10 +186,22 @@ function bottomSelectorClick(t) {
         t.classList.add(`our-vacancy__bottom-selector_selected`);
         let vacList = document.getElementsByClassName(`our-vacancy__bottom-item`);
         for (i=0;i<vacList.length;i++){
-                vacList[i].classList.add(`hidden`);
+                vacList[i].style = `opacity: 0`
         }
-        vacList[(Number(t.text)-1)].classList.remove(`hidden`);
+        setTimeout(()=> {
+                for (i=0;i<vacList.length;i++){
+                        vacList[i].classList.add(`hidden`);
+                }
+                vacList[(Number(t.text)-1)].classList.remove(`hidden`);
+        }
+        ,500)
+        setTimeout(()=> {
+
+                vacList[(Number(t.text)-1)].style = `opacity: 1`
+        }
+        ,1000)
 }
+
 
 window.addEventListener(`resize`, () => {
         if (document.getElementById(`horscrollsection`).classList.contains(`cardHold`)) {
@@ -207,6 +221,7 @@ window.addEventListener(`resize`, () => {
                 pagewidth = window.innerWidth;
         }
         bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
+        bgCoordsList = getBgCoords();
         // document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 });
 
@@ -254,7 +269,6 @@ function getBgCoords() {
         return (bgCoords);
 }
 
-var bgCoordsList = getBgCoords();
 
 function navHeaderInverseControl(arg, curY)
 {
@@ -285,28 +299,45 @@ window.onscroll = () => {
         sсrolled = window.scrollY;
         scrolledX = sсrolled - xpos-stop;
 
-        let scrolledPercent = (sсrolled)/window.innerHeight*100;
-
         navHeaderInverseControl(bgCoordsList,sсrolled);
 
-        if (scrolledPercent>50) {
-                animHomeEndPassed = true;
-                document.getElementById(`home-end__tagline`).style = `width:100%;`;
-                document.getElementById(`home__end`).style = `background-color: ` + `rgb(0,0,0);`;
-        }
-        if (animHomeEndPassed == false)
-        {
-                let bg = Math.round(255-(scrolledPercent/100)*255*10/6);
-                document.getElementById(`home-end__tagline`).style = `width:` + (scrolledPercent +50) + `%;`;
-                document.getElementById(`home__end`).style = `background-color: ` + `rgb(`+bg+`,`+bg+`,`+bg+`);`;
-        }
+        let scrolledPercent = (sсrolled)/window.innerHeight*100;
 
-        if (sсrolled>window.innerHeight/2) {
+        if (document.getElementById(`text-animation-onscroll_01`).getBoundingClientRect().top<window.innerHeight-50) {
                 document.getElementById(`text-animation-onscroll_01`).classList.remove(`paused`);
+                document.getElementById(`home-end__tagline`).classList.remove(`paused`);
         }
 
-        if (sсrolled>window.innerHeight*1.4) {
+        if (document.getElementById(`text-animation-onscroll_02`).getBoundingClientRect().top<window.innerHeight-50) {
                 document.getElementById(`text-animation-onscroll_02`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`text-animation-onscroll_03`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`text-animation-onscroll_03`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`text-animation-onscroll_04`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`text-animation-onscroll_04`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`text-animation-onscroll_05`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`text-animation-onscroll_05`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`become-first`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`become-first`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`our-vacancy-01`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`our-vacancy-01`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`footer__top`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`footer__top`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`slider-item__1`).getBoundingClientRect().top<window.innerHeight*(2/3)) {
+                document.getElementById(`slider-item__1`).classList.remove(`moved-right`);
         }
 
         if (window.innerWidth >  699) {
@@ -363,17 +394,17 @@ document.getElementById("slider").ondragstart = () => {
         return(false);
 }
 
-document.getElementById(`footer-top__box-space`).onmouseover = (m) => {
+document.getElementById(`footer__top`).onmouseover = (m) => {
         document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
 }
 
-document.getElementById(`footer-top__box-space`).onmouseleave = (m) => {
+document.getElementById(`footer__top`).onmouseleave = (m) => {
         document.getElementById(`helloBox`).src = "";
 }
 
 document.getElementById(`footer`).onmousemove = (m) => {
         document.getElementById('helloBox').classList.add ('BoxShow');
-        footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect(),
+        let footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect();
         document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/2 + (m.clientX - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
         document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/2 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
 }

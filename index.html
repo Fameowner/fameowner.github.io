@@ -61,19 +61,6 @@
             </div>
         </header>
         <div class = "bg-blur" id = "bg-blur"></div>
-        <!-- <div class = "home js-bg_black" id = "home">
-            <div class = "marqueeBG" will-change id = "marqueeBG"> 
-                <span>MAJORWEB</span>
-            </div>
-            <div class = "homeLeft">
-                <div class = "homeLeftText">
-                        <h1>В точности, как вы представляли свой бренд, но намного больше.</h1>
-                        <h2>ВЕБ РАЗРАБОТКА, ДИЗАЙН И МАРКЕТИНГ</h2>
-                </div>
-            </div>
-            <div class = "homeRight">
-            </div>
-        </div> -->
         <div class="home js-bg_black">
             <div class = "home__coords">
                     <span class = "home__title t1">MAJORWEB/DIGITAL<br> </span>
@@ -92,13 +79,13 @@
             </div>
         </div>
         <div class = "home__end js-bg_black" id = "home__end">
-            <div class = "home-end__tagline" id  = "home-end__tagline">
+            <div class = "home-end__tagline paused" id  = "home-end__tagline">
                 <div>
                     <div id = "text-animation-onscroll_01" class = "text-animation-onscroll paused">
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom">В точности, как вы </h1></div>
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom">представляли свой </h1></div>
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s1">бренд, <span class = "text-underline-left2right">но намного</span></h1></div>
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2"> <span class = "text-underline-left2right">больше.</span></h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s1">В точности, как вы </h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2">представляли свой </h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s3">бренд, <span class = "text-underline-left2right">но намного</span></h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s4"> <span class = "text-underline-left2right">больше.</span></h1></div>
                     </div>
                 </div>
             </div>
@@ -193,7 +180,7 @@
                         <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
                     </a>
                 </div>
-                <div class="slider-item" id = "slider-item__1">
+                <div class="slider-item moved-right" id = "slider-item__1">
                     <h2>01 tdnpo.ru</h2>
                     <a>
                         <img src="Res\majorpack.jpg" alt="majorpack">
@@ -220,8 +207,19 @@
                 </div>
         </div>
         <div class = "our-stack js-bg_white" id = "our-stack">
-            <div class = "our-stack__item">
-                <h1>В нашей работе мы используем новейшие технологии и современный подход.</h1>
+            <div class = "our-stack__item header text-animation-onscroll paused" id = "text-animation-onscroll_03">
+                <div class="text-from-bottom-outter">
+                    <h1 class = "text-from-bottom s1">В нашей работе мы</h1>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h1 class = "text-from-bottom s2">используем новейшие</h1>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h1 class = "text-from-bottom s3">технологии и современный</h1>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h1 class = "text-from-bottom s4">подход.</h1>
+                </div>
             </div>
             <div class = "our-stack__item">
                 <div class = "our-stack__item-list">
@@ -295,18 +293,35 @@
                     </div>
                 </div>
             </div>
-            <div class = "our-stack__item"> <h2>Образ вашей компании в Интернете - лицо вашего бренда. Красивый дизайн и хорошо написанный код сделают ваших клиентов счастливее. Лояльность клиентов способствует увеличению продаж и развитию вашего бизнеса.</h2> </div>
-            <div class = "our-stack__item"> <a class = "a-like-underline black" onclick = "showStartProject()">Станьте первыми.</a></div>
+            <div class = "our-stack__item header text-animation-onscroll paused" id = "text-animation-onscroll_04">
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s1">Образ вашей компании в Интернете - лицо вашего бренда. Красивый</h2>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s2">дизайн и хорошо написанный код сделают ваших клиентов счастливее.</h2>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s3">Лояльность клиентов способствует увеличению продаж и развитию</h2>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s4">вашего бизнеса.</h2>
+                </div>
+            </div>
+            <div class = "our-stack__item">
+                <a class = "a-like-underline black text-from-opacity paused" onclick = "showStartProject()" id = "become-first">Станьте первыми.</a>
+            </div>
         </div>
         <div class = "our-vacancy js-bg_black" id = "our-vacancy">
-            <div class = "our-vacancy_top">
-                <ul>
-                    <li>Мы всегда ищем новые таланты, </li>
-                    <li>свяжитесь с нами, если Вы:</li>
-                </ul>
+            <div class = "our-vacancy_top text-animation-onscroll paused" id = "text-animation-onscroll_05">
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s1 first">Мы всегда ищем новые таланты,</h2>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s2">свяжитесь с нами, если Вы:</h2>
+                </div>
             </div>
             <div class = "our-vacancy__bottom" id = "our-vacancy__bottom-ID">
-                <div class = "our-vacancy__bottom-item" id = "our-vacancy-01">
+                <div class = "our-vacancy__bottom-item paused" id = "our-vacancy-01">
                     <div class = "our-vacancy__bottom-header">Front—end разработчик</div>
                     <div class = "our-vacancy__bottom-description">
                         <div class = "our-vacancy__bottom-description-duties c-our-vacancy__bottom-description-paddings">
@@ -345,7 +360,7 @@
                         </div>
                     </div>
                 </div>
-                <div class = "our-vacancy__bottom-item" id = "our-vacancy-02">
+                <div class = "our-vacancy__bottom-item hidden" id = "our-vacancy-02">
                     <div class = "our-vacancy__bottom-header">Back-end разработчик</div>
                         <div class = "our-vacancy__bottom-description">
                         <div class = "our-vacancy__bottom-description-duties c-our-vacancy__bottom-description-paddings">
@@ -446,11 +461,13 @@
             </form>
         </div>
         <footer class = "js-bg_white" id = "footer">
-            <div class = "footer__top" id = "footer__top">
-                <ul id = "footer-top__box-space">
-                    <li>Our major is web,</li>
-                    <li>tell us more about yours.</li>
-                </ul>
+            <div class = "footer__top paused text-animation-onscroll" id = "footer__top">
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s1">Our major is web,</h2>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s2">tell us more about yours.</h2>
+                </div>
             </div>
             <div  class = "footer__bottom">
                 <div class = "footer-bottom__left">
