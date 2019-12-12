@@ -9,19 +9,19 @@ vid1 = document.getElementById('vid1'),
 vid2 = document.getElementById('vid2'),
 vid3 = document.getElementById('vid3');
 
-document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
+// document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 
 document.getElementById(`home__bg`).addEventListener("ended", () => {
         document.getElementById(`home__bg`).currentTime = 16;
         document.getElementById(`home__bg`).play();
 });
 
-// document.getElementById(`home__bg`).addEventListener("timeupdate", () => {
-//         console.log(document.getElementById(`home__bg`).currentTime);
-//         if (document.getElementById(`home__bg`).currentTime > 1) {
-//                 
-//         }
-// });
+document.getElementById(`home__bg`).addEventListener("timeupdate", () => {
+        if (document.getElementById(`home__bg`).currentTime > 9.5) {
+                document.getElementById(`video-box_ID`).classList.add(`play`);
+                document.getElementById(`home__services`).classList.add(`play`);
+        }
+});
 
 
 function pauseAll() {
@@ -177,12 +177,16 @@ function randomInteger(min, max) {
 }
 
 function bottomSelectorClick(t) {
-        var b = document.getElementsByClassName(`our-vacancy__bottom-selector`);
+        let b = document.getElementsByClassName(`our-vacancy__bottom-selector`);
         for(i = 0; i<b.length;i++){
                 b[i].classList.remove(`our-vacancy__bottom-selector_selected`);
         }
         t.classList.add(`our-vacancy__bottom-selector_selected`);
-        document.getElementById(`our-vacancy__bottom-ID`).scrollTo({left: document.getElementById(`our-vacancy__bottom-ID`).offsetWidth * (Number(t.text)-1), behavior: 'smooth' });
+        let vacList = document.getElementsByClassName(`our-vacancy__bottom-item`);
+        for (i=0;i<vacList.length;i++){
+                vacList[i].classList.add(`hidden`);
+        }
+        vacList[(Number(t.text)-1)].classList.remove(`hidden`);
 }
 
 window.addEventListener(`resize`, () => {
@@ -203,7 +207,7 @@ window.addEventListener(`resize`, () => {
                 pagewidth = window.innerWidth;
         }
         bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
-        document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
+        // document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 });
 
 function videoCheckAndPlay(vid) {
@@ -215,38 +219,54 @@ function navHeaderInverse(act) {
         else if (act == `add`){document.getElementById(`header`).classList.add (`nav-headerInverse`)}
 }
 
-// function getBgCoords() {
-//         let     a = document.getElementsByClassName(`js-bg_black`),
-//                 b = document.getElementsByClassName(`js-bg_white`),
-//                 coordsA = [],
-//                 coordsB = [],
-//                 bgCoords = [],
-//                 last;
-//         for (i=0;i<a.length;i++) {
-//                 coordsA.push(getCoordsY(a[i])+sсrolled);
-//         }
-//         for (i=0;i<b.length;i++) {
-//                 coordsB.push(getCoordsY(b[i])+sсrolled);
-//         }
-//         let s = coordsA.length+coordsB.length;
-//         for (i=0;i<s;i++){
-//                 if (coordsA[0]<coordsB[0])
-//                         {
-//                                 if (last != `a`) {bgCoords.push(coordsA[0])}
-//                                 coordsA.shift();
-//                                 last = `a`;
-//                         }
-//                 else if (coordsA[0]>coordsB[0])
-//                         {
-//                                 if (last != `b`) {bgCoords.push(coordsB[0])}
-//                                 coordsB.shift();
-//                                 last = `b`;
-//                         }
-//         }
-//         return (bgCoords);
+function getBgCoords() {
+        let     a = document.getElementsByClassName(`js-bg_black`),
+                b = document.getElementsByClassName(`js-bg_white`),
+                coordsA = [],
+                coordsB = [],
+                bgCoords = [],
+                last;
+        for (i=0;i<a.length;i++) {
+                coordsA.push(getCoordsY(a[i])+sсrolled);
+        }
+        for (i=0;i<b.length;i++) {
+                coordsB.push(getCoordsY(b[i])+sсrolled);
+        }
+        let s = coordsA.length+coordsB.length;
+        for (i=0;i<s;i++){
+                if (coordsA[0]<coordsB[0])
+                        {
+                                if (last != `a`) {bgCoords.push(coordsA[0]);}
+                                if (coordsA.length>1) {coordsA.shift();}
+                                last = `a`;
+                        }
+                else if (coordsA[0]>coordsB[0])
+                        {
+                                if (last != `b`) {bgCoords.push(coordsB[0]);}
+                                if (coordsB.length>1){coordsB.shift();}
+                                last = `b`;
+                        }
+                if (i==s-1) {
+                        bgCoords.push(Math.max(coordsA[0],coordsB[0]));
+                        bgCoords.push(document.body.getBoundingClientRect().height);
+                }
+        }
+        return (bgCoords);
+}
 
-// }
-// var bgCoordsList = getBgCoords();
+var bgCoordsList = getBgCoords();
+
+function navHeaderInverseControl(arg, curY)
+{
+        for (i=0; i<arg.length; i++){
+                if ((arg[i] < curY+50)&(curY+50<arg[i+1]))
+                {
+                        if (i%2 == 1) {document.getElementById(`header`).classList.add (`nav-headerInverse`);}
+                        else {document.getElementById(`header`).classList.remove (`nav-headerInverse`);}
+                        break;
+                }
+        }
+}
 
 var     vid1Rect = vid1.getBoundingClientRect(),
         vid2Rect = vid2.getBoundingClientRect(),
@@ -266,6 +286,8 @@ window.onscroll = () => {
         scrolledX = sсrolled - xpos-stop;
 
         let scrolledPercent = (sсrolled)/window.innerHeight*100;
+
+        navHeaderInverseControl(bgCoordsList,sсrolled);
 
         if (scrolledPercent>50) {
                 animHomeEndPassed = true;
@@ -287,13 +309,6 @@ window.onscroll = () => {
                 document.getElementById(`text-animation-onscroll_02`).classList.remove(`paused`);
         }
 
-        if ((getCoordsY(document.getElementById(`about`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
-        || (getCoordsY(document.getElementById(`our-stack`)) <= 50 && getCoordsY(document.getElementById(`our-vacancy`)) > 50 )
-        || (getCoordsY(document.getElementById(`footer`)) <= 50)) {
-        document.getElementById(`header`).classList.add (`nav-headerInverse`);
-        } else {
-        document.getElementById(`header`).classList.remove (`nav-headerInverse`);
-        }
         if (window.innerWidth >  699) {
                 if (scrolledX >= 2*pagewidth) {;
                 vid1.pause();

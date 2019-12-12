@@ -399,7 +399,10 @@ header {
 }
 
 .home__videos {
-    padding-left: 22vw;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse ;
+    right: 10vw;
 }
 
 .home__coords {
@@ -437,15 +440,23 @@ header {
 
 .home__services {
     display: flex;
+    position: relative;
     margin-top: 53px;
+    width: 34ch;
+    left: calc(100vw - 34ch - 10vw - 15px);
 }
 .home__title.t5{
     width: 34ch;
-    animation: printed-text 2.5s 8s steps(34) forwards;
+    animation: printed-text 2.5s steps(34) forwards;
+    animation-play-state: paused;
+}
+
+.home__services.play .home__title.t5{
+    animation-play-state: running;
 }
 
 @keyframes printed-text{
-    from {
+    0% {
         visibility: visible;
         width: 0%;
     }
@@ -468,12 +479,21 @@ header {
     right: 100%;
     height: 1px;
     background-color: #fff;
-    animation: video-box-underline 2.5s 8s forwards;
+    animation: video-box-underline 2.5s steps(102) forwards;
+    animation-play-state: paused;
+}
+
+.video-box.play::after{
+    animation-play-state: running;
 }
 
 @keyframes video-box-underline {
-    0%      {right: 100%;}
-    100%    {right: 0;}
+    from {
+        right: 100%;
+        }
+    100% {
+        right: 0;
+    }
 }
 
 .home__bg {
@@ -897,10 +917,6 @@ header {
 
 .our-vacancy__bottom{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    overflow-x: hidden;
     z-index: 6;
 }
 .our-vacancy__bottom-item {
@@ -914,6 +930,11 @@ header {
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.5);
 }
+
+.our-vacancy__bottom-item.hidden {
+    display: none;
+}
+
 .our-vacancy__bottom-header {
     font-style: normal;
     font-weight: 300;
@@ -982,27 +1003,6 @@ header {
 .our-vacancy__bottom-selector+.our-vacancy__bottom-selector{
     margin-left: 35px;
 }
-
-/* 
-.our-vacancy__bottom-item {
-    flex-basis: 45%;
-    z-index: 2;
-}
-.our-vacancy__bottom-item li {
-    font-style: thin;
-    font-weight: 200;
-    font-size: 14px;
-    line-height: 25px;
-    letter-spacing: 0.04em;
-    color: #FFFFFF;
-}
-
-.our-vacancy__bottom-item li:first-of-type {
-    margin-bottom: 25px;
-    font-weight: 300;
-    font-size: 1.25VW;
-    line-height: 1.05;
-} */
 
 .our-vacancyResponseto {
     width: fit-content;
