@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: local('Roboto Mono'), local('RobotoMono-Regular'), url('Res/fonts/Robotomono.woff2') format('woff2'), url('Res/fonts/Robotomono.woff') format('woff'), url('Res/fonts/Robotomono.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 @font-face{
     font-family: 'HelveticaNeueCyr';
     src: url('Res/fonts/HelveticaNeueCyr-Normal.woff');
@@ -415,10 +421,13 @@ header {
 }
 
 .home__title{
-    font-family: monospace;
+    font-family: Roboto mono;
+    font-size: 14px;
+    line-height: 1;
     white-space: nowrap;
     overflow: hidden;
     visibility: hidden;
+    margin-top: 3px;
 }
 
 .home__title.t1{
@@ -442,16 +451,16 @@ header {
     display: flex;
     position: relative;
     margin-top: 53px;
-    width: 34ch;
-    left: calc(100vw - 34ch - 15vw - 15px);
+    width: 40ch;
+    left: calc(100vw - 40ch - 15vw - 15px);
 }
 .home__title.t5{
-    width: 34ch;
-    animation: printed-text 2.5s steps(34) forwards;
+    animation: printed-text 2.5s steps(37) forwards;
     animation-play-state: paused;
 }
 
 .home__services.play .home__title.t5{
+    width: 37ch;
     animation-play-state: running;
 }
 
@@ -882,11 +891,39 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-top: 1px solid #808080;
-    border-bottom: 1px solid #808080;
+    position: relative;
+    /* border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080; */
     width: 70%;
     padding: 1%;
 }
+.our-stack__item-list::before, .our-stack__item-list::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #000;
+    transition: all 1s ease-in-out;
+}
+
+.our-stack__item-list::before {
+    top: 0;
+    right: 100%;
+}
+.our-stack__item-list.visible::before {
+    right: 0%;
+}
+
+.our-stack__item-list::after {
+    bottom: 0;
+    left: 100%;
+}
+
+.our-stack__item-list.visible::after {
+    left: 0%;
+}
+
 
 .our-stack-item__list-item {
     flex-basis: 1;
@@ -895,6 +932,30 @@ header {
     line-height: 25px;
     letter-spacing: 0.06em;
     color: #000000;
+    transform: translateX(-20%);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.our-stack-item__list-item.c1{
+    transition-delay: 0s;
+}
+.our-stack-item__list-item.c2{
+    transition-delay: .3s;
+}
+
+.our-stack-item__list-item.c3{
+    transition-delay: 0.6s;
+}
+
+.our-stack-item__list-item.c4{
+    transition-delay: 0.9s;
+}
+
+
+.our-stack__item-list.visible .our-stack-item__list-item {
+    transform: translateX(0%);
+    opacity: 1;
 }
 
 .our-stack__item-list-item-num {
@@ -936,17 +997,23 @@ header {
     letter-spacing: 0.04em;
     color: #FFFFFF;
     opacity: 0.8;
-    
 }
 
 .our-vacancy_top .first {
     font-weight: 300;
 }
 
-.our-vacancy__bottom{
+.our-vacancy__bottom {
     width: 100%;
     z-index: 6;
+    opacity: 0;
+    transition: all 2s ease-in-out;
 }
+
+.our-vacancy__bottom.visible{
+    opacity: 1;
+}
+
 .our-vacancy__bottom-item {
     width: 100%;
     flex-shrink: 0;
@@ -957,7 +1024,7 @@ header {
     line-height: 25px;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.5);
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .our-vacancy__bottom-item.paused {
@@ -975,12 +1042,36 @@ header {
     line-height: 21px;
     padding: 5px;
     margin-bottom: 14px;
-    color: #fff
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    height: 21px;
 }
+
+.our-vacancy__bottom-header ul {
+    transition: all .5s ease-in-out;
+}
+
+.our-vacancy__bottom-header li+li{
+    margin-top: 15px;
+}
+
+.our-vacancy__bottom-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 1s ease-in-out;
+}
+
+
 .our-vacancy__bottom-description {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    /* border-top: 1px solid rgba(255, 255, 255, 0.5); */
     padding: 5px;
     min-height: 50vh;
     transition: all .5s;

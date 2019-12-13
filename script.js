@@ -178,7 +178,33 @@ function randomInteger(min, max) {
         return Math.floor(rand);
 }
 
+// function lettering()
+// {
+//         let     str0 = "Back-end разработчик",
+//                 str2 = "",
+//                 str = "Front-end разработчик";
+//                 j = 0;
+
+//         let timerId = setInterval(() =>
+//         {
+//                 if (j<str0.length) {
+//                         document.getElementById(`our-vacancy__bottom-header_ID`).innerHTML = str0.substring(0, str0.length - j);
+//                 }
+//                 else {
+//                         str2+=str[j-str0.length];
+//                         document.getElementById(`our-vacancy__bottom-header_ID`).innerHTML = str2;
+//                 }
+//                 j++;
+//         }, 100);
+//         setTimeout(() => {
+//                 clearInterval(timerId);
+//         }, 100*(str0.length+str.length))
+// }
+
 function bottomSelectorClick(t) {
+
+        document.getElementById(`our-vacancy__bottom-header__UL-ID`).style.cssText = `transform: translateY(`+(-36*(Number(t.text)-1))+`px);`;
+
         let b = document.getElementsByClassName(`our-vacancy__bottom-selector`);
         for(i = 0; i<b.length;i++){
                 b[i].classList.remove(`our-vacancy__bottom-selector_selected`);
@@ -194,12 +220,12 @@ function bottomSelectorClick(t) {
                 }
                 vacList[(Number(t.text)-1)].classList.remove(`hidden`);
         }
-        ,500)
+        ,300)
         setTimeout(()=> {
 
                 vacList[(Number(t.text)-1)].style = `opacity: 1`
         }
-        ,1000)
+        ,600)
 }
 
 
@@ -334,6 +360,14 @@ window.onscroll = () => {
 
         if (document.getElementById(`footer__top`).getBoundingClientRect().top<window.innerHeight-50) {
                 document.getElementById(`footer__top`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`our-stack__item-list_ID`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`our-stack__item-list_ID`).classList.add(`visible`);
+        }
+
+        if (document.getElementById(`our-vacancy__bottom-ID`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`our-vacancy__bottom-ID`).classList.add(`visible`);
         }
 
         if (document.getElementById(`slider-item__1`).getBoundingClientRect().top<window.innerHeight*(2/3)) {
