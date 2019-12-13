@@ -580,7 +580,6 @@ header {
 
 .text-from-bottom.s2 {
     animation-delay: .3s;
-    line-height: 1.15;
 }
 .text-from-bottom.s1 {
     animation-delay: .15s;
@@ -1710,6 +1709,14 @@ footer {
     font-weight: 300;
 }
 
+.home__moblile {
+    display: none;
+}
+
+.mobile {
+    display: none;
+}
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
 
@@ -1730,6 +1737,15 @@ footer {
     .mob {
         display: flex;
     }
+
+    .mobile {
+        display: inherit;
+    }
+
+    .nav-header {
+        padding-top: 0;
+    }
+
     .nav-button__left_opened {
         display: none;
     }
@@ -1744,14 +1760,93 @@ footer {
         font-size: 8vw;
     }
 
+    .home {
+        justify-content: space-around;
+    }
+
     .home__end {
-        opacity: 0;
-        height: 0px;
+        display: none;
+    }
+
+    .home-end__tagline>div{
+        position: inherit;
+    }
+
+    .home__videos {
+        display: none;
+    }
+
+    .home_logo{
+        position: relative;
+        width: 80vw;
+        left: 10vw;
+        opacity: 1;
+        animation: home_logo-anim 2s ease-in-out forwards;
+    }
+
+    @keyframes home_logo-anim {
+        from {
+            opacity: 0;
+        }
+    }
+
+
+
+    .home_logo img {
+        width: 100%;
+    }
+
+    .home__services {
+        margin: 0;
+        position: relative;
+        left: 10vw;
+        right: 10vw;
+        font-size: 1vw;
+        max-width: 80vw;
+    }
+
+    .home__title.t5 {
+        width: 37ch;
+        animation-play-state: running;
+    }
+
+    .home__coords {
+        display: none;
+    }
+
+    .home__moblile {
+        position: relative;
+        left: 10vw;
+        margin-top: 30vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .home__moblile h1 {
+        font-weight: 200;
+    }
+    .text-underline-left2right::after {
+        bottom: 2px;
+    }
+
+    .home > div {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 9.4vw;
+        line-height: 1;
+        color: #FFFFFF;
+    }
+
+    .home__title{
+        font-size: 3.6vw;
+    }
+
+    .about {
+        flex-direction: column-reverse;
     }
 
     .about h2 {
         text-align: left;
-        font-size: 4.05vw;
+        font-size: 3.9vw;
         line-height: 1.8;
     }
 
@@ -1797,13 +1892,24 @@ footer {
         font-size: 12px;
     }
     .services__right {
-        display: flex;
-        flex-direction: row-reverse;
+        display: inline;
     }
 
     .services__rightItem {
+        position: absolute;
         max-width: 90vw;
         max-height: 50vh;
+        transform: scale(1);
+        height: 100%;
+        right: 25%;
+    }
+
+    .services__rightItem video {
+        width: 100%;
+        position: relative;
+        right: 0;
+        transform: translate(-45%,-50%);
+    
     }
 
     .slider {
@@ -1888,6 +1994,10 @@ footer {
         border-top: 1px solid #808080;
     }
 
+    .our-vacancy__bottom-description {
+        flex-direction: column  ;
+    }
+
     .footer__top{
         margin: 15vh 10vw 0px 10vw;
     }
@@ -1911,6 +2021,10 @@ footer {
     .contact-us-block {/* хуй*/
         display: none;
     } /* хуй*/
+
+    .our-stack__item-list::before, .our-stack__item-list::after {
+        display: none;
+    }
 }
 
 /* Landscape phones and smaller */
