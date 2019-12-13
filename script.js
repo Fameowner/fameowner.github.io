@@ -7,21 +7,23 @@ pagewidth = window.innerWidth,
 stop = 500,
 vid1 = document.getElementById('vid1'),
 vid2 = document.getElementById('vid2'),
-vid3 = document.getElementById('vid3');
+vid3 = document.getElementById('vid3'),
+vidBG =document.getElementById(`home__bg`),
+bgCoordsList = getBgCoords();
 
-document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
+// document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 
-document.getElementById(`home__bg`).addEventListener("ended", () => {
+vidBG.addEventListener("ended", () => {
         document.getElementById(`home__bg`).currentTime = 16;
         document.getElementById(`home__bg`).play();
 });
 
-// document.getElementById(`home__bg`).addEventListener("timeupdate", () => {
-//         console.log(document.getElementById(`home__bg`).currentTime);
-//         if (document.getElementById(`home__bg`).currentTime > 1) {
-//                 
-//         }
-// });
+vidBG.addEventListener("timeupdate", () => {
+        if (document.getElementById(`home__bg`).currentTime > 9.5) {
+                document.getElementById(`video-box_ID`).classList.add(`play`);
+                document.getElementById(`home__services`).classList.add(`play`);
+        }
+});
 
 
 function pauseAll() {
@@ -176,14 +178,56 @@ function randomInteger(min, max) {
         return Math.floor(rand);
 }
 
+// function lettering()
+// {
+//         let     str0 = "Back-end разработчик",
+//                 str2 = "",
+//                 str = "Front-end разработчик";
+//                 j = 0;
+
+//         let timerId = setInterval(() =>
+//         {
+//                 if (j<str0.length) {
+//                         document.getElementById(`our-vacancy__bottom-header_ID`).innerHTML = str0.substring(0, str0.length - j);
+//                 }
+//                 else {
+//                         str2+=str[j-str0.length];
+//                         document.getElementById(`our-vacancy__bottom-header_ID`).innerHTML = str2;
+//                 }
+//                 j++;
+//         }, 100);
+//         setTimeout(() => {
+//                 clearInterval(timerId);
+//         }, 100*(str0.length+str.length))
+// }
+
 function bottomSelectorClick(t) {
-        var b = document.getElementsByClassName(`our-vacancy__bottom-selector`);
+
+        document.getElementById(`our-vacancy__bottom-header__UL-ID`).style.cssText = `transform: translateY(`+(-36*(Number(t.text)-1))+`px);`;
+
+        let b = document.getElementsByClassName(`our-vacancy__bottom-selector`);
         for(i = 0; i<b.length;i++){
                 b[i].classList.remove(`our-vacancy__bottom-selector_selected`);
         }
         t.classList.add(`our-vacancy__bottom-selector_selected`);
-        document.getElementById(`our-vacancy__bottom-ID`).scrollTo({left: document.getElementById(`our-vacancy__bottom-ID`).offsetWidth * (Number(t.text)-1), behavior: 'smooth' });
+        let vacList = document.getElementsByClassName(`our-vacancy__bottom-item`);
+        for (i=0;i<vacList.length;i++){
+                vacList[i].style = `opacity: 0`
+        }
+        setTimeout(()=> {
+                for (i=0;i<vacList.length;i++){
+                        vacList[i].classList.add(`hidden`);
+                }
+                vacList[(Number(t.text)-1)].classList.remove(`hidden`);
+        }
+        ,300)
+        setTimeout(()=> {
+
+                vacList[(Number(t.text)-1)].style = `opacity: 1`
+        }
+        ,600)
 }
+
 
 window.addEventListener(`resize`, () => {
         if (document.getElementById(`horscrollsection`).classList.contains(`cardHold`)) {
@@ -203,7 +247,8 @@ window.addEventListener(`resize`, () => {
                 pagewidth = window.innerWidth;
         }
         bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
-        document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
+        bgCoordsList = getBgCoords();
+        // document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 });
 
 function videoCheckAndPlay(vid) {
@@ -215,38 +260,53 @@ function navHeaderInverse(act) {
         else if (act == `add`){document.getElementById(`header`).classList.add (`nav-headerInverse`)}
 }
 
-// function getBgCoords() {
-//         let     a = document.getElementsByClassName(`js-bg_black`),
-//                 b = document.getElementsByClassName(`js-bg_white`),
-//                 coordsA = [],
-//                 coordsB = [],
-//                 bgCoords = [],
-//                 last;
-//         for (i=0;i<a.length;i++) {
-//                 coordsA.push(getCoordsY(a[i])+sсrolled);
-//         }
-//         for (i=0;i<b.length;i++) {
-//                 coordsB.push(getCoordsY(b[i])+sсrolled);
-//         }
-//         let s = coordsA.length+coordsB.length;
-//         for (i=0;i<s;i++){
-//                 if (coordsA[0]<coordsB[0])
-//                         {
-//                                 if (last != `a`) {bgCoords.push(coordsA[0])}
-//                                 coordsA.shift();
-//                                 last = `a`;
-//                         }
-//                 else if (coordsA[0]>coordsB[0])
-//                         {
-//                                 if (last != `b`) {bgCoords.push(coordsB[0])}
-//                                 coordsB.shift();
-//                                 last = `b`;
-//                         }
-//         }
-//         return (bgCoords);
+function getBgCoords() {
+        let     a = document.getElementsByClassName(`js-bg_black`),
+                b = document.getElementsByClassName(`js-bg_white`),
+                coordsA = [],
+                coordsB = [],
+                bgCoords = [],
+                last;
+        for (i=0;i<a.length;i++) {
+                coordsA.push(getCoordsY(a[i])+sсrolled);
+        }
+        for (i=0;i<b.length;i++) {
+                coordsB.push(getCoordsY(b[i])+sсrolled);
+        }
+        let s = coordsA.length+coordsB.length;
+        for (i=0;i<s;i++){
+                if (coordsA[0]<coordsB[0])
+                        {
+                                if (last != `a`) {bgCoords.push(coordsA[0]);}
+                                if (coordsA.length>1) {coordsA.shift();}
+                                last = `a`;
+                        }
+                else if (coordsA[0]>coordsB[0])
+                        {
+                                if (last != `b`) {bgCoords.push(coordsB[0]);}
+                                if (coordsB.length>1){coordsB.shift();}
+                                last = `b`;
+                        }
+                if (i==s-1) {
+                        bgCoords.push(Math.max(coordsA[0],coordsB[0]));
+                        bgCoords.push(document.body.getBoundingClientRect().height);
+                }
+        }
+        return (bgCoords);
+}
 
-// }
-// var bgCoordsList = getBgCoords();
+
+function navHeaderInverseControl(arg, curY)
+{
+        for (i=0; i<arg.length; i++){
+                if ((arg[i] < curY+50)&(curY+50<arg[i+1]))
+                {
+                        if (i%2 == 1) {document.getElementById(`header`).classList.add (`nav-headerInverse`);}
+                        else {document.getElementById(`header`).classList.remove (`nav-headerInverse`);}
+                        break;
+                }
+        }
+}
 
 var     vid1Rect = vid1.getBoundingClientRect(),
         vid2Rect = vid2.getBoundingClientRect(),
@@ -265,35 +325,55 @@ window.onscroll = () => {
         sсrolled = window.scrollY;
         scrolledX = sсrolled - xpos-stop;
 
+        navHeaderInverseControl(bgCoordsList,sсrolled);
+
         let scrolledPercent = (sсrolled)/window.innerHeight*100;
 
-        if (scrolledPercent>50) {
-                animHomeEndPassed = true;
-                document.getElementById(`home-end__tagline`).style = `width:100%;`;
-                document.getElementById(`home__end`).style = `background-color: ` + `rgb(0,0,0);`;
-        }
-        if (animHomeEndPassed == false)
-        {
-                let bg = Math.round(255-(scrolledPercent/100)*255*10/6);
-                document.getElementById(`home-end__tagline`).style = `width:` + (scrolledPercent +50) + `%;`;
-                document.getElementById(`home__end`).style = `background-color: ` + `rgb(`+bg+`,`+bg+`,`+bg+`);`;
-        }
-
-        if (sсrolled>window.innerHeight/2) {
+        if (document.getElementById(`text-animation-onscroll_01`).getBoundingClientRect().top<window.innerHeight-50) {
                 document.getElementById(`text-animation-onscroll_01`).classList.remove(`paused`);
+                document.getElementById(`home-end__tagline`).classList.remove(`paused`);
         }
 
-        if (sсrolled>window.innerHeight*1.4) {
+        if (document.getElementById(`text-animation-onscroll_02`).getBoundingClientRect().top<window.innerHeight-50) {
                 document.getElementById(`text-animation-onscroll_02`).classList.remove(`paused`);
         }
 
-        if ((getCoordsY(document.getElementById(`about`)) <= 50 && getCoordsY(document.getElementById(`services`)) > 50)
-        || (getCoordsY(document.getElementById(`our-stack`)) <= 50 && getCoordsY(document.getElementById(`our-vacancy`)) > 50 )
-        || (getCoordsY(document.getElementById(`footer`)) <= 50)) {
-        document.getElementById(`header`).classList.add (`nav-headerInverse`);
-        } else {
-        document.getElementById(`header`).classList.remove (`nav-headerInverse`);
+        if (document.getElementById(`text-animation-onscroll_03`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`text-animation-onscroll_03`).classList.remove(`paused`);
         }
+
+        if (document.getElementById(`text-animation-onscroll_04`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`text-animation-onscroll_04`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`text-animation-onscroll_05`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`text-animation-onscroll_05`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`become-first`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`become-first`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`our-vacancy-01`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`our-vacancy-01`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`footer__top`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`footer__top`).classList.remove(`paused`);
+        }
+
+        if (document.getElementById(`our-stack__item-list_ID`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`our-stack__item-list_ID`).classList.add(`visible`);
+        }
+
+        if (document.getElementById(`our-vacancy__bottom-ID`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`our-vacancy__bottom-ID`).classList.add(`visible`);
+        }
+
+        if (document.getElementById(`slider-item__1`).getBoundingClientRect().top<window.innerHeight*(2/3)) {
+                document.getElementById(`slider-item__1`).classList.remove(`moved-right`);
+        }
+
         if (window.innerWidth >  699) {
                 if (scrolledX >= 2*pagewidth) {;
                 vid1.pause();
@@ -348,17 +428,17 @@ document.getElementById("slider").ondragstart = () => {
         return(false);
 }
 
-document.getElementById(`footer-top__box-space`).onmouseover = (m) => {
+document.getElementById(`footer__top`).onmouseover = (m) => {
         document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
 }
 
-document.getElementById(`footer-top__box-space`).onmouseleave = (m) => {
+document.getElementById(`footer__top`).onmouseleave = (m) => {
         document.getElementById(`helloBox`).src = "";
 }
 
 document.getElementById(`footer`).onmousemove = (m) => {
         document.getElementById('helloBox').classList.add ('BoxShow');
-        footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect(),
+        let footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect();
         document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/2 + (m.clientX - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
         document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/2 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
 }
