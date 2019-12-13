@@ -246,7 +246,7 @@ window.addEventListener(`resize`, () => {
                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
                 pagewidth = window.innerWidth;
         }
-        bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
+        // bottomSelectorClick(document.getElementsByClassName(`our-vacancy__bottom-selector_selected`)[0]);
         bgCoordsList = getBgCoords();
         // document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 });
@@ -316,18 +316,10 @@ window.onscroll = () => {
         vid1Rect = vid1.getBoundingClientRect();
         vid2Rect = vid2.getBoundingClientRect();
 
-        vid1.style.opacity = vid1Rect.left/vid1Rect.width + .5;
-        vid2.style.opacity = vid2Rect.left/vid2Rect.width + .5;
-
-        document.getElementById(`services__left_2`).style.opacity = -(document.getElementById(`services__left_2`).getBoundingClientRect().left/window.innerWidth - .8);
-        document.getElementById(`services__left_3`).style.opacity = -(document.getElementById(`services__left_3`).getBoundingClientRect().left/window.innerWidth - .8);
-
         sсrolled = window.scrollY;
         scrolledX = sсrolled - xpos-stop;
 
         navHeaderInverseControl(bgCoordsList,sсrolled);
-
-        let scrolledPercent = (sсrolled)/window.innerHeight*100;
 
         if (document.getElementById(`text-animation-onscroll_01`).getBoundingClientRect().top<window.innerHeight-50) {
                 document.getElementById(`text-animation-onscroll_01`).classList.remove(`paused`);
@@ -375,6 +367,11 @@ window.onscroll = () => {
         }
 
         if (window.innerWidth >  699) {
+                vid1.style.opacity = vid1Rect.left/vid1Rect.width + .5;
+                vid2.style.opacity = vid2Rect.left/vid2Rect.width + .5;
+        
+                document.getElementById(`services__left_2`).style.opacity = -(document.getElementById(`services__left_2`).getBoundingClientRect().left/window.innerWidth - .8);
+                document.getElementById(`services__left_3`).style.opacity = -(document.getElementById(`services__left_3`).getBoundingClientRect().left/window.innerWidth - .8);
                 if (scrolledX >= 2*pagewidth) {;
                 vid1.pause();
                 vid2.pause();
