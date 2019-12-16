@@ -568,13 +568,16 @@
         <div class="start-project" id = "start-project">
             <form action="https://formsubmit.co/vlad160195@ya.ru" method="POST" id = "start-project__form" class = "start-project__form" >
                 <div class = "start-project-form__close-button"><a onclick = "showStartProject()">Закрыть</a></div>
-                <div class = "start-project-form__item start-project-form__item-left">
+                <!-- <div class = "start-project-form__item start-project-form__item-left">
                         <label class="start-project-form__heading" >Вас интересует</label>
-                        <label class="start-project-form__heading">Бюджет</label>
+                        <label class="start-project-form__heading" for = "radioBudgetUpTo200Button">Бюджет</label>
                         <label class="start-project-form__heading" for = "textarea-escription-project">Описание</label>
-                </div>
-                <div class = "start-project-form__item start-project-form__item-right">
-                    <div>
+                </div> -->
+                <div class = "start-project-form__item checkbox-services">
+                    <div class="start-project-form__item-left">
+                        <label class="start-project-form__heading" >Вас интересует</label>
+                    </div>
+                    <div class="start-project-form__item-right">
                         <input type="checkbox" name="services_design" value="Design" id="checkbox-design_button">
                         <label for = "checkbox-design_button"> Дизайн </label>
                         <input type="checkbox" name="services_development" value="Development" id ="checkbox-development_button">
@@ -583,8 +586,13 @@
                         <label for = "checkbox-support_button">Поддержка</label>
                         <input type="checkbox" name="services_consulting" value="Consulting" id = "checkbox-consulting_button">
                         <label for = "checkbox-consulting_button">Консалтинг</label>
+                    </div >
+                </div>
+                <div class = "start-project-form__item radio-budget">
+                    <div class="start-project-form__item-left">
+                        <label class="start-project-form__heading" for = "radioBudgetUpTo200Button">Бюджет</label>
                     </div>
-                    <div>
+                    <div  class="start-project-form__item-right">
                         <input type="radio" name="budget" value="upTo200" id = "radioBudgetUpTo200Button">
                         <label for = "radioBudgetUpTo200Button">До 200 тыс. ₽</label>
                         <input type="radio" name="budget" value="f200t500" id = "radioBudgetf200t500Button">
@@ -592,14 +600,17 @@
                         <input type="radio" name="budget" value="f500" id = "radioBudgetf500Button">
                         <label for = "radioBudgetf500Button">От 500 тыс. ₽</label>
                     </div>
-                    <div>
+                </div>
+                <div class = "start-project-form__item">
+                    <div class="start-project-form__item-left">
+                        <label class="start-project-form__heading" for = "textarea-escription-project">Описание</label>
+                    </div>
+                    <div class="start-project-form__item-right no-border">
                         <textarea class = "start-project-form__input" type="textarea" name="descriptionProject" placeholder="Кратко опишите ваш проект, чтобы мы могли составить бриф." id = "textarea-escription-project"></textarea>
                     </div>
                 </div>
                 <div class = "start-project-form__item-bottom">
-                    <div>
-                        <label class="start-project-form__heading">Контакты</label>
-                    </div>
+                    <div class="start-project-form__item-left"><label class="start-project-form__heading">Контакты</label></div>
                     <div class = "contacts">
                         <label for="contacts-name-ID" required>Имя:</label>
                         <input class = "start-project-form__input shortInput" type="text" name="contactsName" placeholder="Как вас зовут?" id = "contacts-name-ID">
