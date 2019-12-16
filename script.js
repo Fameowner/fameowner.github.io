@@ -330,6 +330,10 @@ window.onscroll = () => {
                 document.getElementById(`text-animation-onscroll_02`).classList.remove(`paused`);
         }
 
+        if (document.getElementById(`text-animation-onscroll_02_01`).getBoundingClientRect().top<window.innerHeight-50) {
+                document.getElementById(`text-animation-onscroll_02_01`).classList.remove(`paused`);
+        }
+
         if (document.getElementById(`text-animation-onscroll_03`).getBoundingClientRect().top<window.innerHeight-50) {
                 document.getElementById(`text-animation-onscroll_03`).classList.remove(`paused`);
         }
@@ -369,7 +373,7 @@ window.onscroll = () => {
         if (window.innerWidth >  699) {
                 vid1.style.opacity = vid1Rect.left/vid1Rect.width + .5;
                 vid2.style.opacity = vid2Rect.left/vid2Rect.width + .5;
-        
+
                 document.getElementById(`services__left_2`).style.opacity = -(document.getElementById(`services__left_2`).getBoundingClientRect().left/window.innerWidth - .8);
                 document.getElementById(`services__left_3`).style.opacity = -(document.getElementById(`services__left_3`).getBoundingClientRect().left/window.innerWidth - .8);
                 if (scrolledX >= 2*pagewidth) {;
@@ -425,21 +429,32 @@ document.getElementById("slider").ondragstart = () => {
         return(false);
 }
 
-document.getElementById(`footer__top`).onmouseover = (m) => {
+if (window.innerWidth >  699)
+        {
+                document.getElementById(`footer__top`).onmouseover = (m) => {
+                document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
+        }
+
+        document.getElementById(`footer__top`).onmouseleave = (m) => {
+                document.getElementById(`helloBox`).src = "";
+        }
+
+        document.getElementById(`footer`).onmousemove = (m) => {
+                document.getElementById('helloBox').classList.add ('BoxShow');
+                let footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect();
+                document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/2 + (m.clientX - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
+                document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/2 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
+        }
+
+        document.getElementById(`footer`).onmouseleave = (m) => {
+                setTimeout(`document.getElementById('helloBox').classList.remove ('BoxShow');`,250);
+        }
+}
+else {
+        document.getElementById('helloBox').classList.add ('BoxShow');
         document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
 }
 
-document.getElementById(`footer__top`).onmouseleave = (m) => {
-        document.getElementById(`helloBox`).src = "";
-}
-
-document.getElementById(`footer`).onmousemove = (m) => {
-        document.getElementById('helloBox').classList.add ('BoxShow');
-        let footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect();
-        document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/2 + (m.clientX - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
-        document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/2 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
-}
-
-document.getElementById(`footer`).onmouseleave = (m) => {
-        setTimeout(`document.getElementById('helloBox').classList.remove ('BoxShow');`,250);
+function showVac(t){
+        t.classList.toggle(`open`);
 }
