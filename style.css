@@ -1523,13 +1523,14 @@ footer {
 .start-project__form {
     position: relative;
     display: flex;
+    flex-direction: column;
     left: 5%;
     justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 16;
     width: 80vw;
     padding: 5vh 5vw;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     border-radius: 10px;
     overflow-y: scroll;
 }
@@ -1539,12 +1540,15 @@ footer {
 
 .start-project-form__item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .start-project-form__item-left {
     flex-basis: 35%;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .start-project-form__item-right {
@@ -1609,23 +1613,14 @@ footer {
     opacity: 0.3;
 }
 
-.start-project-form__item-right div{
+.start-project-form__item-right{
     display: flex;
-    justify-content: space-between;
-    padding: 0px 50px 0px;
+    justify-content: space-around;
     border-top: 0.5px solid rgba(255, 255, 255, 0.5);
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
-.start-project-form__item-right div:last-of-type{
-    border: none;
-    padding: 1px;
-}
-
-.start-project-form__item-left label + label {
-    margin-top: 45px;
-}
-.start-project-form__item-right div + div {
+.start-project-form__item + .start-project-form__item {
     margin-top: 45px;
 }
 .start-project-form__item-bottom {
@@ -1667,16 +1662,15 @@ footer {
     color: #fff;
 }
 
-.start-project-form__item-bottom div{
-    flex-basis: 35%;
-    margin-top: 100px;
-}
-
 .start-project-form__item-bottom div:last-of-type {
     margin-top: 0px;
     flex-basis: 65%;
     display: flex;
     flex-direction: column;
+}
+
+.start-project-form__item-right.no-border {
+    border: none;
 }
 
 .contacts input + input {
@@ -1782,6 +1776,7 @@ footer {
 
     .home {
         justify-content: space-around;
+        height: 85vh;
     }
 
     .home__end {
@@ -1837,7 +1832,7 @@ footer {
     .home__moblile {
         position: relative;
         left: 10vw;
-        margin-top: 30vh;
+        margin-top: 25vh;
         display: flex;
         flex-direction: column;
     }
@@ -2154,6 +2149,75 @@ footer {
         transform:  scale(.5);
         left: 50vw;
         top:10vh;
+    }
+
+    .start-project-form__item {
+        display: flex;
+        flex-direction: column;
+        flex-basis: max-content;
+    }
+
+    .start-project-form__item-left{
+        flex-basis: auto;
+        margin-bottom: 8.1vh;
+    }
+
+    .start-project-form__item-right {
+        border: none;
+        flex-wrap: wrap;
+    }
+    
+    .checkbox-services .start-project-form__item-right label {
+        width: 40vw;
+        height: 40vw;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .start-project input[type="checkbox"]:checked + Label {
+        border-color: white;
+        /* border-width: 20px; */
+        /* background-color: #222; */
+        /* border-radius: 30px; */
+    }
+
+    .checkbox-services .start-project-form__item-right label:nth-of-type(1){
+        border-right: .5px solid #4F4F4F;
+        border-bottom: .5px solid #4F4F4F;
+    }
+
+    .checkbox-services .start-project-form__item-right label:nth-of-type(2){
+        border-left: .5px solid #4F4F4F;
+        border-bottom: .5px solid #4F4F4F;
+    }
+
+    .checkbox-services .start-project-form__item-right label:nth-of-type(3){
+        border-right: .5px solid #4F4F4F;
+        border-top: .5px solid #4F4F4F;
+    }
+
+    .checkbox-services .start-project-form__item-right label:nth-of-type(4){
+        border-left: .5px solid #4F4F4F;
+        border-top: .5px solid #4F4F4F;
+    }
+
+    .radio-budget .start-project-form__item-right label {
+        width: 100%;
+    }
+
+    .radio-budget .start-project-form__item-right label:nth-of-type(-n+2) {
+        border-bottom: 1px solid #4F4F4F;
+    }
+
+    .start-project-form__item-bottom{
+        flex-direction: column;
+    }
+
+    .start-project .start-project-form__heading {
+    font-size: 8.3vw;
     }
 
     .contact-us-block {/* хуй*/
