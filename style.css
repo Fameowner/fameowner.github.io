@@ -553,8 +553,7 @@ header {
 .home-end__tagline>div {
     display: flex;
     justify-content: flex-start;
-    position: relative;
-    left: 10vw;
+    margin-left: 10vw;
 }
 
 
@@ -569,6 +568,18 @@ header {
 
 .text-from-bottom-outter {
     overflow: hidden;
+}
+
+.text-from-bottom.s7 {
+    animation-delay: 1.05s;
+}
+
+.text-from-bottom.s6 {
+    animation-delay: .9s;
+}
+
+.text-from-bottom.s5 {
+    animation-delay: .75s;
 }
 
 .text-from-bottom.s4 {
@@ -835,8 +846,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vw;
-    padding: 10px 0px;
+    padding: 7% 0px;
     background-color: #fff;
     z-index: 1;
 }
@@ -1742,6 +1752,16 @@ footer {
         display: inherit;
     }
 
+    .no-mob.a-like-underline::before, .no-mob.a-like-underline::after{
+        display: none;
+    }
+    .desktop {
+        display: none;
+    }
+    .our-stack__item .mobile{
+        display: block;
+    }
+
     .nav-header {
         padding-top: 0;
     }
@@ -1848,6 +1868,7 @@ footer {
         text-align: left;
         font-size: 3.9vw;
         line-height: 1.8;
+        margin: 0px 10%;
     }
 
     .about h1 {
@@ -1855,11 +1876,17 @@ footer {
         font-size: 10.3vw;
         line-height: 1.1;
         letter-spacing: 0.04em;
-        margin: 5vh 19.8%;
+        margin: 5vh 10%;
         color: #000000;
-        opacity: 0.8;
+        opacity: 0;
         display: inline;
+        animation: text-from-opacity-anim 2s ease-in-out forwards;
     }
+
+    .about h1.paused {
+        animation-play-state: paused;
+    }
+
     .scrollspace{
         flex-direction: column;
         height: auto;
@@ -1874,7 +1901,7 @@ footer {
         height: 150vh;
     }
     .services__left {
-        flex-basis: 100vh;
+        flex-basis: 80vh;
         padding: 0px 19% 0px 10%;
     }
     .services__right {
@@ -1896,20 +1923,16 @@ footer {
     }
 
     .services__rightItem {
-        position: absolute;
-        max-width: 90vw;
+        width: 90vw;
         max-height: 50vh;
         transform: scale(1);
         height: 100%;
-        right: 25%;
+        margin-left: 10vw;
     }
 
     .services__rightItem video {
-        width: 100%;
+        width: 90vw;
         position: relative;
-        right: 0;
-        transform: translate(-45%,-50%);
-    
     }
 
     .slider {
@@ -1921,7 +1944,6 @@ footer {
         margin-left: 30vw;
         width: 72vw;
         min-height: 72vw;
-        transition: margin 1s;
     }
 /* 
     .slider-item__fast {
@@ -1980,7 +2002,9 @@ footer {
     }
 
     .our-stack-item__list-item li:not(.our-stack__item-list-item-num):not(.our-stack__item-list-item-dir) {
-        display: none;
+        transition: all 1s ease-in-out;
+        height: 0;
+        overflow: hidden;
     }
 
     .our-stack__item-list-item-num {
@@ -1996,6 +2020,15 @@ footer {
 
     .our-vacancy__bottom-description {
         flex-direction: column  ;
+        padding: 0;
+    }
+
+    .our-vacancy__bottom-selection {
+        display: none;
+    }
+
+    .our-vacancy_top h2{
+        font-size: 8.3vw;
     }
 
     .footer__top{
@@ -2016,6 +2049,111 @@ footer {
     }
     .footer-bottom__right {
         margin-left: 10vw;
+    }
+
+    .our-vacancy {
+        min-height: 80vh;
+        padding: 10%;
+        justify-content: space-between;
+    }
+
+    .our-vacancy_top{
+        margin-top: 5vh;
+    }
+
+    .our-vacancy__bottom.mobile{
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+    }
+    
+    .our-vacancy__bottom.mobile>div+div{
+        margin-top: 5vh;
+    }
+
+    .our-vacancy__bottom-header {
+        font-size: 6.6vw;
+        line-height: 1;
+        padding: 0px;
+        margin-bottom: 0px;
+        height: auto;
+        margin-top: 2vh;
+    }
+
+    .our-vacancy__bottom-header-num{
+        font-weight: 200;
+        font-size: 3.33vw;
+        line-height: 2;
+        letter-spacing: -0.04em;
+        color: #FFFFFF;
+        position: relative;
+    }
+
+    .our-vacancy__bottom-header-num::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: #fff;
+    }
+
+    .our-vacancy__bottom-header::after {
+        display: none;
+    }
+
+    .our-vacancy__c-li-header {
+        font-size: 4.1vw;
+    }
+
+    .our-vacancy__bottom-item {
+        overflow: hidden;
+        max-height: 0;
+        transition: all 1.4s ease-in-out;
+        cursor: pointer;
+    }
+
+    .open .our-vacancy__bottom-item {
+        max-height: 200vh;
+    }
+
+    .c-our-vacancy__bottom-description-paddings {
+        padding: 0;
+    }
+
+    .our-vacancy__bottom-description>div+div{
+        margin-top: 5vh;
+    }
+
+    .our-vacancy__c-li-numbering{
+        position: relative;
+        line-height: 2;
+    }
+    .our-vacancy__c-li-numbering::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        opacity: 0.5;
+        background-color: #fff;
+    }
+
+    .footer__top h2 {
+        font-size: 8.3vw;
+    }
+    
+    footer {
+        position: relative;
+    }
+
+    .helloBox {
+        transform-origin: left top;
+        transform:  scale(.5);
+        left: 50vw;
+        top:10vh;
     }
 
     .contact-us-block {/* хуй*/
