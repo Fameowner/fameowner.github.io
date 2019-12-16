@@ -623,6 +623,7 @@ header {
 
 .text-from-opacity {
     opacity: 0;
+    
     animation: text-from-opacity-anim 2s ease-in-out forwards;
 }
 
@@ -631,6 +632,7 @@ header {
     }
     100%{
         opacity: 100%;
+        visibility: visible;
     }
 }
 
@@ -1776,7 +1778,7 @@ footer {
 
     .home {
         justify-content: space-around;
-        height: 85vh;
+        height: 90vh;
     }
 
     .home__end {
@@ -2163,6 +2165,7 @@ footer {
     }
 
     .start-project-form__item-right {
+        flex-basis: auto;
         border: none;
         flex-wrap: wrap;
     }
