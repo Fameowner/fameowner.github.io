@@ -2165,6 +2165,7 @@ footer {
     }
 
     .start-project-form__item-right {
+        flex-basis: auto;
         border: none;
         flex-wrap: wrap;
     }
