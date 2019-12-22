@@ -77,6 +77,7 @@ body {
 /* Шапка */
 header {
     position: fixed;
+    top: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -312,8 +313,8 @@ header {
     top:0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.7);
+    bottom: -15vh;
+    background: rgba(0,0,0,.88);
     /* backdrop-filter: blur(4px); */
     z-index: 9;
 }
@@ -609,30 +610,28 @@ header {
 .text-underline-left2right {
     position: relative;
     animation: forwards;
-    opacity: 0;
+    visibility: hidden;
+    opacity: 0%;
     animation: text-underline-opacity-anim 2s ease-in-out .7s forwards;
 }
 
 @keyframes text-underline-opacity-anim {
-    0%{
-    }
-    100%{
+    to {
+        visibility: visible;
         opacity: 100%;
     }
 }
 
 .text-from-opacity {
-    opacity: 0;
-    
+    visibility: hidden;
+    opacity: 0%;
     animation: text-from-opacity-anim 2s ease-in-out forwards;
 }
 
 @keyframes text-from-opacity-anim {
-    0%{
-    }
-    100%{
-        opacity: 100%;
+    to {
         visibility: visible;
+        opacity: 100%;
     }
 }
 
@@ -1562,13 +1561,16 @@ footer {
     cursor: pointer;
 }
 
+input, textarea{
+    border-radius: 0px;
+}
+
 .start-project-form__input{
     background-color: transparent;
     outline: none;
     width: 100%;
     height: 40px;
     max-height: 120px;
-    -moz-appearance: none;
     resize: none;
     font-family: HelveticaNeueCyr;
     font-weight: 300;
@@ -1579,6 +1581,10 @@ footer {
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
     overflow-x: hidden;
     overflow-y: scroll;
+
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .start-project-form__input::-webkit-scrollbar-track {
@@ -1602,8 +1608,8 @@ footer {
 
 
 .shortInput {
-    width: 50%;
     height: 20px;
+    width: 50%;
 }
 
 .start-project-form__input:-moz-placeholder {
@@ -1625,10 +1631,20 @@ footer {
 .start-project-form__item + .start-project-form__item {
     margin-top: 45px;
 }
-.start-project-form__item-bottom {
-    display: flex;
+.start-project-form__item.bottom {
     width: 100%;
     margin-top: 40px;
+}
+
+.start-project-form__item.bottom .start-project-form__item-right
+{
+    justify-content: flex-start;
+}
+
+.start-project-form__item.bottom .contacts {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .start-project label {
@@ -1680,6 +1696,7 @@ footer {
 }
 
 .start-project-form__item-button{
+    flex-basis: auto;
     width: 100%;
     height: 50px;
     display: flex;
@@ -1699,6 +1716,10 @@ footer {
     color: #FFFFFF;
     background-color: transparent;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 40px;
+    margin-bottom: 10px;
 }
 
 .mob {
@@ -1875,7 +1896,8 @@ footer {
         letter-spacing: 0.04em;
         margin: 5vh 10%;
         color: #000000;
-        opacity: 0;
+        visibility: hidden;
+        opacity: 0%;
         display: inline;
         animation: text-from-opacity-anim 2s ease-in-out forwards;
     }
@@ -2141,7 +2163,7 @@ footer {
     .footer__top h2 {
         font-size: 8.3vw;
     }
-    
+
     footer {
         position: relative;
     }
@@ -2153,23 +2175,34 @@ footer {
         top:10vh;
     }
 
+    .start-project {
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        transition: height .3s ease-in-out;
+    }
+
+    .start-project form{
+        margin: 2vh 0px 2vh 0px;
+        -webkit-overflow-scrolling:touch;
+    }
+
     .start-project-form__item {
-        display: flex;
-        flex-direction: column;
-        flex-basis: max-content;
+        display: inline;
     }
 
     .start-project-form__item-left{
-        flex-basis: auto;
         margin-bottom: 8.1vh;
     }
 
     .start-project-form__item-right {
-        flex-basis: auto;
         border: none;
         flex-wrap: wrap;
     }
-    
+
+    .shortInput{
+        width: 100%;
+    }
+
     .checkbox-services .start-project-form__item-right label {
         width: 40vw;
         height: 40vw;
@@ -2229,6 +2262,14 @@ footer {
 
     .our-stack__item-list::before, .our-stack__item-list::after {
         display: none;
+    }
+
+    .start-project-form__item-button{
+        margin-bottom: 5vh;
+    }
+    .no-scroll {
+        height: 100%;
+        overflow: hidden;
     }
 }
 

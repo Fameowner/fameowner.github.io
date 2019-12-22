@@ -11,7 +11,6 @@ vid3 = document.getElementById('vid3'),
 vidBG =document.getElementById(`home__bg`),
 bgCoordsList = getBgCoords();
 
-// document.getElementById("home__services").style.cssText = `padding-left:` +  (document.getElementById("video-box_ID").getBoundingClientRect().right - document.getElementById("t5").offsetWidth)  + `px`;
 
 vidBG.addEventListener("ended", () => {
         document.getElementById(`home__bg`).currentTime = 16;
@@ -32,7 +31,23 @@ function pauseAll() {
         vid3.pause();
 }
 
+document.addEventListener('touchmove', { passive: false }, (e)=>{
+        e.preventDefault();
+        console.log(e);
+});
+
+function isMobile(){
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+                return true
+        } else{
+                return false
+        }
+}
+
 function showMenu() {
+        if (isMobile()){
+                document.body.classList.toggle('no-scroll');
+        }
         document.getElementById(`ham`).classList.toggle('active');
         document.getElementById(`nav-header`).classList.toggle (`nav-header_opened`);
         document.getElementById(`header`).classList.toggle (`header_opened`);
@@ -44,6 +59,9 @@ function showMenu() {
 }
 
 function showStartProject() {
+        if (isMobile()){
+                document.body.classList.toggle('no-scroll');
+        }
         document.getElementById(`start-project`).classList.toggle('startProject_opened');
         document.getElementById(`header`).classList.toggle(`headerHidden`);
         if (document.getElementById(`header`).classList.contains(`header_opened`)){
@@ -51,6 +69,17 @@ function showStartProject() {
         }
         pauseAll();
 }
+
+document.getElementById(`start-project__form`).scrollTop=1;
+
+document.getElementById(`start-project__form`).addEventListener("scroll", ()=>{
+        if (document.getElementById(`start-project__form`).scrollTop + document.getElementById(`start-project__form`).clientHeight - document.getElementById(`start-project__form`).scrollHeight >=-1) {
+                document.getElementById(`start-project__form`).scrollTo(0, (document.getElementById(`start-project__form`).scrollHeight-document.getElementById(`start-project__form`).clientHeight-1), "smooth");
+        }
+        if (document.getElementById(`start-project__form`).scrollTop <=1) {
+                document.getElementById(`start-project__form`).scrollTo(0, 1, "smooth");
+        }
+})
 
 var textarea = document.querySelector('textarea');
         textarea.addEventListener('keydown', autosize);
@@ -298,12 +327,18 @@ function getBgCoords() {
 
 function navHeaderInverseControl(arg, curY)
 {
-        for (i=0; i<arg.length; i++){
-                if ((arg[i] < curY+50)&(curY+50<arg[i+1]))
-                {
-                        if (i%2 == 1) {document.getElementById(`header`).classList.add (`nav-headerInverse`);}
-                        else {document.getElementById(`header`).classList.remove (`nav-headerInverse`);}
-                        break;
+        if (curY > document.innerHeight) {
+                document.getElementById(`header`).classList.add (`nav-headerInverse`);
+        }
+        else
+        {
+                for (i=0; i<arg.length; i++){
+                        if ((arg[i] < curY+50)&(curY+50<arg[i+1]))
+                        {
+                                if (i%2 == 1) {document.getElementById(`header`).classList.add (`nav-headerInverse`);}
+                                else {document.getElementById(`header`).classList.remove (`nav-headerInverse`);}
+                                break;
+                        }
                 }
         }
 }
@@ -313,6 +348,10 @@ var     vid1Rect = vid1.getBoundingClientRect(),
         animHomeEndPassed = false;
 
 window.onscroll = () => {
+
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+
         vid1Rect = vid1.getBoundingClientRect();
         vid2Rect = vid2.getBoundingClientRect();
 
