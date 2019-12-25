@@ -87,10 +87,8 @@
                     <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2">представляли свой </h1></div>
                     <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s3">бренд, <span class = "text-underline-left2right">но намного</span></h1></div>
                     <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s4"> <span class = "text-underline-left2right">больше.</span></h1></div>
-            </div>
-            <div class = "mobile home_logo">
-                <img src="Res\MAJORWEB.png" alt="majorweb">
-            </div>
+            </div> 
+            <img src="Res\MAJORWEB.png" alt="majorweb" class = "mobile">
             <div class = "home__services" id = "home__services">
                     <span class = "home__title t5" id = "t5">WEB DEVELOPMENT, DESIGN AND MARKETING</span>
             </div>
@@ -149,7 +147,10 @@
                                 </div>
                                 <div class = "services__right" >
                                     <div class = "services__rightItem">
-                                        <video src = "Res\vid-code.mp4" poster="" loop clip muted id = "vid1"></video>
+                                        <video loop clip muted playsinline webkit-playsinline id = "vid1">
+                                            <source src = "Res\vid-code.webm" type="video/webm">
+                                            <source src = "Res\vid-code-mob.mp4" type="video/mp4">
+                                        </video>
                                     </div>
                                 </div>
                             </div>
@@ -162,11 +163,14 @@
                                                 <li>Бренд-дизайн</li>
                                                 <li>Производство визуального контента (иллюстрации, 3D)</li>
                                                 <li>UI / UX и Motion Design</li>
-                                            </ul>    
+                                            </ul>
                                     </div>
                                     <div class = "services__right">
                                         <div class = "services__rightItem">
-                                            <video src = "Res\vid-gisign.mp4" poster="" loop clip muted id = "vid2"></video>
+                                            <video loop clip muted playsinline webkit-playsinline id = "vid2">
+                                                <source src = "Res\vid-disign.webm" type="video/webm">
+                                                <source src = "Res\vid-disign-mob.mp4" type="video/mp4">
+                                            </video>
                                         </div>
                                     </div>
                                 </div>
@@ -179,11 +183,14 @@
                                                 <li>Проектирование архитектуры веб-приложения</li>
                                                 <li>A/B тестирование</li>
                                                 <li>Перфоманс и креатив консалтинг</li>
-                                            </ul>    
+                                            </ul>
                                     </div>
                                     <div class = "services__right">
                                         <div class = "services__rightItem">
-                                            <video src = "" poster="Res\Kon.jpg" loop clip muted id = "vid3"></video>
+                                            <video loop clip muted playsinline webkit-playsinline id = "vid3">
+                                                <source src = "Res\vid-consulting.webm" type="video/webm">
+                                                <source src = "Res\vid-consulting-mob.mp4" type="video/mp4">
+                                            </video>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +273,8 @@
             </div>
             <div class = "our-stack__item">
                 <div class = "our-stack__item-list" id = "our-stack__item-list_ID">
-                    <div class = "our-stack-item__list-item c1">
+                    
+                    <div class = "our-stack-item__list-item c1" onclick="ourStackOpen(this)">
                         <ul>
                             <li class = "our-stack__item-list-item-num">01</li>
                             <li class = "our-stack__item-list-item-dir">Front—end</li>
@@ -287,7 +295,7 @@
                             <li>Webpack</li>
                         </ul>
                     </div>
-                    <div class = "our-stack-item__list-item c2">
+                    <div class = "our-stack-item__list-item c2" onclick="ourStackOpen(this)">
                         <ul>
                             <li class = "our-stack__item-list-item-num">02</li>
                             <li class = "our-stack__item-list-item-dir">Back—end</li>
@@ -303,7 +311,7 @@
                             <li>Redis</li>
                         </ul>
                     </div>
-                    <div class = "our-stack-item__list-item c3">
+                    <div class = "our-stack-item__list-item c3" onclick="ourStackOpen(this)">
                         <ul>
                             <li class = "our-stack__item-list-item-num">03</li>
                             <li class = "our-stack__item-list-item-dir">DevOps</li>
@@ -315,7 +323,7 @@
                             <li>Sentry</li>
                         </ul>
                     </div>
-                    <div class = "our-stack-item__list-item c4">
+                    <div class = "our-stack-item__list-item c4" onclick="ourStackOpen(this)">
                         <ul>
                             <li class = "our-stack__item-list-item-num">04</li>
                             <li class = "our-stack__item-list-item-dir">Design</li>
@@ -365,10 +373,10 @@
                         <h2 class = "text-from-bottom s4">счастливее. Лояльность клиентов</h2>
                     </div>
                     <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s5">способствует увеличению продаж и развитию</h2>
+                        <h2 class = "text-from-bottom s5">способствует увеличению продаж</h2>
                     </div>
                     <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s6">вашего бизнеса.</h2>
+                        <h2 class = "text-from-bottom s6">и развитию вашего бизнеса.</h2>
                     </div>
                 </div>
             </div>
