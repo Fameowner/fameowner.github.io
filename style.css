@@ -1814,7 +1814,7 @@ input, textarea{
         display: none;
     }
 
-    .home_logo{
+    .home img {
         position: relative;
         width: 80vw;
         left: 10vw;
@@ -1828,12 +1828,6 @@ input, textarea{
         }
     }
 
-
-
-    .home_logo img {
-        width: 100%;
-    }
-
     .home__services {
         margin: 0;
         position: relative;
@@ -1844,8 +1838,11 @@ input, textarea{
     }
 
     .home__title.t5 {
-        width: 37ch;
-        animation-play-state: running;
+        width: 100%;
+        font-family: HelveticaNeueCyr;
+        animation: none;
+        visibility: visible;
+        opacity: 1;
     }
 
     .home__coords {
@@ -2022,8 +2019,13 @@ input, textarea{
 
     .our-stack-item__list-item li:not(.our-stack__item-list-item-num):not(.our-stack__item-list-item-dir) {
         transition: all 1s ease-in-out;
+        font-size: 14px;
         height: 0;
         overflow: hidden;
+    }
+
+    .our-stack-item__list-item.open li:not(.our-stack__item-list-item-num):not(.our-stack__item-list-item-dir) {
+        height: 20px;
     }
 
     .our-stack__item-list-item-num {
@@ -2271,8 +2273,9 @@ input, textarea{
         height: 100%;
         overflow: hidden;
     }
-}
 
+    
+}
 /* Landscape phones and smaller */
 @media (max-width: 480px) {
 
