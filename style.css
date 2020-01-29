@@ -729,7 +729,7 @@ header {
 .bg-title {
     position: absolute;
     margin-top: 5vh;
-    font-size: 25vw;
+    font-size: 19vw;
     color: #1B1B1E;
     font-weight: 500;
     letter-spacing: 0.04em;
@@ -1187,7 +1187,7 @@ footer {
 
 .footer__top h2 {
     font-weight: 300;
-    font-size: 4.3vw;
+    font-size: 4vw;
     line-height: 1;
     letter-spacing: 0.04em;
     color: #000000;
@@ -1267,7 +1267,7 @@ footer {
     justify-content: center;
     background-color: #010101;
     z-index: 1;
-    height: 102vh;
+    height: 105vh;
 }
 
 .slider {
@@ -1503,6 +1503,7 @@ footer {
     background: rgba(136, 136, 136, 0.5);
     overflow: hidden;
     transform: translateX(-100%) scale(0);
+    backdrop-filter: blur(10px);
 }
 
 .startProject_opened{
@@ -1532,7 +1533,7 @@ footer {
     width: 80vw;
     padding: 5vh 5vw;
     flex-wrap: nowrap;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow-y: scroll;
 }
 
@@ -2001,9 +2002,9 @@ input, textarea{
     }
 
     .our-stack__item h2 {
-        font-size: 3.3vw;
+        font-size: 2.4vw;
         line-height: 2.1;
-        padding: 0px 13%;
+        padding: 0px 3%;
     }
 
     .our-stack__item a {
@@ -2163,7 +2164,7 @@ input, textarea{
     }
 
     .footer__top h2 {
-        font-size: 8.3vw;
+        font-size: 5.8vw;
     }
 
     footer {
@@ -2258,9 +2259,9 @@ input, textarea{
     font-size: 8.3vw;
     }
 
-    .contact-us-block {/* хуй*/
+    .contact-us-block {
         display: none;
-    } /* хуй*/
+    } 
 
     .our-stack__item-list::before, .our-stack__item-list::after {
         display: none;
