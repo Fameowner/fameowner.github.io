@@ -494,8 +494,8 @@ if (window.innerWidth >  699)
         document.getElementById(`footer`).onmousemove = (m) => {
                 document.getElementById('helloBox').classList.add ('BoxShow');
                 let footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect();
-                document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/2 + (m.clientX - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
-                document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/2 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
+                document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/1.2 + (m.clientX  - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
+                document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/4 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
         }
 
         document.getElementById(`footer`).onmouseleave = (m) => {
