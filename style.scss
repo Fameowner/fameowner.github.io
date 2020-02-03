@@ -790,7 +790,7 @@ header {
 .services__left h1 {
     font-style: normal;
     font-weight: 200;
-    font-size: 3.75vw;
+    font-size: 3.35vw;
     letter-spacing: 0.04em;
     color: #FFFFFF;
 }
@@ -869,7 +869,7 @@ header {
 .our-stack__item h1 {
     font-weight: 200;
     font-size: 3.9vw;
-    line-height: 1;
+    line-height: 1.1;
     text-align: center;
     letter-spacing: 0.08em;
     color: #000000;
@@ -883,7 +883,7 @@ header {
     text-align: center;
     letter-spacing: 0.04em;
     color: #000000;
-    padding: 0px 28% 0px 28%;
+    padding: 0px 25%;
 }
 
 .our-stack__item a {
@@ -1182,17 +1182,18 @@ footer {
     min-height: 100vh;
     z-index: 1;
     overflow: hidden;
+    position: relative;
 }
 
 .footer__top {
-    margin: 35vh 35vw 0px 10vw;
+    margin: 35vh 20vw 0px 10vw;
     z-index: 2;
 }
 
 .footer__top h2 {
     font-weight: 300;
     font-size: 4vw;
-    line-height: 1;
+    line-height: 1.2;
     letter-spacing: 0.04em;
     color: #000000;
 }

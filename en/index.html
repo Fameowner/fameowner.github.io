@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="EN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name = "Description" content = "#MAJORWEB EN" >
+        <title>#MAJORWEB EN</title>
+        <link rel="stylesheet" href="..//reset.css">
+        <link rel="stylesheet" href="..//style.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146646226-2"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-146646226-2');
+        </script>
+    </head>
+    <body>
+        <header role = "navigation" class = "" id = "header">
+            <nav class = "nav-header" id = "nav-header">
+                <div class = "nav-button nav-button__left" id = "nav-button__left"><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></div>
+                <!-- <div class = "nav-button"><a onclick = "showStartProject()">Начать проект</a></div> -->
+                <div class = "nav-button "><a href="">majorweb</a></div>
+                <div class = "nav-button ">
+                    <a>
+                        <div class = "menu-button" onclick="showMenu()" id = "burger-menu" name = "burger-menu-button">
+                                <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="40" id = "ham">
+                                        <path
+                                            class="line top"
+                                            d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                                        <path
+                                            class="line middle"
+                                            d="m 70,50 h -40" />
+                                        <path
+                                            class="line bottom"
+                                            d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+                                </svg>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+            <div class = "header__bottom" id = "header__bottom">
+                <div class="mob">
+                        <h3> Start dialogue </h3>
+                        <a href="mailto:start@majorweb.studio">start@majorweb.studio</a>
+                </div>
+                <div class = "header-bottom__left">
+                    <div class = "hheader-bottom__left-locations">
+                        <div class = "header-bottom-left-locations__loc">
+                            <h1>Moscow</h1>
+                            <h2>Novoryazanskaya <br> street, 26s1</h2>
+                        </div>
+                        <!-- <div class = "header-bottom-left-locations__loc">
+                            <h1>Москва</h1>
+                            <h2>Новорязанская <br> улица, 26с1</h2>
+                        </div> -->
+                    </div>
+                </div>
+                <div class = "header-bottom__right">
+                    <nav class = "nav-menu">
+                        <a href="#about" onclick="showMenu()">About company</a>
+                        <a href="#services" onclick="showMenu()">Services</a>
+                        <a href="#our-works" onclick="showMenu()">Our works</a>
+                        <a href="#our-stack" onclick="showMenu()">Technology stack</a>
+                        <a onclick = "showStartProject()">Order development</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class = "bg-blur" id = "bg-blur"></div>
+        <div class="home js-bg_black">
+            <div class = "home__coords">
+                    <span class = "home__title t1" id = "home-title__t1">MAJORWEB/DIGITAL</span>
+                    <br>
+                    <span class = "home__title t2" id = "home-title__t2">55°45'24.9"N</span>
+                    <span class = "home__title t3" id = "home-title__t3">37°33'47.1"E</span>
+                    <span class = "home__title t4" id = "home-title__t4">55.756927, 37.563087</span>
+            </div>
+            <div class = "home__videos" >
+                <div class="video-box" id = "video-box_ID">
+                    <video src="Res\vid-bg-home.mp4" class = "home__bg" poster = "Res\RecBlack.jpg" autoplay clip muted id = "home__bg"></video>
+                </div>
+            </div>
+            <div class = "home__moblile">
+                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s1">Exactly as you </h1></div>
+                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2">imagined your </h1></div>
+                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s3">brand, <span class = "text-underline-left2right">but much</span></h1></div>
+                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s4"> <span class = "text-underline-left2right">more.</span></h1></div>
+            </div> 
+            <img src="Res\MAJORWEB.png" alt="majorweb" class = "mobile">
+            <div class = "home__services" id = "home__services">
+                    <span class = "home__title t5" id = "home-title__t5">WEB DEVELOPMENT, DESIGN AND MARKETING</span>
+            </div>
+        </div>
+        </div>
+        <div class = "home__end js-bg_black" id = "home__end">
+            <div class = "home-end__tagline paused" id  = "home-end__tagline">
+                <div>
+                    <div id = "text-animation-onscroll_01" class = "text-animation-onscroll paused">
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s1">Exactly as you </h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2">imagined your </h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s3">brand, <span class = "text-underline-left2right">but much</span></h1></div>
+                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s4"> <span class = "text-underline-left2right">more.</span></h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "contact-us-block contact-us-blockClosed" id = "contact-us-block">
+            <div class = "contact-us-blockTop">
+                <span onclick="showStartProject()">Start a project with majorweb</span>
+            </div>
+            <div class = "contact-us-blockBottom">
+                <div>
+                    <a href="mailto:start@majorweb.studio">start@majorweb.studio</a>
+                </div>
+                <div class = "contact-us-blockBottomRight">
+                    <span>Our major is web. <br> Don’t be shy, tell us more<br></span>
+                    <span>about yours!</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class = "about js-bg_white" id = "about">
+                <div id = "text-animation-onscroll_02" class = "text-animation-onscroll paused">
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom">Majorweb is an independent </h2></div>
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom s1">studio with a mission </h2></div>
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom s2">to reveal and convey</h2></div>
+                        <div class = "text-from-bottom-outter"><h2 class = "text-from-bottom s3">the value of the product.</h2></div>
+                </div>
+                <h1 id = "text-animation-onscroll_02_01" class = "paused">We create modern content for brands with meaning.</h1>
+        </div>
+        <div class = "scrollspace js-bg_black" id = "services">
+                <div class="card" id = 'horscrollsection'>
+                        <div class = "bg-title-outer"><h1 class="bg-title" id="bg-titleID">MAJORWEB</h1></div>
+                        <div class = "services">
+                                <div class = "services__left" id = "services__left_1">
+                                        <h1>Developing and <br> Maintaining</h1>
+                                        <h2>The collaboration of developers and designers under the same roof ensures that the design flawlessly matches the technical requirements and keeps up with the times.
+                                        </h2>
+                                        <ul>
+                                            <li>Websites and web-applications</li>
+                                            <li>Interactive advertising banners</li>
+                                            <li>Chatbots in messengers</li>
+                                            <li>Integration of CRM / ERM platforms</li>
+                                        </ul>
+                                </div>
+                                <div class = "services__right" >
+                                    <div class = "services__rightItem">
+                                        <video loop clip muted playsinline webkit-playsinline id = "vid1">
+                                            <source src = "Res\vid-code.webm" type="video/webm">
+                                            <source src = "Res\vid-code-mob.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "services">
+                                    <div class = "services__left" id = "services__left_2">
+                                            <h1>Design and<br> Creativity</h1>
+                                            <h2>We won't leave you alone with a rough idea. Our creative team will be your loyal friend on the way to the finalized project.</h2>
+                                            <ul>
+                                                <li>Brand-design of products and services</li>
+                                                <li>UI / UX and Motion Design</li>
+                                                <li>Visual content for Digital (illustrations, 3D)</li>
+                                                <li>Video Production</li>
+                                            </ul>
+                                    </div>
+                                    <div class = "services__right">
+                                        <div class = "services__rightItem">
+                                            <video loop clip muted playsinline webkit-playsinline id = "vid2">
+                                                <source src = "Res\vid-disign.webm" type="video/webm">
+                                                <source src = "Res\vid-disign-mob.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "services">
+                                    <div class = "services__left" id = "services__left_3">
+                                            <h1>Consulting and<br>Analytics</h1>
+                                            <h2>The combination of our extensive digital experience and data research expertise allows us to find useful ideas and recommendations that drive your business growth.
+                                            </h2>
+                                            <ul>
+                                                <li>Penetration testing</li>
+                                                <li>Performance and creative consulting</li>
+                                                <li>A/B testing</li>
+                                                <li>Digital product or service analysis</li>
+                                            </ul>
+                                    </div>
+                                    <div class = "services__right">
+                                        <div class = "services__rightItem">
+                                            <video loop clip muted playsinline webkit-playsinline id = "vid3">
+                                                <source src = "Res\vid-consulting.webm" type="video/webm">
+                                                <source src = "Res\vid-consulting-mob.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
+        </div>
+        <div class = "our-work-grid-container js-bg_black" id = "our-works">
+            <div class="heading">
+                <h2>Our projects</h2>
+                <h3>Realizing your ideas is our task.</h3>
+                <div class="line"></div>
+            </div>
+            <div class="img">
+                <img src="Res\works1.jpg" alt="our-work__img" id = "js-our-work__img1">
+                <img src="Res\works2.jpg" alt="our-work__img" id = "js-our-work__img2">
+                <img src="Res\works3.jpg" alt="our-work__img" id = "js-our-work__img3">
+                <img src="Res\works4.jpg" alt="our-work__img" id = "js-our-work__img4">
+            </div>
+            <div class="select">
+                <div class="our-work__item" id = "our-work__item0">
+                    <a href="">
+                        <h2>Majorpack</h2>
+                        <p>Majorpack corporate site in Russia.</p>
+                    </a>
+                    <img src="Res\m-works1.jpg" alt="our-work__img" class = "mobile">
+                </div>
+                <div class="our-work__item" id = "our-work__item1">
+                    <a href="">
+                        <h2>Majorpack USA</h2>
+                        <p>Coating for the oil industry.</p>
+                    </a>
+                    <img src="Res\m-works2.jpg" alt="our-work__img" class = "mobile">
+                </div>
+                <div class="our-work__item" id = "our-work__item2">
+                    <a href="">
+                        <h2>Funny Bunny</h2>
+                        <p>Pet Supplies Online Store.</p>
+                    </a>
+                    <img src="Res\m-works3.jpg" alt="our-work__img" class = "mobile">
+                </div>
+                <div class="our-work__item" id = "our-work__item3">
+                    <a href="">
+                        <h2>Sterion</h2>
+                        <p>Сorporate site.</p>
+                    </a>
+                    <img src="Res\m-works4.jpg" alt="our-work__img" class = "mobile">
+                </div>
+            </div>
+        </div>
+        <div class = "our-stack js-bg_white" id = "our-stack">
+            <div class = "our-stack__item header text-animation-onscroll paused" id = "text-animation-onscroll_03">
+                <div class = "desktop">
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s1">We use the newest</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s2">technologies and modern</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s3">approach to project</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s4">implementation.</h1>
+                    </div>
+                </div>
+                <div class = "mobile">
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s1">We use</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s2">the newest</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s3">technologies</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s4">and modern</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s5">approach</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s6">to project</h1>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h1 class = "text-from-bottom s7">implementation.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class = "our-stack__item"  >
+                <div class = "our-stack__item-list" id = "our-stack__item-list_ID">
+                    
+                    <div class = "our-stack-item__list-item c1" onclick="ourStackOpen(this)">
+                        <ul>
+                            <li class = "our-stack__item-list-item-num">01</li>
+                            <li class = "our-stack__item-list-item-dir">Front—end</li>
+                            <li>Babel</li>
+                            <li>GatsbyJs</li>
+                            <li>Javascript ES7</li>
+                            <li>Mobx</li>
+                            <li>PostCSS</li>
+                            <li>PWA</li>
+                            <li>ReactJs</li>
+                            <li>React Native</li>
+                            <li>Redux</li>
+                            <li>Sass</li>
+                            <li>SSR</li>
+                            <li>Styled Components</li>
+                            <li>Typescript</li>
+                            <li>VueJs</li>
+                            <li>Webpack</li>
+                        </ul>
+                    </div>
+                    <div class = "our-stack-item__list-item c2" onclick="ourStackOpen(this)">
+                        <ul>
+                            <li class = "our-stack__item-list-item-num">02</li>
+                            <li class = "our-stack__item-list-item-dir">Back—end</li>
+                            <li>Celery</li>
+                            <li>Django</li>
+                            <li>Docker</li>
+                            <li>Flask</li>
+                            <li>Haproxy</li>
+                            <li>Nginx</li>
+                            <li>NodeJs</li>
+                            <li>PostgresSql</li>
+                            <li>Python</li>
+                            <li>Redis</li>
+                        </ul>
+                    </div>
+                    <div class = "our-stack-item__list-item c3" onclick="ourStackOpen(this)">
+                        <ul>
+                            <li class = "our-stack__item-list-item-num">03</li>
+                            <li class = "our-stack__item-list-item-dir">DevOps</li>
+                            <li>Centos</li>
+                            <li>Graphite</li>
+                            <li>InfluxDB</li>
+                            <li>Nagios</li>
+                            <li>Saltstack</li>
+                            <li>Sentry</li>
+                        </ul>
+                    </div>
+                    <div class = "our-stack-item__list-item c4" onclick="ourStackOpen(this)">
+                        <ul>
+                            <li class = "our-stack__item-list-item-num">04</li>
+                            <li class = "our-stack__item-list-item-dir">Design</li>
+                            <li>3DS Max</li>
+                            <li>Adobe After Effects</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Adobe Photoshop</li>
+                            <li>Blender</li>
+                            <li>Autocad</li>
+                            <li>Cinema 4D</li>
+                            <li>Figma</li>
+                            <li>Keyshot</li>
+                            <li>Marvelous Designer</li>
+                            <li>Sketch</li>
+                            <li>Unreal Engine</li>
+                            <li>Zbrush</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class = "our-stack__item header text-animation-onscroll paused" id = "text-animation-onscroll_04">
+                <div class = "desktop">
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s1">The image of the company on the Internet is the face of your Brand.</h2>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s2">Stylish "wrapping" and qualitative realization will make your clients happier.</h2>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s3">Customer loyalty contributes to sales growth and your business development.</h2>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s4">Trust us and you will be the First.</h2>
+                    </div>
+                </div>
+                <div class = "mobile">
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s1">The image of the company on the Internet is the face of your Brand.</h2>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s2">Stylish "wrapping" and qualitative realization will make your clients happier.</h2>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s3">Customer loyalty contributes to sales growth and your business development.</h2>
+                    </div>
+                    <div class="text-from-bottom-outter">
+                        <h2 class = "text-from-bottom s4">Trust us and you will be the First.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class = "our-stack__item">
+                <a class = "no-mob a-like-underline black text-from-opacity paused" onclick = "showStartProject()" id = "become-first">Go First.</a>
+            </div>
+        </div>
+        <div class="start-project" id = "start-project">
+            <form action="//formspree.io/vlad160195@ya.ru" method="POST" id = "start-project__form" class = "start-project__form" >
+                <div class = "start-project-form__close-button">
+                    <div onclick = "showStartProject()">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" id= "js-close-button__SVG">
+                            <path d="M0 27.9214L27.9213 0.00012207L30.7497 2.82855L2.82843 30.7498L0 27.9214Z" fill="#A7A7A7"/>
+                            <path d="M2.82861 0.000144434L30.7499 27.9214L27.9215 30.7499L0.000186205 2.82857L2.82861 0.000144434Z" fill="#A7A7A7"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class = "start-project-form__item checkbox-services">
+                    <div class="start-project-form__item-left">
+                        <label class="start-project-form__heading" >Interested in</label>
+                    </div>
+                    <div class="start-project-form__item-right">
+                        <input type="checkbox" name="services_design" value="Design" id="checkbox-design_button">
+                        <label for = "checkbox-design_button"> Design </label>
+                        <input type="checkbox" name="services_development" value="Development" id ="checkbox-development_button">
+                        <label for = "checkbox-development_button">Development</label>
+                        <input type="checkbox" name="services_support" value="Support" id = "checkbox-support_button">
+                        <label for = "checkbox-support_button">Support</label>
+                        <input type="checkbox" name="services_consulting" value="Consulting" id = "checkbox-consulting_button">
+                        <label for = "checkbox-consulting_button">Consulting</label>
+                    </div >
+                </div>
+                <div class = "start-project-form__item radio-budget">
+                    <div class="start-project-form__item-left">
+                        <label class="start-project-form__heading" for = "radioBudgetUpTo200Button">Budget</label>
+                    </div>
+                    <div  class="start-project-form__item-right">
+                        <input type="radio" name="budget" value="upTo3k$" id = "radioBudgetUpTo200Button">
+                        <label for = "radioBudgetUpTo200Button">Up to 3,000 $</label>
+                        <input type="radio" name="budget" value="f3kT10k$" id = "radioBudgetf200t500Button">
+                        <label for = "radioBudgetf200t500Button">From 3,000 $ to 10,000 $</label>
+                        <input type="radio" name="budget" value="f10k$" id = "radioBudgetf500Button">
+                        <label for = "radioBudgetf500Button">From 10,000 $</label>
+                    </div>
+                </div>
+                <div class = "start-project-form__item">
+                    <div class="start-project-form__item-left">
+                        <label class="start-project-form__heading" for = "textarea-escription-project">Description</label>
+                    </div>
+                    <div class="start-project-form__item-right no-border">
+                        <textarea class = "start-project-form__input" type="textarea" name="descriptionProject" placeholder="Briefly describe your project so that we can draw up a brief" id = "textarea-escription-project"></textarea>
+                    </div>
+                </div>
+                <div class = "start-project-form__item bottom">
+                    <div class="start-project-form__item-left"><label class="start-project-form__heading">Contacts</label></div>
+                    <div class="start-project-form__item-right no-border">
+                        <div class = "contacts">
+                        <label for="contacts-name-ID" required>Name:</label>
+                        <input class = "start-project-form__input shortInput" type="text" name="contactsName" placeholder="What is your name?" id = "contacts-name-ID">
+                        <label for="contacts-eMail-ID" required>E-mail:</label>
+                        <input class = "start-project-form__input shortInput" type="email" name="contactsEMail" placeholder="Contact Email" id = "contacts-eMail-ID">
+                        <label for="contacts-phone-ID" required>Phone number:</label>
+                        <input class = "start-project-form__input shortInput" type="tel" name="contactsPhone" placeholder="+1 (000) 000 0000" pattern="[0-9] {+}" id = "contacts-phone-ID">
+                    </div>
+                    </div>
+                </div>
+                <div class = "start-project-form__item-button">
+                    <button type="submit" class="a-like-underline">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <footer class = "js-bg_white" id = "footer">
+            <div class = "footer__top paused text-animation-onscroll" id = "footer__top">
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s1">Our major is web,</h2>
+                </div>
+                <div class="text-from-bottom-outter">
+                    <h2 class = "text-from-bottom s2">tell us more about yours</h2>
+                </div>
+            </div>
+            <div  class = "footer__bottom">
+                <div class = "footer-bottom__left">
+                    <div class = "footer-bottom-left__locations">
+                            <div class = "footer-bottom-left__location">
+                                    <h1>Moscow</h1>
+                                    <h2>Novoryazanskaya <br> street, 26s1 </h2>
+                                </div>
+                    </div>
+                </div>
+                <div class = "footer-bottom__right">
+                    <ul>
+                        <li>Start a project with us</li>
+                        <li><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <video src = "" autoplay loop clip muted class = "Box helloBox" id = "helloBox" >  </video>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
