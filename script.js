@@ -447,7 +447,7 @@ for (let i = 0; i < ourWorksItems.length; i++) {
 
 ourWorks.addEventListener("mousemove", (m)=>{
         for (let i = 0; i < imgList.length; i++) {
-                imgList[i].style.left = (50 - (m.clientX)*.01) + `%`;
-                imgList[i].style.top = (50 - (m.clientY)*.01)  + `%`;
+                imgList[i].style.left = (50 - (m.clientX - window.outerWidth/2)*.005) + `%`;
+                imgList[i].style.top = (50 - (m.clientY  - window.outerHeight/2)*.005)  + `%`;
         }
 })
