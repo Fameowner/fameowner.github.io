@@ -25,7 +25,7 @@
                 <div class = "nav-button "><a href="">majorweb</a></div>
                 <div class = "nav-button ">
                     <a>
-                        <button class = "menu-button" onclick="showMenu()" id = "burger-menu" name = "burger-menu-button">
+                        <div class = "menu-button" onclick="showMenu()" id = "burger-menu" name = "burger-menu-button">
                                 <svg class="ham hamRotate ham4" viewBox="0 0 100 100" width="40" id = "ham">
                                         <path
                                             class="line top"
@@ -37,7 +37,7 @@
                                             class="line bottom"
                                             d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
                                 </svg>
-                        </button>
+                        </div>
                     </a>
                 </div>
             </nav>
@@ -72,11 +72,11 @@
         <div class = "bg-blur" id = "bg-blur"></div>
         <div class="home js-bg_black">
             <div class = "home__coords">
-                    <span class = "home__title t1">MAJORWEB/DIGITAL<br> </span>
+                    <span class = "home__title t1" id = "home-title__t1">MAJORWEB/DIGITAL</span>
                     <br>
-                    <span class = "home__title t2">55°45'24.9"N <br></span>
-                    <span class = "home__title t3">37°33'47.1"E <br></span>
-                    <span class = "home__title t4">55.756927, 37.563087</span>
+                    <span class = "home__title t2" id = "home-title__t2">55°45'24.9"N</span>
+                    <span class = "home__title t3" id = "home-title__t3">37°33'47.1"E</span>
+                    <span class = "home__title t4" id = "home-title__t4">55.756927, 37.563087</span>
             </div>
             <div class = "home__videos" >
                 <div class="video-box" id = "video-box_ID">
@@ -91,7 +91,7 @@
             </div> 
             <img src="Res\MAJORWEB.png" alt="majorweb" class = "mobile">
             <div class = "home__services" id = "home__services">
-                    <span class = "home__title t5" id = "t5">ВЕБ-РАЗРАБОТКА, ДИЗАЙН И МАРКЕТИНГ</span>
+                    <span class = "home__title t5" id = "home-title__t5">ВЕБ-РАЗРАБОТКА, ДИЗАЙН И МАРКЕТИНГ</span>
             </div>
         </div>
         </div>
@@ -116,9 +116,8 @@
                     <a href="mailto:start@majorweb.studio">start@majorweb.studio</a>
                 </div>
                 <div class = "contact-us-blockBottomRight">
-                    <!-- <span>Our major is web.<br></span> -->
                     <span>Не стесняйтесь - расскажите<br></span>
-                    <span>нам о вашей Идее!</span>
+                    <span>нам о своей Идее!</span>
                 </div>
             </div>
         </div>
@@ -199,40 +198,48 @@
                                 </div>
                 </div>
         </div>
-        <div class = "our-works js-bg_black" id = "our-works">
-            <button class = "our-works-slider__next" onclick="nextButton()" id = "our-works-slider__next"></button>
-            <div class = "slider" id = "slider">
-                <div class="slider-item slider-item_move" id = "slider-item__0">
-                    <h2>Зоомагазин FunnyBunny</h2>
-                    <a>
-                        <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
+        <div class = "our-work-grid-container js-bg_black" id = "our-works">
+            <div class="heading">
+                <h2>Наши проекты</h2>
+                <h3>Воплощать ваши идеи - наша задача.</h3>
+                <div class="line"></div>
+            </div>
+            <div class="img">
+                <img src="Res\works1.jpg" alt="our-work__img" id = "js-our-work__img1">
+                <img src="Res\works2.jpg" alt="our-work__img" id = "js-our-work__img2">
+                <img src="Res\works3.jpg" alt="our-work__img" id = "js-our-work__img3">
+                <img src="Res\works4.jpg" alt="our-work__img" id = "js-our-work__img4">
+            </div>
+            <div class="select">
+                <div class="our-work__item" id = "our-work__item0">
+                    <a href="">
+                        <h2>Majorpack</h2>
+                        <p>Производтво покрытий для нефтяной отрасли.</p>
                     </a>
+                    <img src="Res\m-works1.jpg" alt="our-work__img" class = "mobile">
                 </div>
-                <div class="slider-item moved-right" id = "slider-item__1">
-                    <h2>majorpack.ru</h2>
-                    <a href="https://majorpack.ru">
-                        <img src="Res\majorpack.jpg" alt="majorpack">
+                <div class="our-work__item" id = "our-work__item1">
+                    <a href="">
+                        <h2>Majorpack USA</h2>
+                        <p>Корпоративный сайт majorpack в США.</p>
                     </a>
+                    <img src="Res\m-works2.jpg" alt="our-work__img" class = "mobile">
                 </div>
-                <div class="slider-item" id = "slider-item__2">
-                    <h2>Зоомагазин FunnyBunny</h2>
-                    <a>
-                        <img src="Res\FunnyBunny.jpg" alt="FunnyBunny">
+                <div class="our-work__item" id = "our-work__item2">
+                    <a href="">
+                        <h2>Funny Bunny</h2>
+                        <p>Интернет-магазин зоотоваров.</p>
                     </a>
+                    <img src="Res\m-works3.jpg" alt="our-work__img" class = "mobile">
                 </div>
-                <div class="slider-item" id = "slider-item__3">
-                    <h2>majorpack.ru</h2>
-                    <a href="https://majorpack.ru">
-                        <img src="Res\majorpack.jpg" alt="majorpack">
+                <div class="our-work__item" id = "our-work__item3">
+                    <a href="">
+                        <h2>АО «Стерион»</h2>
+                        <p>Корпоративный сайт.</p>
                     </a>
+                    <img src="Res\m-works4.jpg" alt="our-work__img" class = "mobile">
                 </div>
             </div>
-            <div class="our-works__buttons" id = "our-works__buttons">
-                    <button class="our-works__buttonN a-like-underline our-works-buttonN_current" onclick="numButton(1)"> 01 </button>
-                    <button class="our-works__buttonN a-like-underline" onclick="numButton(2)"> 02 </button>
-                    <!-- <button class="our-works__buttonN a-like-underline" onclick="numButton(3)"> 03 </button>
-                    <button class="our-works__buttonN a-like-underline" onclick="numButton(4)"> 04 </button> -->
-                </div>
         </div>
         <div class = "our-stack js-bg_white" id = "our-stack">
             <div class = "our-stack__item header text-animation-onscroll paused" id = "text-animation-onscroll_03">
@@ -350,16 +357,16 @@
             <div class = "our-stack__item header text-animation-onscroll paused" id = "text-animation-onscroll_04">
                 <div class = "desktop">
                     <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s1">Образ вашей компании в Интернете - лицо вашего бренда. Красивый</h2>
+                        <h2 class = "text-from-bottom s1">Образ компании в Интернете - лицо вашего Бренда</h2>
                     </div>
                     <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s2">дизайн и хорошо написанный код сделают ваших клиентов счастливее.</h2>
+                        <h2 class = "text-from-bottom s2">Стильная “обертка” и качественная реализация сделают ваших клиентов</h2>
                     </div>
                     <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s3">Лояльность клиентов способствует увеличению продаж и развитию</h2>
+                        <h2 class = "text-from-bottom s3">счастливее. Лояльность клиентов способствует увеличению продаж и развитию</h2>
                     </div>
                     <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s4">вашего бизнеса.</h2>
+                        <h2 class = "text-from-bottom s4">вашего бизнеса. Доверьтесь нам и Вы станете первыми.</h2>
                     </div>
                 </div>
                 <div class = "mobile">
@@ -375,12 +382,6 @@
                     <div class="text-from-bottom-outter">
                         <h2 class = "text-from-bottom s4">вашего бизнеса. Доверьтесь нам и Вы станете первыми.</h2>
                     </div>
-                    <!-- <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s5">способствует увеличению продаж</h2>
-                    </div>
-                    <div class="text-from-bottom-outter">
-                        <h2 class = "text-from-bottom s6">и развитию вашего бизнеса.</h2>
-                    </div> -->
                 </div>
             </div>
             <div class = "our-stack__item">
@@ -484,8 +485,8 @@
             </div>
             <div class = "our-vacancyResponseto desktop">
                     <ul>
-                    <a class = "a-like-underline" href="mailto:jobs@majorweb.studio"><li>Отправить резюме</li></a>
-                    <a href="mailto:jobs@majorweb.studio"><li>jobs@majorweb.studio</li></a>
+                        <li><a class = "a-like-underline" href="mailto:jobs@majorweb.studio">Отправить резюме</a></li>
+                        <li><a href="mailto:jobs@majorweb.studio">jobs@majorweb.studio</a></li>
                     </ul>
             </div>
             <div class = "our-vacancy__bottom mobile">
@@ -586,9 +587,14 @@
             </div>
         </div>
         <div class="start-project" id = "start-project">
-            <form action="https://formsubmit.co/vlad160195@ya.ru" method="POST" id = "start-project__form" class = "start-project__form" >
+            <form action="//formspree.io/vlad160195@ya.ru" method="POST" id = "start-project__form" class = "start-project__form" >
                 <div class = "start-project-form__close-button">
-                    <a onclick = "showStartProject()">Закрыть</a>
+                    <div onclick = "showStartProject()">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" id= "js-close-button__SVG">
+                            <path d="M0 27.9214L27.9213 0.00012207L30.7497 2.82855L2.82843 30.7498L0 27.9214Z" fill="#A7A7A7"/>
+                            <path d="M2.82861 0.000144434L30.7499 27.9214L27.9215 30.7499L0.000186205 2.82857L2.82861 0.000144434Z" fill="#A7A7A7"/>
+                        </svg>
+                    </div>
                 </div>
                 <div class = "start-project-form__item checkbox-services">
                     <div class="start-project-form__item-left">
@@ -662,10 +668,6 @@
                                     <h1>Москва</h1>
                                     <h2>Новорязанская <br> улица, 26с1 </h2>
                                 </div>
-                                <!-- <div class = "footer-bottom-left__location">
-                                    <h1>Нью-Йорк</h1>
-                                    <h2>Адрес нашего офиса в Нью-Йорке</h2>
-                                </div> -->
                     </div>
                 </div>
                 <div class = "footer-bottom__right">
