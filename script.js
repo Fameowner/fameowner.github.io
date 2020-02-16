@@ -391,31 +391,31 @@ window.onscroll = () => {
 };
 
 
-if (window.innerWidth >  699)
-        {
-                document.getElementById(`footer__top`).onmouseover = (m) => {
-                document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
-        }
+// if (window.innerWidth >  699)
+//         {
+//                 document.getElementById(`footer__top`).onmouseover = (m) => {
+//                 document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
+//         }
 
-        document.getElementById(`footer__top`).onmouseleave = (m) => {
-                document.getElementById(`helloBox`).src = "";
-        }
+//         document.getElementById(`footer__top`).onmouseleave = (m) => {
+//                 document.getElementById(`helloBox`).src = "";
+//         }
 
-        document.getElementById(`footer`).onmousemove = (m) => {
-                document.getElementById('helloBox').classList.add ('BoxShow');
-                let footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect();
-                document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/1.2 + (m.clientX  - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
-                document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/4 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
-        }
+//         document.getElementById(`footer`).onmousemove = (m) => {
+//                 document.getElementById('helloBox').classList.add ('BoxShow');
+//                 let footerTopCenter = document.getElementById(`footer__top`).getBoundingClientRect();
+//                 document.getElementById(`helloBox`).style.left = footerTopCenter.left + footerTopCenter.width/1.2 + (m.clientX  - (footerTopCenter.left + footerTopCenter.width/2)) *.06  + `px`;
+//                 document.getElementById(`helloBox`).style.top = footerTopCenter.top + footerTopCenter.height/4 + (m.clientY -(footerTopCenter.top + footerTopCenter.height/2))*.06 + sсrolled + `px`;
+//         }
 
-        document.getElementById(`footer`).onmouseleave = (m) => {
-                setTimeout(`document.getElementById('helloBox').classList.remove ('BoxShow');`,250);
-        }
-}
-else {
-        document.getElementById('helloBox').classList.add ('BoxShow');
-        document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
-}
+//         document.getElementById(`footer`).onmouseleave = (m) => {
+//                 setTimeout(`document.getElementById('helloBox').classList.remove ('BoxShow');`,250);
+//         }
+// }
+// else {
+//         document.getElementById('helloBox').classList.add ('BoxShow');
+//         document.getElementById(`helloBox`).src = "Res/doc_2019-11-26_14-24-53.mp4";
+// }
 
 function showVac(t){
         t.classList.toggle(`open`);

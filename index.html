@@ -24,7 +24,7 @@
             <nav class = "nav-header" id = "nav-header">
                 <div class = "nav-button nav-button__left" id = "nav-button__left"><a href="mailto:start@majorweb.studio">start@majorweb.studio</a></div>
                 <!-- <div class = "nav-button"><a onclick = "showStartProject()">Начать проект</a></div> -->
-                <div class = "nav-button "><a href="">majorweb</a></div>
+                <div class = "nav-button desktop"><a href="">majorweb</a></div>
                 <div class = "nav-button ">
                     <a>
                         <div class = "menu-button" onclick="showMenu()" id = "burger-menu" name = "burger-menu-button">
@@ -51,13 +51,9 @@
                 <div class = "header-bottom__left">
                     <div class = "hheader-bottom__left-locations">
                         <div class = "header-bottom-left-locations__loc">
-                            <h1>Москва</h1>
-                            <h2>Новорязанская <br> улица, 26с1</h2>
+                            <h3>Москва</h3>
+                            <h4>Новорязанская <br> улица, 26с1</h4>
                         </div>
-                        <!-- <div class = "header-bottom-left-locations__loc">
-                            <h1>Москва</h1>
-                            <h2>Новорязанская <br> улица, 26с1</h2>
-                        </div> -->
                     </div>
                 </div>
                 <div class = "header-bottom__right">
@@ -86,10 +82,12 @@
                 </div>
             </div>
             <div class = "home__moblile">
-                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s1">В точности, как вы </h1></div>
-                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2">представляли свой </h1></div>
-                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s3">бренд, <span class = "text-underline-left2right">но намного</span></h1></div>
-                    <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s4"> <span class = "text-underline-left2right">больше.</span></h1></div>
+                <h1>
+                    <div class = "text-from-bottom-outter"><span class = "text-from-bottom s1">В точности, как вы </span></div>
+                    <div class = "text-from-bottom-outter"><span class = "text-from-bottom s2">представляли свой </span></div>
+                    <div class = "text-from-bottom-outter"><span class = "text-from-bottom s3">бренд, <span class = " text-underline-left2right">но намного</span></span></div>
+                    <div class = "text-from-bottom-outter"><span class = "text-from-bottom s4 text-underline-left2right">больше.</span></div>
+                </h1>
             </div> 
             <img src="Res\MAJORWEB.png" alt="majorweb" class = "mobile">
             <div class = "home__services" id = "home__services">
@@ -101,10 +99,12 @@
             <div class = "home-end__tagline paused" id  = "home-end__tagline">
                 <div>
                     <div id = "text-animation-onscroll_01" class = "text-animation-onscroll paused">
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s1">В точности, как вы </h1></div>
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s2">представляли свой </h1></div>
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s3">бренд, <span class = "text-underline-left2right">но намного</span></h1></div>
-                        <div class = "text-from-bottom-outter"><h1 class = "text-from-bottom s4"> <span class = "text-underline-left2right">больше.</span></h1></div>
+                        <h1>
+                            <div class = "text-from-bottom-outter"><span class = "text-from-bottom s1">В точности, как вы </span></div>
+                            <div class = "text-from-bottom-outter"><span class = "text-from-bottom s2">представляли свой </span></div>
+                            <div class = "text-from-bottom-outter"><span class = "text-from-bottom s3">бренд, <span class = " text-underline-left2right">но намного</span></span></div>
+                            <div class = "text-from-bottom-outter"><span class = "text-from-bottom s4 text-underline-left2right">больше.</span></div>
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -119,7 +119,7 @@
                 </div>
                 <div class = "contact-us-blockBottomRight">
                     <span>Не стесняйтесь - расскажите<br></span>
-                    <span>нам о своей Идее!</span>
+                    <span>нам о своей идее!</span>
                 </div>
             </div>
         </div>
@@ -311,28 +311,27 @@
                         <ul>
                             <li class = "our-stack__item-list-item-num">02</li>
                             <li class = "our-stack__item-list-item-dir">Back—end</li>
-                            <li>Celery</li>
-                            <li>Django</li>
-                            <li>Docker</li>
-                            <li>Flask</li>
-                            <li>Haproxy</li>
-                            <li>Nginx</li>
-                            <li>NodeJs</li>
-                            <li>PostgresSql</li>
                             <li>Python</li>
+                            <li>Django</li>
+                            <li>Tornado</li>
+                            <li>Flask</li>
+                            <li>NodeJs</li>
+                            <li>PostgreSql</li>
                             <li>Redis</li>
+                            <li>PHP</li>
+                            <li>Wordpress</li>
                         </ul>
                     </div>
                     <div class = "our-stack-item__list-item c3" onclick="ourStackOpen(this)">
                         <ul>
                             <li class = "our-stack__item-list-item-num">03</li>
                             <li class = "our-stack__item-list-item-dir">DevOps</li>
-                            <li>Centos</li>
+                            <li>Ansible</li>
+                            <li>Nginx</li>
+                            <li>Gunicorn</li>
+                            <li>Apache</li>
+                            <li>Docker</li>
                             <li>Graphite</li>
-                            <li>InfluxDB</li>
-                            <li>Nagios</li>
-                            <li>Saltstack</li>
-                            <li>Sentry</li>
                         </ul>
                     </div>
                     <div class = "our-stack-item__list-item c4" onclick="ourStackOpen(this)">
@@ -387,7 +386,7 @@
                 </div>
             </div>
             <div class = "our-stack__item">
-                <a class = "no-mob a-like-underline black text-from-opacity paused" onclick = "showStartProject()" id = "become-first">Стать первым.</a>
+                <a class = "no-mob a-like-underline black text-from-opacity paused" onclick = "showStartProject()" id = "become-first">Заполнить бриф.</a>
             </div>
         </div>
         <div class = "our-vacancy js-bg_black" id = "our-vacancy">
@@ -667,8 +666,8 @@
                 <div class = "footer-bottom__left">
                     <div class = "footer-bottom-left__locations">
                             <div class = "footer-bottom-left__location">
-                                    <h1>Москва</h1>
-                                    <h2>Новорязанская <br> улица, 26с1 </h2>
+                                    <h3>Москва</h3>
+                                    <h4>Новорязанская <br> улица, 26с1 </h4>
                                 </div>
                     </div>
                 </div>
@@ -680,7 +679,7 @@
                 </div>
             </div>
             </div>
-            <video src = "" autoplay loop clip muted class = "Box helloBox" id = "helloBox" >  </video>
+            <!-- <video src = "" autoplay loop clip muted class = "Box helloBox" id = "helloBox" >  </video> -->
         </footer>
         <script src="script.js"></script>
     </body>
