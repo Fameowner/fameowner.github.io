@@ -150,7 +150,7 @@ header {
   display: flex;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   color: #fff;
   stroke: #fff;
@@ -314,6 +314,10 @@ header {
   text-decoration: none;
   font-weight: 200;
   cursor: pointer;
+}
+
+.nav-menu a.brief {
+  font-weight: 300;
 }
 
 .nav-menu a + a {
@@ -1592,6 +1596,13 @@ footer {
   line-height: 25px;
   letter-spacing: 0.04em;
   color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .footer-bottom__right li:first-of-type {
@@ -2550,6 +2561,7 @@ textarea {
   .our-work-grid-container {
     -ms-grid-rows: auto 1fr 1fr 1fr 1fr;
         grid-template-rows: auto 1fr 1fr 1fr 1fr;
+    padding: 5% 0% 20px 10%;
   }
 }
 
@@ -2701,6 +2713,7 @@ textarea {
 @media (max-width: 699px) {
   .our-work-grid-container .select .our-work__item img {
     max-width: 100%;
+    margin: 20px 0 50px;
   }
 }
 
