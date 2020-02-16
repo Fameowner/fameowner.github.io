@@ -198,7 +198,7 @@ window.addEventListener(`resize`, () => {
                 xpos = getCoordsY(document.getElementById('horscrollsection')) - getCoordsY(document.body)+0.02*window.innerHeight;
                 pagewidth = window.innerWidth;
         }
-        bgCoordsList = getBgCoords();
+        //bgCoordsList = getBgCoords();
 });
 
 function videoCheckAndPlay(vid) {
@@ -218,10 +218,10 @@ function getBgCoords() {
                 bgCoords = [],
                 last;
         for (i=0;i<a.length;i++) {
-                coordsA.push(getCoordsY(a[i])+sсrolled);
+                coordsA.push(getCoordsY(a[i])+window.scrollY);
         }
         for (i=0;i<b.length;i++) {
-                coordsB.push(getCoordsY(b[i])+sсrolled);
+                coordsB.push(getCoordsY(b[i])+window.scrollY);
         }
         let s = coordsA.length+coordsB.length;
         for (i=0;i<s;i++){
@@ -248,11 +248,11 @@ function getBgCoords() {
 
 function navHeaderInverseControl(arg, curY)
 {
-        if (curY > document.innerHeight - window.innerHeight) {
-                document.getElementById(`header`).classList.add (`nav-headerInverse`);
-        }
-        else
-        {
+        // if (curY > document.innerHeight - window.innerHeight) {
+        //         document.getElementById(`header`).classList.add (`nav-headerInverse`);
+        // }
+        // else
+        // {
                 for (i=0; i<arg.length; i++){
                         if ((arg[i] < curY+50)&(curY+50<arg[i+1]))
                         {
@@ -261,7 +261,7 @@ function navHeaderInverseControl(arg, curY)
                                 break;
                         }
                 }
-        }
+        //}
 }
 
 var     vid1Rect = vid1.getBoundingClientRect(),
